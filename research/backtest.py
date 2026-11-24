@@ -88,6 +88,18 @@ def simulate(close, opn, fx, tickers, cm: CostModel, n=5, freq="M", band=None, l
             cash -= t_
             value -= t_
             year_start_val = value
+            if cash < 0 and shares:  # sell just enough of the largest holding to pay the tax
+                big = max(shares, key=lambda t: shares[t] * float(px[t]))
+                p_ = float(px[big]) * f
+                n_sell = min(shares[big], math.ceil(-cash / (p_ * (1 - cmz.fx_fee_pct - cmz.slippage_pct)) + 1e-9)
+                                       if cmz.whole_shares else -cash / (p_ * 0.99))
+                r = cmz.sell(float(px[big]), n_sell, "USD", f, 7.46)
+                cash += r["total"]
+                costs_paid += r["fx_fee"] + r["commission"] + r["slippage"]
+                traded += r["gross"]
+                shares[big] -= n_sell
+                if shares[big] <= 0:
+                    del shares[big]
         vals.append(value)
         # 3) decide at the close of the first day of each new period
         if i < lookback or period(d) == last_period:
@@ -102,8 +114,6 @@ def simulate(close, opn, fx, tickers, cm: CostModel, n=5, freq="M", band=None, l
         keep = [t for t in shares if rank.get(t, 999) <= band]
         sells = [t for t in shares if t not in keep]
         buys = [t for t in ranked if t not in keep][: max(0, n - len(keep))]
-        if cash < 0:  # tax overdraft: sell the weakest holding
-            sells = list(set(sells) | {min(keep, key=lambda t: rank.get(t, 999))}) if keep else sells
         pending = (sells, buys)
     v = pd.Series(vals, index=dates)
     return v, costs_paid, traded
