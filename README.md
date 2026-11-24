@@ -128,3 +128,7 @@ docs/                      the website
 - Automated scores cover only the measurable parts of the skill (no judgement on moat, governance or management), so they are labelled *indicative*.
 - Tax is paid at the first run of the year; in reality it is drawn in February. Interest on cash is ignored.
 - Costs are researched estimates, not a broker's quote.
+
+## Author
+
+Built and maintained by [Gustav Wrisberg](https://github.com/gustavwrisberg), with help from Claude. Paper money and research only, not investment advice.
