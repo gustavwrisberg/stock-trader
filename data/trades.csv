@@ -1,0 +1,13 @@
+date,strategy,ticker,action,shares,price,value,fee,reason
+2026-11-23,Skill-scored,AAPL,BUY,4.76968,349.08,1665.0,1.67,"New entry: rank #1, skill score 8.2 (Strong), +31% 12-1m momentum"
+2026-11-23,Skill-scored,V,BUY,4.066927,409.4,1665.0,1.67,"New entry: rank #2, skill score 8.2 (Strong), +27% 12-1m momentum"
+2026-11-23,Skill-scored,MA,BUY,2.620067,635.48,1665.0,1.67,"New entry: rank #3, skill score 8.7 (Exceptional), +19% 12-1m momentum"
+2026-11-23,Skill-scored,JNJ,BUY,6.165525,270.05,1665.0,1.67,"New entry: rank #4, skill score 7.6 (Strong), +33% 12-1m momentum"
+2026-11-23,Skill-scored,UNP,BUY,5.763439,288.89,1665.0,1.67,"New entry: rank #5, skill score 7.5 (Above average), +35% 12-1m momentum"
+2026-11-23,Skill-scored,LLY,BUY,1.220138,1364.6,1665.0,1.66,"New entry: rank #6, skill score 8.0 (Strong), +23% 12-1m momentum"
+2026-11-23,Momentum only,XOM,BUY,10.611855,156.9,1665.0,1.67,"New entry: rank #1, +60% 12-1m momentum"
+2026-11-23,Momentum only,SHEL,BUY,17.920568,92.91,1665.0,1.67,"New entry: rank #2, +52% 12-1m momentum"
+2026-11-23,Momentum only,UNP,BUY,5.763439,288.89,1665.0,1.67,"New entry: rank #3, +35% 12-1m momentum"
+2026-11-23,Momentum only,KO,BUY,17.365457,95.88,1665.0,1.67,"New entry: rank #4, +34% 12-1m momentum"
+2026-11-23,Momentum only,JNJ,BUY,6.165525,270.05,1665.0,1.67,"New entry: rank #5, +33% 12-1m momentum"
+2026-11-23,Momentum only,AAPL,BUY,4.76968,349.08,1665.0,1.67,"New entry: rank #6, +31% 12-1m momentum"
