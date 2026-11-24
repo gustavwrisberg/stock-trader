@@ -120,8 +120,9 @@ def decide_orders(p: Dict[str, Any], ranked: List[str], rows: Dict[str, Dict[str
             continue
         cost1 = est_share_cost_dkk.get(t)
         if cost1 is None or cost1 > budget:
-            rows[t].setdefault("notes", []).append(
-                f"one share (~{cost1:,.0f} kr) costs more than a position budget ({budget:,.0f} kr)" if cost1 else "no price")
+            note = f"one share (~{cost1:,.0f} kr) costs more than a position budget ({budget:,.0f} kr)" if cost1 else "no price"
+            if note not in rows[t].setdefault("notes", []):
+                rows[t]["notes"].append(note)
             continue
         r = rows.get(t, {})
         bits = [f"rank #{rank[t]}"]
