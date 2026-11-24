@@ -1,0 +1,25 @@
+{
+  "_note": "Real-world costs for a Danish private investor, researched November 2026. Change these if your broker or account differs. Sources are listed in README.md.",
+  "broker": "Saxo (SaxoInvestor, standard tier)",
+  "account": "Aktiesparekonto (ASK)",
+  "base_currency": "DKK",
+  "stock_commission_pct": 0.08,
+  "stock_commission_min_usd": 1.0,
+  "etf_commission_pct": 0.08,
+  "etf_commission_min_eur": 3.0,
+  "fx_fee_pct": 0.25,
+  "slippage_pct": 0.05,
+  "whole_shares_only": true,
+  "us_dividend_withholding_pct": 15,
+  "ask_tax_pct": 17,
+  "ask_deposit_cap_dkk": 174200,
+  "etf": {
+    "ticker": "VUAA.DE",
+    "name": "Vanguard S&P 500 UCITS ETF (USD) Acc",
+    "currency": "EUR",
+    "ter_pct": 0.07
+  },
+  "alternatives": {
+    "Nordnet standard": {"stock_commission_pct": 0.15, "stock_commission_min_usd": 13.0, "fx_fee_pct": 0.25}
+  }
+}
