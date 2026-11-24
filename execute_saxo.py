@@ -49,9 +49,9 @@ def write_json(p: Path, obj):
 
 def notify(subject: str, body: str):
     print(f"\n== {subject} ==\n{body}")
-    if os.getenv("GMAIL_REFRESH_TOKEN"):
+    from trader.gmail_oauth import email_configured, send_email
+    if email_configured():
         try:
-            from trader.gmail_oauth import send_email
             send_email(subject, body)
         except Exception as exc:  # email trouble must never block trading logic
             print(f"(email failed: {exc})")

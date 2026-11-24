@@ -310,10 +310,10 @@ def main() -> None:
 
 
 def send_summary(as_of, events, alerts, strategies, cfg):
-    if not os.getenv("GMAIL_REFRESH_TOKEN"):
-        print("Email skipped: GMAIL_* secrets not set")
+    from trader.gmail_oauth import email_configured, send_email
+    if not email_configured():
+        print("Email skipped: set EMAIL_FROM and GMAIL_APP_PASSWORD secrets")
         return
-    from trader.gmail_oauth import send_email
 
     lines = [f"Paper trader - {as_of}", ""]
     for s in strategies:

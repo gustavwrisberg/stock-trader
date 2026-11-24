@@ -29,6 +29,7 @@ jobs:
       SAXO_TOKEN:          ${{ secrets.SAXO_TOKEN }}
       SAXO_ALLOW_LIVE:     ${{ secrets.SAXO_ALLOW_LIVE }}
       SAXO_DRY_RUN:        ${{ inputs.dry_run && 'true' || 'false' }}
+      GMAIL_APP_PASSWORD:  ${{ secrets.GMAIL_APP_PASSWORD }}
       GMAIL_CLIENT_ID:     ${{ secrets.GMAIL_CLIENT_ID }}
       GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
       GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}

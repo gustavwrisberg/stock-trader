@@ -93,7 +93,7 @@ The strategy trades about once a quarter. When orders are waiting and the token 
 ## Setup
 
 1. **Website:** Settings → Pages → Deploy from a branch → `main`, folder `/docs`.
-2. **Email (optional):** Settings → Secrets and variables → Actions. Add `GMAIL_CLIENT_ID`, `GMAIL_CLIENT_SECRET`, `GMAIL_REFRESH_TOKEN`, `EMAIL_FROM` and `EMAIL_TO`.
+2. **Email (optional):** Settings → Secrets and variables → Actions. Add `EMAIL_FROM` (your Gmail address), `GMAIL_APP_PASSWORD` (a 16-letter app password from myaccount.google.com/apppasswords, needs 2-step verification) and optionally `EMAIL_TO`. Then run the **Test email** workflow from the Actions tab. (The older `GMAIL_CLIENT_ID`/`GMAIL_CLIENT_SECRET`/`GMAIL_REFRESH_TOKEN` OAuth setup still works if no app password is set.)
 3. **Offline test:** `pip install -r requirements.txt`, then `python run.py --demo` runs on simulated data and writes to `demo/`.
 
 ## What's in the repo
