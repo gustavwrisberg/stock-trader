@@ -33,12 +33,12 @@
     const r = rows.find((x) => x.inflation_10y_pct != null);
     return r ? `80,000 kr put in 10 years ago, valued today and shrunk by Danish inflation (${r.inflation_10y_pct}% over the 10 years, Statistics Denmark), so it is in the same money as the 80,000 kr you put in. Above 80,000 kr means you can buy more than you started with.` : null;
   };
-  const realCol = (rows) => ({ label: REAL_LABEL, num: true, title: realTitle(rows), get: (r) => r.value_of_80k_after_10y_real_kr,
+  const realCol = (rows) => ({ label: REAL_LABEL, num: true, wide: true, title: realTitle(rows), get: (r) => r.value_of_80k_after_10y_real_kr,
     fmt: kr, cls: (r) => r.value_of_80k_after_10y_real_kr == null ? "" : signCls(r.value_of_80k_after_10y_real_kr - 80000) });
 
   function table(t, cols, rows, highlight) {
     t.replaceChildren(
-      el("thead", {}, el("tr", {}, cols.map((c) => el("th", { class: c.num ? "num" : "", text: c.label, title: c.title })))),
+      el("thead", {}, el("tr", {}, cols.map((c) => el("th", { class: (c.num ? "num" : "") + (c.wide ? " wide" : ""), text: c.label, title: c.title })))),
       el("tbody", {}, rows.map((r) => el("tr", { class: highlight && highlight(r) ? "chosen" : "" },
         cols.map((c) => {
           const v = c.get(r);
