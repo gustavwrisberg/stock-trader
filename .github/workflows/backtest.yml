@@ -6,7 +6,7 @@ on:
       script:
         description: "Which research script to run"
         type: choice
-        options: [backtest, plan_lsb]
+        options: [backtest, plan_lsb, house_5y]
         default: backtest
 
 permissions:
