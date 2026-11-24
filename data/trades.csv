@@ -1,0 +1,13 @@
+date,strategy,ticker,action,shares,value,fee,reason,price_usd
+2026-11-24,Skill-scored,V,BUY,0.59631,1665.01,1.64,"New entry: rank #1, skill score 8.2 (Strong), +23% 12-1m momentum",409.4
+2026-11-24,Skill-scored,AAPL,BUY,0.69935,1665.01,1.64,"New entry: rank #2, skill score 8.2 (Strong), +21% 12-1m momentum",349.08
+2026-11-24,Skill-scored,JNJ,BUY,0.904015,1665.01,1.64,"New entry: rank #3, skill score 7.6 (Strong), +32% 12-1m momentum",270.05
+2026-11-24,Skill-scored,MA,BUY,0.384165,1665.01,1.64,"New entry: rank #4, skill score 8.7 (Exceptional), +12% 12-1m momentum",635.48
+2026-11-24,Skill-scored,MSFT,BUY,0.495694,1665.01,1.64,"New entry: rank #5, skill score 8.4 (Strong), +12% 12-1m momentum",492.5
+2026-11-24,Skill-scored,LLY,BUY,0.178902,1665.01,1.64,"New entry: rank #6, skill score 8.0 (Strong), +24% 12-1m momentum",1364.6
+2026-11-24,Momentum only,XOM,BUY,1.555954,1665.01,1.64,"New entry: rank #1, +60% 12-1m momentum",156.9
+2026-11-24,Momentum only,SHEL,BUY,2.627588,1665.01,1.64,"New entry: rank #2, +46% 12-1m momentum",92.91
+2026-11-24,Momentum only,JNJ,BUY,0.904015,1665.01,1.64,"New entry: rank #3, +32% 12-1m momentum",270.05
+2026-11-24,Momentum only,UNP,BUY,0.845059,1665.01,1.64,"New entry: rank #4, +29% 12-1m momentum",288.89
+2026-11-24,Momentum only,ABBV,BUY,0.846348,1665.01,1.64,"New entry: rank #5, +28% 12-1m momentum",288.45
+2026-11-24,Momentum only,LIN,BUY,0.472203,1665.01,1.64,"New entry: rank #6, +25% 12-1m momentum",517.0
