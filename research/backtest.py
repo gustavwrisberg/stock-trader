@@ -109,7 +109,15 @@ def simulate(close, opn, fx, tickers, cm: CostModel, n=5, freq="M", band=None, l
     return v, costs_paid, traded
 
 
+def _cagr(v: pd.Series):
+    if len(v) < 300:
+        return None
+    yrs = (v.index[-1] - v.index[0]).days / 365.25
+    return round(float((v.iloc[-1] / v.iloc[0]) ** (1 / yrs) - 1) * 100, 2)
+
+
 def stats(v: pd.Series, capital: float, costs_paid: float, traded: float):
+    avg_value = float(v.mean())
     v = v[v.index >= v.index[252]]  # measure after the warm-up
     v = v / v.iloc[0] * capital
     yrs = (v.index[-1] - v.index[0]).days / 365.25
@@ -119,8 +127,10 @@ def stats(v: pd.Series, capital: float, costs_paid: float, traded: float):
         "max_drawdown_pct": round(float((v / v.cummax() - 1).min()) * 100, 1),
         "volatility_pct": round(float(r.std()) * math.sqrt(252) * 100, 1),
         "sharpe": round(float(r.mean() / r.std() * math.sqrt(252)), 2),
-        "costs_pct_per_year": round(costs_paid / capital / yrs * 100, 2),
-        "turnover_x_per_year": round(traded / capital / yrs / 2, 2),
+        "costs_pct_per_year": round(costs_paid / avg_value / yrs * 100, 2),
+        "turnover_x_per_year": round(traded / avg_value / yrs / 2, 2),
+        "cagr_2012_2018_pct": _cagr(v[v.index < "2019-01-01"]),
+        "cagr_2019_now_pct": _cagr(v[v.index >= "2019-01-01"]),
         "years": round(yrs, 1),
         "worst_year_pct": round(float(v.resample("YE").last().pct_change().min() * 100), 1),
     }
@@ -135,6 +145,11 @@ def main():
         etf_cm = CostModel(**{**cm.__dict__, "whole_shares": False})  # UCITS units are ~EUR 100, near-fractional
         v, c, t = simulate(close, opn, fx, ["SPY"], etf_cm, n=1, freq="Y", band=1, lookback=253, skip=0, trend=False, capital=capital)
         results.append({"name": "S&P 500 ETF, buy and hold", "capital": capital, **stats(v, capital, c, t)})
+        # same 38 stocks bought once at equal weight and held: carries the same survivorship bias as
+        # the strategies, so (strategy - this) is what the trading rules themselves add
+        v, c, t = simulate(close, opn, fx, tickers, cm, n=len(tickers), freq="Y", band=len(tickers), lookback=253,
+                           skip=0, trend=False, capital=capital)
+        results.append({"name": "Same 38 stocks, equal weight, buy and hold", "capital": capital, **stats(v, capital, c, t)})
         for n, freq, band_x, trend, lb in itertools.product((3, 4, 5, 6, 8), ("M", "Q"), (1, 2), (True, False), (252, 126)):
             band = n * band_x
             v, c, t = simulate(close, opn, fx, tickers, cm, n=n, freq=freq, band=band, trend=trend, lookback=lb, capital=capital)
@@ -156,9 +171,12 @@ def main():
              f"Period {close.index[252].date()} to {close.index[-1].date()}, values in DKK after Saxo costs and 17% ASK tax.", ""]
     for capital in (10_000.0, 100_000.0):
         sub = df[df.capital == capital].sort_values("sharpe", ascending=False)
+        base = df[(df.capital == capital) & df.name.str.contains("buy and hold")]
+        lines += [f"## Baselines, {capital:,.0f} kr", "", base[["name", "cagr_pct", "cagr_2012_2018_pct", "cagr_2019_now_pct",
+                  "sharpe", "max_drawdown_pct", "worst_year_pct"]].to_markdown(index=False), ""]
         lines += [f"## Starting with {capital:,.0f} kr (sorted by Sharpe)", "",
-                  sub[["name", "cagr_pct", "sharpe", "max_drawdown_pct", "worst_year_pct", "costs_pct_per_year", "turnover_x_per_year"]]
-                  .head(25).to_markdown(index=False), ""]
+                  sub[["name", "cagr_pct", "cagr_2012_2018_pct", "cagr_2019_now_pct", "sharpe", "max_drawdown_pct", "worst_year_pct",
+                       "costs_pct_per_year", "turnover_x_per_year"]].head(30).to_markdown(index=False), ""]
     (out / "backtest_results.md").write_text("\n".join(lines))
     print("\n".join(lines[:60]))
 
