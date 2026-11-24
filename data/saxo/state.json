@@ -1,0 +1,32 @@
+{
+ "instruments": {
+  "TSM": {
+   "Uic": 1077,
+   "Symbol": "TSM:xnys",
+   "Description": "TSMC - ADR",
+   "Currency": "USD"
+  },
+  "AAPL": {
+   "Uic": 211,
+   "Symbol": "AAPL:xnas",
+   "Description": "Apple Inc.",
+   "Currency": "USD"
+  },
+  "NVDA": {
+   "Uic": 1249,
+   "Symbol": "NVDA:xnas",
+   "Description": "NVIDIA Corp.",
+   "Currency": "USD"
+  },
+  "BHP": {
+   "Uic": 11893,
+   "Symbol": "BHP:xnys",
+   "Description": "BHP Group Ltd - ADS - ADR",
+   "Currency": "USD"
+  }
+ },
+ "last_positions": {},
+ "last_run": "2026-11-24",
+ "account_currency": "EUR",
+ "environment": "sim"
+}

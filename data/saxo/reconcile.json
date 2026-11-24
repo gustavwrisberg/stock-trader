@@ -1,0 +1,89 @@
+{
+ "date": "2026-11-24",
+ "model_as_of": "2026-11-23",
+ "environment": "sim",
+ "strategy": "skill",
+ "model": {
+  "TSM": 1,
+  "BHP": 5,
+  "AAPL": 1,
+  "NVDA": 2
+ },
+ "saxo": {},
+ "differences": {
+  "AAPL": {
+   "model": 1,
+   "saxo": 0
+  },
+  "BHP": {
+   "model": 5,
+   "saxo": 0
+  },
+  "NVDA": {
+   "model": 2,
+   "saxo": 0
+  },
+  "TSM": {
+   "model": 1,
+   "saxo": 0
+  }
+ },
+ "orders": [
+  {
+   "date": "2026-11-24",
+   "environment": "sim",
+   "strategy": "skill",
+   "ticker": "AAPL",
+   "side": "Buy",
+   "shares": 1,
+   "quote": 349.08,
+   "est_value_dkk": 2377.9,
+   "ref": "pt-2026-11-24-skill-AAPL-B",
+   "order_id": "",
+   "status": "dry-run",
+   "detail": "New entry: rank #4, skill score 8.2 (Strong), +31% 12-1m momentum"
+  },
+  {
+   "date": "2026-11-24",
+   "environment": "sim",
+   "strategy": "skill",
+   "ticker": "BHP",
+   "side": "Buy",
+   "shares": 5,
+   "quote": 70.6,
+   "est_value_dkk": 2404.6,
+   "ref": "pt-2026-11-24-skill-BHP-B",
+   "order_id": "",
+   "status": "dry-run",
+   "detail": "New entry: rank #2, skill score 8.5 (Exceptional), +54% 12-1m momentum"
+  },
+  {
+   "date": "2026-11-24",
+   "environment": "sim",
+   "strategy": "skill",
+   "ticker": "NVDA",
+   "side": "Buy",
+   "shares": 2,
+   "quote": 165.05,
+   "est_value_dkk": 2248.61,
+   "ref": "pt-2026-11-24-skill-NVDA-B",
+   "order_id": "",
+   "status": "dry-run",
+   "detail": "New entry: rank #7, skill score 8.8 (Exceptional), +17% 12-1m momentum"
+  },
+  {
+   "date": "2026-11-24",
+   "environment": "sim",
+   "strategy": "skill",
+   "ticker": "TSM",
+   "side": "Buy",
+   "shares": 1,
+   "quote": 363.6,
+   "est_value_dkk": 2476.81,
+   "ref": "pt-2026-11-24-skill-TSM-B",
+   "order_id": "",
+   "status": "dry-run",
+   "detail": "New entry: rank #1, skill score 9.0 (Exceptional), +52% 12-1m momentum"
+  }
+ ]
+}
