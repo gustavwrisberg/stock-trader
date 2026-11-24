@@ -57,6 +57,17 @@ def notify(subject: str, body: str):
             print(f"(email failed: {exc})")
 
 
+def live_price(ticker: str):
+    """Latest trade price from Yahoo Finance, used when Saxo sends no quote."""
+    try:
+        import yfinance as yf
+        p = yf.Ticker(ticker).fast_info.get("last_price")
+        return float(p) if p else None
+    except Exception as exc:
+        print(f"  ({ticker}: no Yahoo price: {exc})")
+        return None
+
+
 def model_target(strategy: str):
     """Whole-share holdings the paper model wants after its queued orders, plus the prices it used."""
     ports = load_json(ROOT / "data/portfolios.json", {})
@@ -177,8 +188,13 @@ def main():
                 continue
             q = sx.quote(uic, ak)
             px = q.get("Ask") if o["side"] == "Buy" else q.get("Bid")
-            px = px or q.get("Mid") or prices.get(t)
+            px, src = (px, "saxo") if px else (q.get("Mid"), "saxo mid")
+            if not px:  # practice accounts often get no live US prices: use an independent current price
+                px, src = live_price(t), "yahoo"
             model_px = prices.get(t)
+            if not px:
+                blocked.append(f"{t}: no current price from Saxo or Yahoo, so the price guard can't check it")
+                continue
             value_dkk = o["shares"] * px * fx
             why_not = None
             full_exit = o["side"] == "Sell" and target.get(t, 0) == 0
@@ -192,7 +208,8 @@ def main():
             elif o["side"] == "Buy" and total_buys + value_dkk > lim["max_total_buys_dkk"]:
                 why_not = f"buys would total more than {lim['max_total_buys_dkk']:,} kr"
             row = {"date": today, "environment": env, "strategy": strategy, "ticker": t, "side": o["side"],
-                   "shares": o["shares"], "quote": round(px, 4), "est_value_dkk": round(value_dkk, 2), "ref": ref,
+                   "shares": o["shares"], "quote": round(px, 4), "quote_source": src,
+                   "est_value_dkk": round(value_dkk, 2), "ref": ref,
                    "order_id": "", "status": "", "detail": o["reason"]}
             if why_not:
                 row.update(status="blocked", detail=why_not)
