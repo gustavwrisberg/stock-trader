@@ -1,0 +1,92 @@
+{
+ "skill": {
+  "cash": 0.0,
+  "positions": {
+   "V": {
+    "shares": 0.5963096648163093,
+    "entry_price": 409.3999938964844,
+    "entry_date": "2026-11-24",
+    "last_price": 409.3999938964844
+   },
+   "AAPL": {
+    "shares": 0.6993502421419187,
+    "entry_price": 349.0799865722656,
+    "entry_date": "2026-11-24",
+    "last_price": 349.0799865722656
+   },
+   "JNJ": {
+    "shares": 0.9040147534587966,
+    "entry_price": 270.04998779296875,
+    "entry_date": "2026-11-24",
+    "last_price": 270.04998779296875
+   },
+   "MA": {
+    "shares": 0.38416501013318205,
+    "entry_price": 635.47998046875,
+    "entry_date": "2026-11-24",
+    "last_price": 635.47998046875
+   },
+   "MSFT": {
+    "shares": 0.49569375256083587,
+    "entry_price": 492.5,
+    "entry_date": "2026-11-24",
+    "last_price": 492.5
+   },
+   "LLY": {
+    "shares": 0.17890163967750805,
+    "entry_price": 1364.5999755859375,
+    "entry_date": "2026-11-24",
+    "last_price": 1364.5999755859375
+   }
+  },
+  "started": "2026-11-24",
+  "last_rebalance_month": "2026-11"
+ },
+ "momentum": {
+  "cash": 0.0,
+  "positions": {
+   "XOM": {
+    "shares": 1.555954000210333,
+    "entry_price": 156.89999389648438,
+    "entry_date": "2026-11-24",
+    "last_price": 156.89999389648438
+   },
+   "SHEL": {
+    "shares": 2.6275875956699872,
+    "entry_price": 92.91000366210938,
+    "entry_date": "2026-11-24",
+    "last_price": 92.91000366210938
+   },
+   "JNJ": {
+    "shares": 0.9040147534587966,
+    "entry_price": 270.04998779296875,
+    "entry_date": "2026-11-24",
+    "last_price": 270.04998779296875
+   },
+   "UNP": {
+    "shares": 0.8450592293170909,
+    "entry_price": 288.8900146484375,
+    "entry_date": "2026-11-24",
+    "last_price": 288.8900146484375
+   },
+   "ABBV": {
+    "shares": 0.8463482849880801,
+    "entry_price": 288.45001220703125,
+    "entry_date": "2026-11-24",
+    "last_price": 288.45001220703125
+   },
+   "LIN": {
+    "shares": 0.47220342966385237,
+    "entry_price": 517.0,
+    "entry_date": "2026-11-24",
+    "last_price": 517.0
+   }
+  },
+  "started": "2026-11-24",
+  "last_rebalance_month": "2026-11"
+ },
+ "spy": {
+  "shares": 2.0299897890066805,
+  "started": "2026-11-24"
+ }
+}

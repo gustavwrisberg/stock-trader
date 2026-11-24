@@ -1,6 +1,6 @@
 {
  "AAPL": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "generic",
   "metrics": {
    "roe_pct": {
@@ -87,7 +87,7 @@
   }
  },
  "MSFT": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "it-saas",
   "metrics": {
    "roe_pct": {
@@ -179,7 +179,7 @@
   }
  },
  "GOOGL": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "it-saas",
   "metrics": {
    "roe_pct": {
@@ -271,7 +271,7 @@
   }
  },
  "META": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "it-saas",
   "metrics": {
    "roe_pct": {
@@ -363,7 +363,7 @@
   }
  },
  "ORCL": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "it-saas",
   "metrics": {
    "roe_pct": {
@@ -455,7 +455,7 @@
   }
  },
  "CRM": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "it-saas",
   "metrics": {
    "roe_pct": {
@@ -542,7 +542,7 @@
   }
  },
  "ADBE": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "it-saas",
   "metrics": {
    "roe_pct": {
@@ -634,7 +634,7 @@
   }
  },
  "NVDA": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "semiconductors",
   "metrics": {
    "roe_pct": {
@@ -726,7 +726,7 @@
   }
  },
  "AVGO": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "semiconductors",
   "metrics": {
    "roe_pct": {
@@ -818,7 +818,7 @@
   }
  },
  "TSM": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "semiconductors",
   "metrics": {
    "roe_pct": {
@@ -910,7 +910,7 @@
   }
  },
  "ASML": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "semiconductors",
   "metrics": {
    "roe_pct": {
@@ -1002,7 +1002,7 @@
   }
  },
  "AMZN": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "retail-ecommerce",
   "metrics": {
    "roe_pct": {
@@ -1083,7 +1083,7 @@
   }
  },
  "COST": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "retail-ecommerce",
   "metrics": {
    "roe_pct": {
@@ -1175,7 +1175,7 @@
   }
  },
  "WMT": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "retail-ecommerce",
   "metrics": {
    "roe_pct": {
@@ -1267,7 +1267,7 @@
   }
  },
  "NVO": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "pharma-healthcare",
   "metrics": {
    "roe_pct": {
@@ -1352,14 +1352,14 @@
    "pe0": 9.883838,
    "pb0": 5.272635,
    "ev_ebitda0": 1.436,
-   "mcap_to_ev": 0.6616800179333837,
+   "mcap_to_ev": 0.661513416447218,
    "fcf_to_ni": 0.2830017377042779,
    "period": "FY2025",
    "sector": "pharma-healthcare"
   }
  },
  "LLY": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "pharma-healthcare",
   "metrics": {
    "roe_pct": {
@@ -1446,7 +1446,7 @@
   }
  },
  "JNJ": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "pharma-healthcare",
   "metrics": {
    "roe_pct": {
@@ -1538,7 +1538,7 @@
   }
  },
  "ABBV": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "pharma-healthcare",
   "metrics": {
    "roe_pct": {
@@ -1630,7 +1630,7 @@
   }
  },
  "JPM": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "banks",
   "metrics": {
    "roe_pct": {
@@ -1670,7 +1670,7 @@
   }
  },
  "V": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "exchanges-payments",
   "metrics": {
    "roe_pct": {
@@ -1762,7 +1762,7 @@
   }
  },
  "MA": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "exchanges-payments",
   "metrics": {
    "roe_pct": {
@@ -1854,7 +1854,7 @@
   }
  },
  "BRK-B": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "holdco-assetmgr",
   "metrics": {
    "roe_pct": {
@@ -1924,7 +1924,7 @@
   }
  },
  "BN": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "holdco-assetmgr",
   "metrics": {
    "roe_pct": {
@@ -2016,7 +2016,7 @@
   }
  },
  "SHEL": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "oil-gas",
   "metrics": {
    "roe_pct": {
@@ -2101,14 +2101,14 @@
    "pe0": 8.0651045,
    "pb0": 1.341312,
    "ev_ebitda0": 4.542,
-   "mcap_to_ev": 0.8545234979731667,
+   "mcap_to_ev": 0.8538813070605765,
    "fcf_to_ni": 1.340808431911196,
    "period": "FY2025",
    "sector": "oil-gas"
   }
  },
  "XOM": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "oil-gas",
   "metrics": {
    "roe_pct": {
@@ -2190,7 +2190,7 @@
   "period": "FY2025",
   "val_inputs": {
    "price0": 156.9,
-   "pe0": 16.463799,
+   "pe0": 16.141973,
    "pb0": 2.4080298,
    "ev_ebitda0": 8.579,
    "mcap_to_ev": 0.9568997065735002,
@@ -2200,7 +2200,7 @@
   }
  },
  "KO": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "fmcg-consumer",
   "metrics": {
    "roe_pct": {
@@ -2292,7 +2292,7 @@
   }
  },
  "PG": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "fmcg-consumer",
   "metrics": {
    "roe_pct": {
@@ -2384,7 +2384,7 @@
   }
  },
  "MCD": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "fmcg-consumer",
   "metrics": {
    "dilution_5y_pct": {
@@ -2471,7 +2471,7 @@
   }
  },
  "GE": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "infra-capitalgoods",
   "metrics": {
    "roe_pct": {
@@ -2563,7 +2563,7 @@
   }
  },
  "CAT": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "infra-capitalgoods",
   "metrics": {
    "roe_pct": {
@@ -2655,7 +2655,7 @@
   }
  },
  "NEE": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "utilities-power",
   "metrics": {
    "roe_pct": {
@@ -2747,7 +2747,7 @@
   }
  },
  "TM": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "auto",
   "metrics": {
    "roe_pct": {
@@ -2834,7 +2834,7 @@
   }
  },
  "TSLA": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "auto",
   "metrics": {
    "roe_pct": {
@@ -2926,7 +2926,7 @@
   }
  },
  "UNP": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "rail-freight",
   "metrics": {
    "roe_pct": {
@@ -3018,7 +3018,7 @@
   }
  },
  "WM": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "waste-environmental",
   "metrics": {
    "roe_pct": {
@@ -3110,7 +3110,7 @@
   }
  },
  "LIN": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "chemicals-cement",
   "metrics": {
    "roe_pct": {
@@ -3202,7 +3202,7 @@
   }
  },
  "BHP": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "metals-mining",
   "metrics": {
    "roe_pct": {
@@ -3294,7 +3294,7 @@
   }
  },
  "ACN": {
-  "fetched_at": "2026-11-24T12:09:40",
+  "fetched_at": "2026-11-24T12:48:53",
   "sector": "people-businesses",
   "metrics": {
    "roe_pct": {
