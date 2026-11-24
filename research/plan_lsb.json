@@ -1,106 +1,142 @@
 {
  "period": [
   "2012-01-03",
-  "2026-11-23"
+  "2026-11-24"
  ],
  "capital": 80000.0,
  "notes": "Backtest plans for 80,000 kr on an aktiesparekonto at L\u00e5n & Spar Bank.\n\n    python research/plan_lsb.py        # needs Yahoo Finance (run it via Actions -> Backtest, script plan_lsb)\n\nL\u00e5n & Spar online prices (lsb.dk/dine-vilkaar/gebyrlisten, read 24 Nov 2026):\n- Danish-listed shares and funds: 0.10%, min 29 kr; 7.50 kr per holding change; no custody fee (VP)\n- US and other foreign shares: 0.20%, min 29 kr; currency +/- 1.30 kr per 100 USD (~0.19%)\n- Foreign shares held outside VP: 0.25% a year, min 250 kr\nIndex funds: Danske Invest Global Indeks (MSCI World) costs 0.40% a year, L\u00e5n & Spar Invest Globale\nAktier Basis 0.44%. Modelled with iShares MSCI World (URTH, 0.24%) total returns, adjusted to 0.40%.\n\nSame caveats as backtest.py: the stock universe is today's survivors, and the skill's fundamental score\ncannot be backtested. Compare plans with each other and with the index fund, not as forecasts.\n",
  "rows": [
   {
    "plan": "Global index fund (Danske Invest Global Indeks, 0.40%)",
-   "cagr_pct": 10.62,
+   "cagr_pct": 10.59,
    "max_drawdown_pct": -33.4,
    "volatility_pct": 18.6,
    "sharpe": 0.64,
    "costs_pct_per_year": 0.02,
    "turnover_x_per_year": 0.0,
    "cagr_2012_2018_pct": 8.63,
-   "cagr_2019_now_pct": 12.45,
+   "cagr_2019_now_pct": 12.4,
    "years": 14.9,
    "worst_year_pct": -16.7,
-   "end_value_kr": 359480,
-   "value_of_80k_after_10y_kr": 209693
+   "value_of_80k_after_10y_kr": 206969,
+   "value_of_80k_after_10y_real_kr": 166318,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ],
+   "end_value_kr": 358367
   },
   {
    "plan": "S&P 500 UCITS ETF bought at L\u00e5n & Spar (foreign, custody fee)",
-   "cagr_pct": 12.98,
+   "cagr_pct": 12.94,
    "max_drawdown_pct": -33.1,
    "volatility_pct": 18.4,
-   "sharpe": 0.76,
+   "sharpe": 0.75,
    "costs_pct_per_year": 0.27,
    "turnover_x_per_year": 0.0,
    "cagr_2012_2018_pct": 11.87,
-   "cagr_2019_now_pct": 14.03,
+   "cagr_2019_now_pct": 13.96,
    "years": 14.9,
    "worst_year_pct": -17.6,
-   "end_value_kr": 492266,
-   "value_of_80k_after_10y_kr": 238680
+   "value_of_80k_after_10y_kr": 235110,
+   "value_of_80k_after_10y_real_kr": 188932,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ],
+   "end_value_kr": 489955
   },
   {
    "plan": "Stock strategy, 4 stocks",
-   "cagr_pct": 28.18,
+   "cagr_pct": 28.03,
    "max_drawdown_pct": -42.3,
    "volatility_pct": 30.6,
-   "sharpe": 0.97,
-   "costs_pct_per_year": 1.15,
+   "sharpe": 0.96,
+   "costs_pct_per_year": 1.14,
    "turnover_x_per_year": 1.03,
    "cagr_2012_2018_pct": 23.96,
-   "cagr_2019_now_pct": 31.94,
+   "cagr_2019_now_pct": 31.64,
    "years": 14.9,
    "worst_year_pct": -9.8,
-   "end_value_kr": 3223447,
-   "value_of_80k_after_10y_kr": 826937
+   "value_of_80k_after_10y_kr": 807546,
+   "value_of_80k_after_10y_real_kr": 648935,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ],
+   "end_value_kr": 3168978
   },
   {
    "plan": "Stock strategy, 4 stocks (no custody fee)",
-   "cagr_pct": 28.16,
+   "cagr_pct": 28.0,
    "max_drawdown_pct": -42.8,
    "volatility_pct": 30.6,
-   "sharpe": 0.97,
+   "sharpe": 0.96,
    "costs_pct_per_year": 0.92,
    "turnover_x_per_year": 1.04,
    "cagr_2012_2018_pct": 23.39,
-   "cagr_2019_now_pct": 32.4,
+   "cagr_2019_now_pct": 32.1,
    "years": 14.9,
    "worst_year_pct": -13.8,
-   "end_value_kr": 3214557,
-   "value_of_80k_after_10y_kr": 816819
+   "value_of_80k_after_10y_kr": 797655,
+   "value_of_80k_after_10y_real_kr": 640986,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ],
+   "end_value_kr": 3160205
   },
   {
    "plan": "Stock strategy, 6 stocks",
-   "cagr_pct": 24.38,
+   "cagr_pct": 24.29,
    "max_drawdown_pct": -38.4,
    "volatility_pct": 28.7,
-   "sharpe": 0.91,
+   "sharpe": 0.9,
    "costs_pct_per_year": 0.88,
    "turnover_x_per_year": 0.72,
    "cagr_2012_2018_pct": 20.06,
-   "cagr_2019_now_pct": 28.27,
+   "cagr_2019_now_pct": 28.11,
    "years": 14.9,
    "worst_year_pct": -14.8,
-   "end_value_kr": 2058598,
-   "value_of_80k_after_10y_kr": 653312
+   "value_of_80k_after_10y_kr": 643232,
+   "value_of_80k_after_10y_real_kr": 516894,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ],
+   "end_value_kr": 2039649
   },
   {
    "plan": "Stock strategy, 6 stocks (no custody fee)",
-   "cagr_pct": 24.21,
+   "cagr_pct": 24.17,
    "max_drawdown_pct": -38.2,
    "volatility_pct": 28.1,
    "sharpe": 0.91,
    "costs_pct_per_year": 0.62,
    "turnover_x_per_year": 0.7,
    "cagr_2012_2018_pct": 19.76,
-   "cagr_2019_now_pct": 28.24,
+   "cagr_2019_now_pct": 28.17,
    "years": 14.9,
    "worst_year_pct": -14.5,
-   "end_value_kr": 2017553,
-   "value_of_80k_after_10y_kr": 630008
+   "value_of_80k_after_10y_kr": 623626,
+   "value_of_80k_after_10y_real_kr": 501139,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ],
+   "end_value_kr": 2010191
   },
   {
    "plan": "Stock strategy, 8 stocks",
-   "cagr_pct": 21.05,
+   "cagr_pct": 21.04,
    "max_drawdown_pct": -34.7,
-   "volatility_pct": 25.8,
+   "volatility_pct": 25.7,
    "sharpe": 0.87,
    "costs_pct_per_year": 0.91,
    "turnover_x_per_year": 0.75,
@@ -108,68 +144,98 @@
    "cagr_2019_now_pct": 21.55,
    "years": 14.9,
    "worst_year_pct": -19.5,
-   "end_value_kr": 1374387,
-   "value_of_80k_after_10y_kr": 434046
+   "value_of_80k_after_10y_kr": 431581,
+   "value_of_80k_after_10y_real_kr": 346813,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ],
+   "end_value_kr": 1374778
   },
   {
    "plan": "Stock strategy, 8 stocks (no custody fee)",
-   "cagr_pct": 21.79,
+   "cagr_pct": 21.78,
    "max_drawdown_pct": -34.9,
-   "volatility_pct": 25.8,
+   "volatility_pct": 25.7,
    "sharpe": 0.9,
    "costs_pct_per_year": 0.66,
    "turnover_x_per_year": 0.74,
    "cagr_2012_2018_pct": 20.66,
-   "cagr_2019_now_pct": 22.78,
+   "cagr_2019_now_pct": 22.75,
    "years": 14.9,
    "worst_year_pct": -19.2,
-   "end_value_kr": 1506137,
-   "value_of_80k_after_10y_kr": 477713
+   "value_of_80k_after_10y_kr": 474083,
+   "value_of_80k_after_10y_real_kr": 380968,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ],
+   "end_value_kr": 1504283
   },
   {
    "plan": "Same 38 stocks, equal weight, held (survivorship baseline)",
-   "cagr_pct": 20.78,
+   "cagr_pct": 20.71,
    "max_drawdown_pct": -30.9,
    "volatility_pct": 21.5,
    "sharpe": 0.99,
    "costs_pct_per_year": 0.29,
    "turnover_x_per_year": 0.02,
    "cagr_2012_2018_pct": 19.41,
-   "cagr_2019_now_pct": 22.25,
+   "cagr_2019_now_pct": 22.13,
    "years": 14.9,
    "worst_year_pct": -24.3,
-   "end_value_kr": 1329567,
-   "value_of_80k_after_10y_kr": 494092
+   "value_of_80k_after_10y_kr": 485162,
+   "value_of_80k_after_10y_real_kr": 389871,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ],
+   "end_value_kr": 1319655
   },
   {
    "plan": "80% global index fund + 20% stock strategy (4 stocks)",
-   "cagr_pct": 17.24,
+   "cagr_pct": 17.14,
    "max_drawdown_pct": -33.1,
    "volatility_pct": 22.6,
    "sharpe": 0.82,
    "costs_pct_per_year": 0.7,
    "turnover_x_per_year": 0.58,
    "cagr_2012_2018_pct": 12.05,
-   "cagr_2019_now_pct": 22.04,
+   "cagr_2019_now_pct": 21.85,
    "years": 14.9,
    "worst_year_pct": -8.8,
-   "end_value_kr": 854533,
-   "value_of_80k_after_10y_kr": 408114
+   "value_of_80k_after_10y_kr": 399548,
+   "value_of_80k_after_10y_real_kr": 321073,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ],
+   "end_value_kr": 844033
   },
   {
    "plan": "70% global index fund + 30% stock strategy (4 stocks)",
-   "cagr_pct": 19.71,
+   "cagr_pct": 19.6,
    "max_drawdown_pct": -33.3,
    "volatility_pct": 24.3,
    "sharpe": 0.86,
    "costs_pct_per_year": 0.83,
    "turnover_x_per_year": 0.72,
    "cagr_2012_2018_pct": 14.23,
-   "cagr_2019_now_pct": 24.76,
+   "cagr_2019_now_pct": 24.53,
    "years": 14.9,
    "worst_year_pct": -7.9,
-   "end_value_kr": 1165401,
-   "value_of_80k_after_10y_kr": 502008
+   "value_of_80k_after_10y_kr": 490916,
+   "value_of_80k_after_10y_real_kr": 394495,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ],
+   "end_value_kr": 1149248
   }
  ]
 }
