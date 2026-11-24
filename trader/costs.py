@@ -23,12 +23,13 @@ class CostModel:
     whole_shares: bool
     withholding_pct: float
     tax_pct: float
+    commission_min_dkk: float = 0.0  # banks that set the minimum in kroner (e.g. Lån & Spar: 29 kr)
 
     @classmethod
     def from_config(cls, b: Dict[str, Any]) -> "CostModel":
         return cls(
             commission_pct=b["stock_commission_pct"] / 100,
-            commission_min_usd=b["stock_commission_min_usd"],
+            commission_min_usd=b.get("stock_commission_min_usd", 0.0),
             etf_commission_pct=b["etf_commission_pct"] / 100,
             etf_commission_min_eur=b["etf_commission_min_eur"],
             fx_fee_pct=b["fx_fee_pct"] / 100,
@@ -36,12 +37,13 @@ class CostModel:
             whole_shares=b.get("whole_shares_only", True),
             withholding_pct=b["us_dividend_withholding_pct"] / 100,
             tax_pct=b["ask_tax_pct"] / 100,
+            commission_min_dkk=b.get("stock_commission_min_dkk", 0.0),
         )
 
     def commission_local(self, value_local: float, ccy: str, fx_dkk: float, eur_dkk: float) -> float:
         """Commission in DKK. US stocks: % with a USD minimum. EUR ETFs: % with a EUR minimum."""
         if ccy == "USD":
-            return max(self.commission_pct * value_local, self.commission_min_usd) * fx_dkk
+            return max(self.commission_pct * value_local * fx_dkk, self.commission_min_usd * fx_dkk, self.commission_min_dkk)
         return max(self.etf_commission_pct * value_local, self.etf_commission_min_eur) * eur_dkk
 
     def fill_price(self, price: float, side: int) -> float:

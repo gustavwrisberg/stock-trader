@@ -28,12 +28,12 @@ from trader.costs import CostModel, ask_tax  # noqa: E402
 START = "2011-01-01"
 
 
-def load():
+def load(extra=()):
     import yfinance as yf
 
     uni = json.loads((ROOT / "config/universe.json").read_text())
     tickers = list(uni["tickers"])
-    raw = yf.download(tickers + ["SPY", "DKK=X"], start=START, auto_adjust=True, progress=False, threads=True)
+    raw = yf.download(tickers + ["SPY", "DKK=X", *extra], start=START, auto_adjust=True, progress=False, threads=True)
     close, opn = raw["Close"], raw["Open"]
     for df in (close, opn):
         df.index = pd.to_datetime(df.index).tz_localize(None).normalize()
@@ -44,7 +44,7 @@ def load():
 
 
 def simulate(close, opn, fx, tickers, cm: CostModel, n=5, freq="M", band=None, lookback=252, skip=21,
-             trend=True, capital=10_000.0, tax=True, park=False, costs=True):
+             trend=True, capital=10_000.0, tax=True, park=False, costs=True, custody_pct=0.0, custody_min=0.0):
     band = band or n
     dates = close.index
     cash, shares = capital, {}
@@ -82,6 +82,12 @@ def simulate(close, opn, fx, tickers, cm: CostModel, n=5, freq="M", band=None, l
         px = close.iloc[i]
         value = cash + sum(s * float(px[t]) * f for t, s in shares.items())
         # 2) ASK tax at the turn of the year (paid from cash; may go briefly negative)
+        if custody_pct and i > 0 and d.year != dates[i - 1].year and shares:
+            # yearly custody fee on foreign shares (e.g. Lån & Spar: 0.25%, at least 250 kr)
+            fee = max(custody_pct * (value - cash), custody_min)
+            cash -= fee
+            value -= fee
+            costs_paid += fee
         if tax and i > 0 and d.year != dates[i - 1].year:
             prev = vals[-1]
             t_, loss_carry = ask_tax(prev - year_start_val, loss_carry, cm.tax_pct)

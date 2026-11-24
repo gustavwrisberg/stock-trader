@@ -2,6 +2,12 @@ name: Backtest
 
 on:
   workflow_dispatch:
+    inputs:
+      script:
+        description: "Which research script to run"
+        type: choice
+        options: [backtest, plan_lsb]
+        default: backtest
 
 permissions:
   contents: write
@@ -21,7 +27,7 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt tabulate
-      - run: python research/backtest.py
+      - run: python research/${{ inputs.script || 'backtest' }}.py
       - name: Commit results
         run: |
           git config user.name "paper-trader-bot"
