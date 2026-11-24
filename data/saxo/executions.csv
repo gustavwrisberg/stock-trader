@@ -3,3 +3,7 @@ date,environment,strategy,ticker,side,shares,quote,est_value_dkk,ref,order_id,st
 2026-11-24,sim,skill,BHP,Buy,5,70.6,2404.6,pt-2026-11-24-skill-BHP-B,,dry-run,"New entry: rank #2, skill score 8.5 (Exceptional), +54% 12-1m momentum"
 2026-11-24,sim,skill,NVDA,Buy,2,165.05,2248.61,pt-2026-11-24-skill-NVDA-B,,dry-run,"New entry: rank #7, skill score 8.8 (Exceptional), +17% 12-1m momentum"
 2026-11-24,sim,skill,TSM,Buy,1,363.6,2476.81,pt-2026-11-24-skill-TSM-B,,dry-run,"New entry: rank #1, skill score 9.0 (Exceptional), +52% 12-1m momentum"
+2026-11-24,sim,skill,AAPL,Buy,1,353.675,yahoo,2409.2,pt-2026-11-24-skill-AAPL-B,,dry-run,"New entry: rank #4, skill score 8.2 (Strong), +31% 12-1m momentum"
+2026-11-24,sim,skill,BHP,Buy,5,69.7,yahoo,2373.95,pt-2026-11-24-skill-BHP-B,,dry-run,"New entry: rank #2, skill score 8.5 (Exceptional), +54% 12-1m momentum"
+2026-11-24,sim,skill,NVDA,Buy,2,155.0298,yahoo,2112.09,pt-2026-11-24-skill-NVDA-B,,blocked,price 155.03 is more than 5% from the model's 165.05
+2026-11-24,sim,skill,TSM,Buy,1,349.2283,yahoo,2378.91,pt-2026-11-24-skill-TSM-B,,dry-run,"New entry: rank #1, skill score 9.0 (Exceptional), +52% 12-1m momentum"
