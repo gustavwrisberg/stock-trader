@@ -26,7 +26,7 @@
 
   <section class="hero" aria-labelledby="verdict">
     <h1 id="verdict" class="verdict">Waiting for the first trading day.</h1>
-    <p class="lede" id="lede">Three portfolios started with $10,000 each. One picks stocks using the stock-analysis skill's fundamental scores plus momentum, one uses momentum alone, and one just holds the S&amp;P 500.</p>
+    <p class="lede" id="lede">Three portfolios started with 10,000 kr each. One picks stocks using the stock-analysis skill's fundamental scores plus momentum, one uses momentum alone, and one just holds the S&amp;P 500.</p>
   </section>
 
   <section aria-label="Portfolio comparison" class="race">
@@ -48,7 +48,7 @@
 
   <section class="panel chart-panel" aria-labelledby="chart-title">
     <div class="panel-head">
-      <h2 id="chart-title">Value of $10,000</h2>
+      <h2 id="chart-title">Value over time</h2>
       <div class="seg" role="group" aria-label="Time range" id="ranges">
         <button type="button" data-range="21">1M</button>
         <button type="button" data-range="63">3M</button>
@@ -126,6 +126,7 @@
         <p id="rules">Each portfolio holds 6 stocks at equal weight. A holding is kept while it ranks in the top 10, which avoids churning on small moves. Weights reset on the first run of each month. Every trade pays 0.10% in costs.</p>
       </div>
     </div>
+    <p class="caveat" id="fx-note" hidden></p>
     <p class="caveat">The data is Yahoo Finance via yfinance. The skill treats that as an aggregator: fine for a screen like this, never a source of record. Scores cover only the measurable parts of the skill (no moat, governance or management judgement), so they are labelled indicative. Paper money only. This is an experiment, not investment advice.</p>
   </section>
 </main>

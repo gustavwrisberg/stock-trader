@@ -4,7 +4,7 @@ A daily paper-trading experiment built on the **stock-analysis** skill from [ali
 
 **Dashboard:** https://gustavwrisberg.github.io/stock-trader/
 
-Three portfolios start with $10,000 each and run every weekday after the US close:
+Three portfolios start with **10,000 kr** each and run every weekday after the US close. The stocks trade in US dollars; values are converted at each day's USD/DKK rate, so currency moves count, as they would for a Danish investor. Change `currency` and `starting_cash` in `config/strategy.json` to use another currency.
 
 | Portfolio | How it picks |
 |---|---|

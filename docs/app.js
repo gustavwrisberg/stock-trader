@@ -44,7 +44,18 @@
     return n;
   };
 
-  const money = (v, d = 0) => v == null ? "–" : "$" + Number(v).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+  // Portfolio amounts are in the run's reporting currency (D.currency); share prices stay in USD.
+  let CCY = "USD";
+  const money = (v, d = 0) => {
+    if (v == null) return "–";
+    const n = Number(v).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+    return CCY === "USD" ? "$" + n : CCY === "DKK" ? n + " kr" : n + " " + CCY;
+  };
+  const usd = (v) => v == null ? "–" : "$" + Number(v).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const compact = (v, step) => {
+    const k = v >= 1000 ? (v / 1000).toFixed(step < 1000 ? 1 : 0) + "k" : String(v);
+    return CCY === "USD" ? "$" + k : CCY === "DKK" ? k + " kr" : k;
+  };
   const pct = (v, d = 1) => v == null ? "–" : (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toFixed(d) + "%";
   const pts = (v) => Math.abs(v).toFixed(1) + (Math.abs(v).toFixed(1) === "1.0" ? " point" : " points");
   const signCls = (v) => v > 0 ? "up" : v < 0 ? "down" : "";
@@ -57,7 +68,7 @@
   // ── boot ──────────────────────────────────────────────────────────────────
   fetch("data/dashboard.json?v=" + Date.now())
     .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then((d) => { D = d; render(); })
+    .then((d) => { D = d; CCY = d.currency || "USD"; render(); })
     .catch(() => {
       $("#stamp").textContent = "No data yet";
       $("#verdict").textContent = "Waiting for the first trading day.";
@@ -70,6 +81,11 @@
     $("#stamp").replaceChildren(el("span", { class: "live", "aria-hidden": "true" }),
       `Prices as of ${fmtDate(D.as_of)}`);
     $("#gen").textContent = `Last run ${gen.toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}. Skill version: ${D.skill.version}`;
+    $("#chart-title").textContent = `Value of ${money(D.config.starting_cash)}`;
+    if (CCY !== "USD" && D.fx_usd) {
+      $("#fx-note").textContent = `Amounts are in ${CCY === "DKK" ? "Danish kroner" : CCY}. The stocks trade in US dollars, so values convert at each day's rate (today 1 USD = ${D.fx_usd.toFixed(2)} ${CCY === "DKK" ? "kr" : CCY}) and currency moves count, as they would for you.`;
+      $("#fx-note").hidden = false;
+    }
     if (D.demo) {
       const b = $("#banner"); b.hidden = false;
       b.textContent = "Demo data. These numbers are simulated to preview the site. Real results replace them after the first live run.";
@@ -86,7 +102,7 @@
     const who = (cls, txt) => el("span", { class: "who " + cls, text: txt });
     if (!s.days || s.days < 2) {
       v.replaceChildren("Day one. ", who("skill", "Skill-scored"), ", ", who("momentum", "momentum"), " and the ",
-        who("spy", "S&P 500"), " each start with $10,000.");
+        who("spy", "S&P 500"), ` each start with ${money(D.config.starting_cash)}.`);
     } else {
       const vsSpy = s.total_return_pct - b.total_return_pct, vsMom = s.total_return_pct - m.total_return_pct;
       const rel = (d) => (d >= 0 ? "ahead of " : "behind ");
@@ -95,7 +111,7 @@
     }
     const start = D.strategies[0].started;
     $("#lede").textContent = (s.days > 1)
-      ? `${s.days} trading days since ${fmtDate(start)}. Each portfolio started with $10,000: Skill-scored is now ${money(s.value)}, Momentum only ${money(m.value)}, and the S&P 500 ${money(b.value)}.`
+      ? `${s.days} trading days since ${fmtDate(start)}. Each portfolio started with ${money(D.config.starting_cash)}: Skill-scored is now ${money(s.value)}, Momentum only ${money(m.value)}, and the S&P 500 ${money(b.value)}.`
       : $("#lede").textContent;
   }
 
@@ -159,7 +175,7 @@
     for (let v = lo; v <= hi + 1e-6; v += step) {
       svg.append(svgEl("line", { class: "grid-line", x1: m.l, x2: m.l + iw, y1: y(v), y2: y(v) }));
       const t = svgEl("text", { class: "axis-text", x: m.l - 8, y: y(v) + 4, "text-anchor": "end" });
-      t.textContent = v >= 1000 ? "$" + (v / 1000).toFixed(step < 1000 ? 1 : 0) + "k" : "$" + v; svg.append(t);
+      t.textContent = compact(v, step); svg.append(t);
     }
     if (start > lo && start < hi) svg.append(svgEl("line", { class: "start-line", x1: m.l, x2: m.l + iw, y1: y(start), y2: y(start) }));
     // x labels: ~5 evenly spaced
@@ -399,13 +415,13 @@
     const rows = all.slice(0, logLimit);
     $("#log").replaceChildren(
       el("thead", {}, el("tr", {}, el("th", { text: "Date" }), el("th", { text: "Trade" }), el("th", { class: "num", text: "Amount" }),
-        el("th", { class: "num hide-sm", text: "Price" }), el("th", { text: "Reason" }))),
+        el("th", { class: "num hide-sm", text: "Share price" }), el("th", { text: "Reason" }))),
       el("tbody", {}, ...(rows.length ? rows.map((t) => el("tr", {},
         el("td", { text: fmtDate(t.date, { day: "numeric", month: "short" }) }),
         el("td", {}, el("span", { class: t.action === "BUY" ? "buy" : "sell", text: t.action === "BUY" ? "Buy " : "Sell " }),
           el("span", { class: "tick", text: t.ticker }), el("span", { class: "name", text: t.strategy })),
         el("td", { class: "num", text: money(t.value) }),
-        el("td", { class: "num hide-sm", text: money(t.price, 2) }),
+        el("td", { class: "num hide-sm", text: usd(t.price_usd ?? t.price) }),
         el("td", { class: "out", text: t.reason }))) : [el("tr", {}, el("td", { colspan: 5, class: "empty", text: "No trades yet." }))])));
     $("#log-more").hidden = all.length <= logLimit;
   }

@@ -51,6 +51,8 @@ def demo_prices(tickers: List[str], days: int = 520, seed: int = 7) -> pd.DataFr
         drift = rng.normal(0.0004, 0.0005)
         vol = rng.uniform(0.010, 0.025)
         out[t] = 100 * np.exp(np.cumsum(rng.normal(drift, vol, days)))
+        if t.endswith("=X"):  # FX rate: ~6.5 per USD, low volatility
+            out[t] = 6.5 * np.exp(np.cumsum(rng.normal(0, 0.004, days)))
     return pd.DataFrame(out, index=idx)
 
 

@@ -1,5 +1,6 @@
 {
-  "_note": "Tuning knobs for both paper portfolios. Changing these mid-run changes behaviour from the next run onward; history is kept.",
+  "_note": "starting_cash is in `currency`. Stocks trade in USD; values are converted at each day's USD rate, so currency moves count. Tuning knobs for both paper portfolios. Changing these mid-run changes behaviour from the next run onward; history is kept.",
+  "currency": "DKK",
   "starting_cash": 10000,
   "holdings": 6,
   "keep_while_rank_within": 10,

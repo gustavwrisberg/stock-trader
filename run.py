@@ -55,14 +55,17 @@ def main() -> None:
     manual_flags = load_json(ROOT / "config/flags.json", {}).get("flags", {})
     tickers = list(universe["tickers"])
     bench = universe.get("benchmark", "SPY")
+    ccy = cfg.get("currency", "USD").upper()
+    fx_ticker = None if ccy == "USD" else f"{ccy}=X"  # Yahoo: units of ccy per 1 USD
 
     state_dir = ROOT / ("demo/data" if args.demo else "data")
     site_json = ROOT / ("demo/dashboard.json" if args.demo else "docs/data/dashboard.json")
     state_dir.mkdir(parents=True, exist_ok=True)
 
     # ── 1. Prices ─────────────────────────────────────────────────────────────
-    print(f"Fetching prices for {len(tickers)} tickers + {bench}")
-    prices = feed.demo_prices(tickers + [bench]) if args.demo else feed.fetch_prices(tickers + [bench])
+    extra = [bench] + ([fx_ticker] if fx_ticker else [])
+    print(f"Fetching prices for {len(tickers)} tickers + {', '.join(extra)}")
+    prices = feed.demo_prices(tickers + extra) if args.demo else feed.fetch_prices(tickers + extra)
     if args.demo and args.demo_offset:
         prices = prices.iloc[:-args.demo_offset]
     prices = prices.dropna(how="all")
@@ -70,7 +73,13 @@ def main() -> None:
     coverage = prices.notna().sum(axis=1)
     prices = prices.loc[coverage[coverage >= 0.8 * prices.shape[1]].index]
     as_of = prices.index[-1].strftime("%Y-%m-%d")
-    print(f"Prices as of {as_of}")
+    fx = 1.0
+    if fx_ticker:
+        fxs = prices.pop(fx_ticker).ffill().dropna()
+        if fxs.empty:
+            raise SystemExit(f"No {fx_ticker} exchange rate available; aborting so values aren't mispriced")
+        fx = float(fxs.iloc[-1])
+    print(f"Prices as of {as_of}; 1 USD = {fx:.4f} {ccy}")
     sig = price_signals(prices, cfg)
     px = {t: s["price"] for t, s in sig.items()}
 
@@ -118,13 +127,18 @@ def main() -> None:
     # ── 4. Trade the paper portfolios ─────────────────────────────────────────
     ports = load_json(state_dir / "portfolios.json", {})
     for sid in STRATEGIES:
-        ports.setdefault(sid, new_portfolio(cfg["starting_cash"], as_of))
+        ports.setdefault(sid, new_portfolio(cfg["starting_cash"] / fx, as_of))
     if "spy" not in ports:
-        ports["spy"] = {"shares": cfg["starting_cash"] / px[bench], "started": as_of}
+        ports["spy"] = {"shares": cfg["starting_cash"] / fx / px[bench], "started": as_of}
 
     trades = []
     for sid in STRATEGIES:
-        trades += step_portfolio(ports[sid], order[sid], px, as_of, cfg, LABELS[sid], rows, sid)
+        new = step_portfolio(ports[sid], order[sid], px, as_of, cfg, LABELS[sid], rows, sid)
+        for t in new:  # amounts in the reporting currency; price stays in USD
+            t["value"] = round(t["value"] * fx, 2)
+            t["fee"] = round(t["fee"] * fx, 2)
+            t["price_usd"] = t.pop("price")
+        trades += new
         for t, pos in ports[sid]["positions"].items():
             pos["last_price"] = px.get(t, pos.get("last_price"))
     write_json(state_dir / "portfolios.json", ports, indent=1)
@@ -137,9 +151,9 @@ def main() -> None:
 
     # ── 5. Equity curve ───────────────────────────────────────────────────────
     eq_path = state_dir / "equity.csv"
-    eq = pd.read_csv(eq_path, index_col="date") if eq_path.exists() else pd.DataFrame(columns=["skill", "momentum", "spy"])
-    eq.loc[as_of] = [round(portfolio_value(ports["skill"], px), 2), round(portfolio_value(ports["momentum"], px), 2),
-                     round(ports["spy"]["shares"] * px[bench], 2)]
+    eq = pd.read_csv(eq_path, index_col="date") if eq_path.exists() else pd.DataFrame(columns=["skill", "momentum", "spy", "fx"])
+    eq.loc[as_of] = [round(portfolio_value(ports["skill"], px) * fx, 2), round(portfolio_value(ports["momentum"], px) * fx, 2),
+                     round(ports["spy"]["shares"] * px[bench] * fx, 2), round(fx, 5)]
     eq = eq.sort_index()
     eq.index.name = "date"
     eq.to_csv(eq_path)
@@ -180,11 +194,11 @@ def main() -> None:
             price = px.get(t, pos.get("last_price"))
             r = rows.get(t, {})
             holdings.append({"ticker": t, "name": r.get("name"), "shares": round(pos["shares"], 6), "price": round(price, 2),
-                             "value": round(pos["shares"] * price, 2), "weight_pct": round(pos["shares"] * price / total * 100, 1),
+                             "value": round(pos["shares"] * price * fx, 2), "weight_pct": round(pos["shares"] * price / total * 100, 1),
                              "entry_price": round(pos["entry_price"], 2), "entry_date": pos["entry_date"],
                              "pnl_pct": round((price / pos["entry_price"] - 1) * 100, 2), "day_pct": round(r.get("day_pct", 0), 2),
                              "composite": r.get("composite"), "grade": r.get("grade"), "sector_label": r.get("sector_label")})
-        strategies.append({"id": sid, "label": LABELS[sid], "cash": round(p["cash"], 2), "started": p["started"],
+        strategies.append({"id": sid, "label": LABELS[sid], "cash": round(p["cash"] * fx, 2), "started": p["started"],
                            "stats": perf_stats(eq_dt[sid]), "holdings": holdings})
 
     def clean(r):
@@ -201,12 +215,14 @@ def main() -> None:
         "as_of": as_of,
         "demo": args.demo,
         "data_source": SOURCE,
+        "currency": ccy,
+        "fx_usd": round(fx, 4),
         "skill": {"name": "stock-analysis", "repo": "https://github.com/alirezarezvani/claude-skills",
                   "path": "finance/skills/stock-analysis", "version": skill_version()},
         "config": {k: v for k, v in cfg.items() if not k.startswith("_")},
         "strategies": strategies,
         "benchmark": {"id": "spy", "label": LABELS["spy"], "stats": perf_stats(eq_dt["spy"])},
-        "equity": [{"date": d, **{k: (None if pd.isna(v) else v) for k, v in r.items()}} for d, r in eq.iterrows()],
+        "equity": [{"date": d, **{k: (None if pd.isna(v) else v) for k, v in r.items() if k != "fx"}} for d, r in eq.iterrows()],
         "trades": recent_trades,
         "alerts": alerts,
         "universe": sorted((clean(r) for r in rows.values()),
@@ -217,10 +233,10 @@ def main() -> None:
 
     # ── 8. Email ──────────────────────────────────────────────────────────────
     if (trades or alerts) and cfg["alerts"].get("send_email") and not args.no_email and not args.demo:
-        send_summary(as_of, trades, alerts, strategies, dashboard["benchmark"], cfg)
+        send_summary(as_of, trades, alerts, strategies, dashboard["benchmark"], cfg, ccy)
 
 
-def send_summary(as_of, trades, alerts, strategies, bench, cfg):
+def send_summary(as_of, trades, alerts, strategies, bench, cfg, ccy="USD"):
     if not os.getenv("GMAIL_REFRESH_TOKEN"):
         print("Email skipped: GMAIL_* secrets not set")
         return
@@ -229,11 +245,11 @@ def send_summary(as_of, trades, alerts, strategies, bench, cfg):
     lines = [f"Paper trader - {as_of}", ""]
     for s in strategies + [bench]:
         st = s["stats"]
-        lines.append(f"{s['label']:<16} ${st.get('value', 0):>10,.2f}   {st.get('total_return_pct', 0):+.2f}% total   {st.get('day_pct', 0):+.2f}% today")
+        lines.append(f"{s['label']:<16} {st.get('value', 0):>10,.2f} {ccy}   {st.get('total_return_pct', 0):+.2f}% total   {st.get('day_pct', 0):+.2f}% today")
     if alerts:
         lines += ["", "Alerts:"] + [f"  ! {a}" for a in alerts]
     if trades:
-        lines += ["", "Trades:"] + [f"  [{t['strategy']}] {t['action']} {t['ticker']} ${t['value']:,.0f} - {t['reason']}" for t in trades]
+        lines += ["", "Trades:"] + [f"  [{t['strategy']}] {t['action']} {t['ticker']} {t['value']:,.0f} {ccy} - {t['reason']}" for t in trades]
     lines += ["", f"Dashboard: {cfg['alerts'].get('site_url', '')}", "Paper money only. Not investment advice."]
     subject = f"Paper trader {as_of}: {len(trades)} trades" + (f", {len(alerts)} alerts" if alerts else "")
     try:
