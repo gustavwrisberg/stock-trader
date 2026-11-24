@@ -1,0 +1,90 @@
+{
+ "period": [
+  "2012-01-03",
+  "2026-11-23"
+ ],
+ "chosen": {
+  "holdings": 4,
+  "rebalance": "quarterly",
+  "keep_while_rank_within": 8,
+  "momentum": "12-1 month",
+  "trend_filter": false
+ },
+ "why": [
+  "It beat an equal-weight hold of the same 38 stocks in both halves of the test (24% vs 18% a year in 2012-18, 33% vs 27% in 2019-26). That is the fair comparison, because every stock in the test is a known survivor.",
+  "Trading once a quarter and keeping a holding while it stays in the top 8 cut costs to 0.8% a year.",
+  "Monthly 6-month momentum showed higher returns here, but cost about three times as much (2.5% a year), and fast, concentrated momentum gains the most from survivorship bias. The slower 12-month signal is the standard one in the research literature.",
+  "The 200-day trend filter did not improve results in this test, so it is off.",
+  "Expect deep falls: the chosen rules dropped 42% at their worst, against 33% for the index fund.",
+  "4 holdings keeps each position near 2,500 kr, large enough that the $1 minimum commission stays under 0.3% of a trade.",
+  "The skill's quality score cannot be backtested (no point-in-time fundamentals), so its value is measured live against the Momentum-only control."
+ ],
+ "rows": [
+  {
+   "name": "S&P 500 index fund (buy and hold)",
+   "cagr_pct": 13.22,
+   "cagr_2012_2018_pct": 12.07,
+   "cagr_2019_now_pct": 14.27,
+   "sharpe": 0.77,
+   "max_drawdown_pct": -33.1,
+   "worst_year_pct": -17.4,
+   "costs_pct_per_year": 0.04,
+   "turnover_x_per_year": 0.02
+  },
+  {
+   "name": "Same 38 stocks, equal weight, held (survivorship baseline)",
+   "cagr_pct": 22.52,
+   "cagr_2012_2018_pct": 18.09,
+   "cagr_2019_now_pct": 26.78,
+   "sharpe": 0.97,
+   "max_drawdown_pct": -36.5,
+   "worst_year_pct": -32.2,
+   "costs_pct_per_year": 0.04,
+   "turnover_x_per_year": 0.02
+  },
+  {
+   "name": "Chosen: 4 stocks, quarterly, keep top 8, 12-1m momentum",
+   "cagr_pct": 28.6,
+   "cagr_2012_2018_pct": 24.13,
+   "cagr_2019_now_pct": 32.55,
+   "sharpe": 0.98,
+   "max_drawdown_pct": -42.2,
+   "worst_year_pct": -10.0,
+   "costs_pct_per_year": 0.79,
+   "turnover_x_per_year": 1.03
+  },
+  {
+   "name": "Same, with 200-day trend filter",
+   "cagr_pct": 26.61,
+   "cagr_2012_2018_pct": 23.9,
+   "cagr_2019_now_pct": 28.92,
+   "sharpe": 0.93,
+   "max_drawdown_pct": -44.1,
+   "worst_year_pct": -14.7,
+   "costs_pct_per_year": 0.8,
+   "turnover_x_per_year": 1.03
+  },
+  {
+   "name": "Not chosen: 4 stocks, monthly, 6-1m momentum",
+   "cagr_pct": 33.11,
+   "cagr_2012_2018_pct": 36.0,
+   "cagr_2019_now_pct": 31.22,
+   "sharpe": 1.07,
+   "max_drawdown_pct": -43.5,
+   "worst_year_pct": -19.2,
+   "costs_pct_per_year": 2.48,
+   "turnover_x_per_year": 3.25
+  },
+  {
+   "name": "Not chosen: 3 stocks, monthly, 6-1m momentum",
+   "cagr_pct": 37.37,
+   "cagr_2012_2018_pct": 41.73,
+   "cagr_2019_now_pct": 34.39,
+   "sharpe": 1.12,
+   "max_drawdown_pct": -46.6,
+   "worst_year_pct": -31.7,
+   "costs_pct_per_year": 2.61,
+   "turnover_x_per_year": 3.43
+  }
+ ]
+}

@@ -8,14 +8,25 @@ import numpy as np
 import pandas as pd
 
 
-def fetch_prices(tickers: List[str], period: str = "2y") -> pd.DataFrame:
+FIELDS = ("Open", "Close", "Adj Close", "Dividends", "Stock Splits")
+
+
+def fetch_market(tickers: List[str], period: str = "2y") -> Dict[str, pd.DataFrame]:
+    """Raw (split-adjusted, not dividend-adjusted) Open/Close for trading and valuation, Adj Close
+    (total return) for momentum signals, plus dividends and splits so they can be booked explicitly."""
     import yfinance as yf
 
-    df = yf.download(tickers, period=period, auto_adjust=True, progress=False, threads=True)["Close"]
-    if isinstance(df, pd.Series):
-        df = df.to_frame(name=tickers[0])
-    df.index = pd.to_datetime(df.index).tz_localize(None).normalize()
-    return df.sort_index().ffill(limit=3)
+    df = yf.download(tickers, period=period, auto_adjust=False, actions=True, progress=False, threads=True)
+    out = {}
+    for f in FIELDS:
+        x = df[f] if f in df.columns.get_level_values(0) else pd.DataFrame(index=df.index, columns=tickers)
+        if isinstance(x, pd.Series):
+            x = x.to_frame(name=tickers[0])
+        x.index = pd.to_datetime(x.index).tz_localize(None).normalize()
+        out[f] = x.sort_index()
+    out["Dividends"] = out["Dividends"].fillna(0.0)
+    out["Stock Splits"] = out["Stock Splits"].fillna(0.0)
+    return out
 
 
 def fetch_statements(ticker: str) -> Dict[str, Any]:
@@ -51,9 +62,24 @@ def demo_prices(tickers: List[str], days: int = 520, seed: int = 7) -> pd.DataFr
         drift = rng.normal(0.0004, 0.0005)
         vol = rng.uniform(0.010, 0.025)
         out[t] = 100 * np.exp(np.cumsum(rng.normal(drift, vol, days)))
-        if t.endswith("=X"):  # FX rate: ~6.5 per USD, low volatility
-            out[t] = 6.5 * np.exp(np.cumsum(rng.normal(0, 0.004, days)))
+        if t.endswith("=X"):  # FX rate, low volatility: ~6.5 DKK per USD, ~7.46 per EUR (pegged)
+            base = 7.46 if t.startswith("EUR") else 6.5
+            out[t] = base * np.exp(np.cumsum(rng.normal(0, 0.004 if base < 7 else 0.0003, days)))
     return pd.DataFrame(out, index=idx)
+
+
+def demo_market(tickers: List[str], days: int = 520, seed: int = 7) -> Dict[str, pd.DataFrame]:
+    close = demo_prices(tickers, days, seed)
+    rng = np.random.default_rng(seed + 1)
+    opn = close.shift(1) * np.exp(rng.normal(0, 0.004, close.shape))
+    opn.iloc[0] = close.iloc[0]
+    divs = pd.DataFrame(0.0, index=close.index, columns=close.columns)
+    for t in tickers:
+        if not t.endswith("=X"):
+            for d in close.index[60::63]:  # quarterly dividend ~0.4%
+                divs.at[d, t] = round(float(close.at[d, t]) * 0.004, 4)
+    return {"Open": opn, "Close": close, "Adj Close": close, "Dividends": divs,
+            "Stock Splits": pd.DataFrame(0.0, index=close.index, columns=close.columns)}
 
 
 def demo_statements(ticker: str, seed: int) -> Dict[str, Any]:

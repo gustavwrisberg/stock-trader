@@ -3,9 +3,9 @@
   "use strict";
 
   const SERIES = [
-    { id: "skill", label: "Skill-scored", cssVar: "--skill" },
-    { id: "momentum", label: "Momentum only", cssVar: "--momentum" },
-    { id: "spy", label: "S&P 500", cssVar: "--spy", dash: true },
+    { id: "skill", label: "Skill-scored", short: "Skill", cssVar: "--skill" },
+    { id: "momentum", label: "Momentum only", short: "Momentum", cssVar: "--momentum" },
+    { id: "index", label: "S&P 500 index fund", short: "Index", cssVar: "--spy", dash: true },
   ];
   const SECTOR_SHORT = {
     "generic": "General", "it-saas": "Software & internet", "semiconductors": "Semiconductors",
@@ -69,7 +69,7 @@
   fetch("data/dashboard.json?v=" + Date.now())
     .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then((d) => { D = d; CCY = d.currency || "USD"; render(); })
-    .catch(() => {
+    .catch((err) => { console.error("render failed", err && err.stack);
       $("#stamp").textContent = "No data yet";
       $("#verdict").textContent = "Waiting for the first trading day.";
       $("#lede").textContent = "The bot runs every weekday after the US market closes. Once it has run, the portfolios, scores and trades appear here. To start it now, open the repository's Actions tab and run “Daily paper trade”.";
@@ -93,26 +93,28 @@
     renderHero(); renderRace(); renderChart(); renderHoldings("skill"); renderToday(); renderBoard(); renderLog(); renderRules();
   }
 
-  const stat = (id) => (id === "spy" ? D.benchmark : D.strategies.find((s) => s.id === id)).stats || {};
+  const strat = (id) => D.strategies.find((s) => s.id === id) || {};
+  const stat = (id) => strat(id).stats || {};
 
   // ── hero verdict ────────────────────────────────────────────────────────
   function renderHero() {
-    const s = stat("skill"), m = stat("momentum"), b = stat("spy");
+    const s = stat("skill"), m = stat("momentum"), b = stat("index");
     const v = $("#verdict");
     const who = (cls, txt) => el("span", { class: "who " + cls, text: txt });
     if (!s.days || s.days < 2) {
       v.replaceChildren("Day one. ", who("skill", "Skill-scored"), ", ", who("momentum", "momentum"), " and the ",
-        who("spy", "S&P 500"), ` each start with ${money(D.config.starting_cash)}.`);
+        who("spy", "index fund"), ` each start with ${money(D.config.starting_cash)}.`);
     } else {
       const vsSpy = s.total_return_pct - b.total_return_pct, vsMom = s.total_return_pct - m.total_return_pct;
       const rel = (d) => (d >= 0 ? "ahead of " : "behind ");
-      v.replaceChildren(who("skill", "Skill-scored"), " is ", rel(vsSpy), "the ", who("spy", "S&P 500"), ` by ${pts(vsSpy)} and `,
+      v.replaceChildren(who("skill", "Skill-scored"), " is ", rel(vsSpy), "the ", who("spy", "index fund"), ` by ${pts(vsSpy)} and `,
         rel(vsMom), who("momentum", "momentum"), ` by ${pts(vsMom)}.`);
     }
     const start = D.strategies[0].started;
+    const pend = D.strategies.reduce((n, x) => n + (x.pending || []).length, 0);
     $("#lede").textContent = (s.days > 1)
-      ? `${s.days} trading days since ${fmtDate(start)}. Each portfolio started with ${money(D.config.starting_cash)}: Skill-scored is now ${money(s.value)}, Momentum only ${money(m.value)}, and the S&P 500 ${money(b.value)}.`
-      : $("#lede").textContent;
+      ? `${s.days} trading days since ${fmtDate(start)}. Each portfolio started with ${money(D.config.starting_cash)} on a simulated Saxo aktiesparekonto, paying real fees, currency costs and tax. Skill-scored is now ${money(s.value)}, Momentum only ${money(m.value)}, and the index fund ${money(b.value)}.`
+      : `Each portfolio starts with ${money(D.config.starting_cash)} on a simulated Saxo aktiesparekonto, paying real fees, currency costs and tax. Orders are decided after the US close and fill at the next open` + (pend ? `: ${pend} orders are waiting for it now.` : ".");
   }
 
   // ── race table ──────────────────────────────────────────────────────────
@@ -127,8 +129,9 @@
         el("td", { class: "num big", text: money(st.value) }),
         el("td", { class: "num big " + signCls(st.total_return_pct), text: pct(st.total_return_pct, 2) }),
         el("td", { class: "num " + signCls(st.day_pct), text: pct(st.day_pct, 2) }),
+        el("td", { class: "num hide-sm", text: money(strat(sr.id).after_tax_value) }),
+        el("td", { class: "num hide-sm", text: money(strat(sr.id).costs_total) }),
         el("td", { class: "num hide-sm", text: st.max_drawdown_pct != null ? pct(st.max_drawdown_pct) : "–" }),
-        el("td", { class: "num hide-sm", text: st.volatility_pct != null ? st.volatility_pct.toFixed(1) + "%" : "–" }),
         el("td", { class: "num hide-sm", text: st.sharpe != null ? st.sharpe.toFixed(2) : "–" }),
       ));
     }
@@ -201,7 +204,7 @@
     for (let i = 1; i < ends.length; i++) if (ends[i].y - ends[i - 1].y < 16) ends[i].y = ends[i - 1].y + 16;
     for (const e of ends) {
       const t = svgEl("text", { class: "end-label", x: m.l + iw + 8, y: e.y + 4 });
-      t.textContent = narrow ? money(e.v) : `${e.s.label.replace(" only", "")} ${money(e.v)}`;
+      t.textContent = narrow ? money(e.v) : `${e.s.short || e.s.label} ${money(e.v)}`;
       svg.append(t);
     }
     const cross = svgEl("line", { class: "cross", y1: m.t, y2: m.t + ih, visibility: "hidden" });
@@ -258,25 +261,36 @@
       $("#hold-tabs").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", x === b));
       renderHoldings(b.dataset.sid);
     };
-    const s = D.strategies.find((x) => x.id === sid);
+    const s = strat(sid);
     const t = $("#holdings");
+    const body = [];
     if (!s.holdings.length) {
-      t.replaceChildren(el("tbody", {}, el("tr", {}, el("td", { class: "empty", text: "No positions. Nothing currently passes this portfolio's rules, so it is holding cash." }))));
-    } else {
-      t.replaceChildren(
-        el("thead", {}, el("tr", {}, el("th", { text: "Stock" }), el("th", { class: "num", text: "Value" }), el("th", { class: "num", text: "Weight" }),
-          el("th", { class: "num", text: "Since bought" }), el("th", { class: "num", text: "Today" }), el("th", { text: "Skill score" }))),
-        el("tbody", {}, ...s.holdings.map((h) => el("tr", {},
-          el("td", {}, el("span", { class: "tick", text: h.ticker }), el("span", { class: "name", text: h.name })),
-          el("td", { class: "num", text: money(h.value) }),
-          el("td", { class: "num", text: h.weight_pct.toFixed(1) + "%" }),
-          el("td", { class: "num" }, el("span", { class: signCls(h.pnl_pct), text: pct(h.pnl_pct) }),
-            el("span", { class: "name", text: fmtDate(h.entry_date, { day: "numeric", month: "short" }) })),
-          el("td", { class: "num " + signCls(h.day_pct), text: pct(h.day_pct) }),
-          el("td", {}, scoreCell(h.composite, h.grade, false)),
-        ))));
+      body.push(el("tr", {}, el("td", { colspan: 6, class: "empty",
+        text: (s.pending || []).length ? "All cash for now. The orders below fill at the next market open." : "No positions. Nothing passes this portfolio's rules right now, so it holds cash." })));
     }
-    $("#cash-line").textContent = `Cash ${money(s.cash, 2)}. Holding since ${fmtDate(s.started)}.`;
+    for (const h of s.holdings) body.push(el("tr", {},
+      el("td", {}, el("span", { class: "tick", text: h.ticker }), el("span", { class: "name", text: h.name })),
+      el("td", { class: "num", text: `${h.shares}` }),
+      el("td", { class: "num" }, money(h.value), el("span", { class: "name", text: h.weight_pct.toFixed(0) + "% of portfolio" })),
+      el("td", { class: "num" }, el("span", { class: signCls(h.pnl_pct), text: pct(h.pnl_pct) }),
+        el("span", { class: "name", text: "since " + fmtDate(h.entry_date, { day: "numeric", month: "short" }) })),
+      el("td", { class: "num " + signCls(h.day_pct), text: pct(h.day_pct) }),
+      el("td", {}, sid === "index" ? el("span", { class: "out", text: "Index fund" }) : scoreCell(h.composite, h.grade, false)),
+    ));
+    t.replaceChildren(
+      el("thead", {}, el("tr", {}, el("th", { text: "Holding" }), el("th", { class: "num", text: "Shares" }), el("th", { class: "num", text: "Value" }),
+        el("th", { class: "num", text: "Return after costs" }), el("th", { class: "num", text: "Today" }), el("th", { text: "Skill score" }))),
+      el("tbody", {}, body));
+    const pend = $("#pending"); pend.replaceChildren();
+    if ((s.pending || []).length) {
+      pend.append(el("h3", { text: "Orders for the next open" }),
+        el("ul", { class: "events" }, s.pending.map((o) => el("li", {},
+          el("span", { class: "what" }, el("span", { class: o.side > 0 ? "buy" : "sell", text: o.side > 0 ? "Buy " : "Sell " }),
+            o.ticker + (o.side > 0 && o.budget_dkk ? ` for up to ${money(o.budget_dkk)}` : o.shares ? ` (${o.shares} shares)` : "")),
+          el("span", { class: "why", text: o.reason })))));
+    }
+    const c = s.costs || {};
+    $("#cash-line").textContent = `Cash ${money(s.cash)}. Fees paid so far ${money(s.costs_total)} (commission ${money(c.commission)}, currency ${money(c.fx_fee)}, spread ${money(c.slippage)}). Dividends received ${money(s.dividends_net)} after ${money(c.withholding)} US tax. ASK tax paid ${money(s.tax_paid)}, tax building up this year ${money(s.tax_accrued)}.`;
   }
 
   function scoreCell(c, grade, capped) {
@@ -293,13 +307,18 @@
     const todays = (D.trades || []).filter((t) => t.date === D.as_of);
     for (const t of todays) {
       ul.append(el("li", {},
-        el("span", { class: "what" }, el("span", { class: t.action === "BUY" ? "buy" : "sell", text: t.action === "BUY" ? "Bought " : "Sold " }),
-          `${t.ticker} for ${money(t.value)}`, el("span", { class: "out", text: `  ${t.strategy}` })),
-        el("span", { class: "why", text: t.reason })));
+        el("span", { class: "what" }, actionLabel(t), `${t.ticker}` + (t.value ? ` ${money(t.value)}` : ""),
+          el("span", { class: "out", text: `  ${t.strategy}` })),
+        el("span", { class: "why", text: t.reason + (t.fee && t.action !== "TAX" ? `. Fees ${money(t.fee, 2)}.` : "") })));
+    }
+    const pending = D.strategies.flatMap((x) => (x.pending || []).map((o) => ({ ...o, strategy: x.label })));
+    if (pending.length) {
+      ul.append(el("li", {}, el("span", { class: "what", text: `${pending.length} orders queued for the next open` }),
+        el("span", { class: "why", text: pending.map((o) => `${o.side > 0 ? "buy" : "sell"} ${o.ticker} (${o.strategy})`).join(", ") })));
     }
     if (!ul.children.length) {
       ul.append(el("li", {}, el("span", { class: "what", text: "No trades today." }),
-        el("span", { class: "why", text: "Every holding still ranks inside the keep band, so both portfolios stayed put." })));
+        el("span", { class: "why", text: `Trading happens once a ${D.config.rebalance === "quarterly" ? "quarter" : "month"}; between rebalances the bot only sells on a red-flag veto.` })));
     }
     const mv = D.universe.filter((r) => r.day_pct != null).sort((a, b) => b.day_pct - a.day_pct);
     if (mv.length > 2) {
@@ -307,6 +326,13 @@
       ul.append(el("li", {}, el("span", { class: "what", text: "Biggest moves on the watchlist" }),
         el("span", { class: "why", text: `${best.ticker} ${pct(best.day_pct)} and ${worst.ticker} ${pct(worst.day_pct)}` })));
     }
+  }
+
+  function actionLabel(t) {
+    const map = { BUY: ["buy", "Bought "], SELL: ["sell", "Sold "], DIVIDEND: ["buy", "Dividend "], TAX: ["sell", "Tax "],
+      SPLIT: ["out", "Split "], SKIPPED: ["out", "Skipped "] };
+    const [cls, txt] = map[t.action] || ["out", t.action + " "];
+    return el("span", { class: cls, text: txt });
   }
 
   // ── scoreboard ──────────────────────────────────────────────────────────
@@ -339,7 +365,8 @@
       for (const g of r.gates || []) status.push(el("span", { class: "pill flag", text: g.severity === "veto" ? "Vetoed" : "Red flag" }));
       if (!status.length) {
         const ex = (r.excluded && r.excluded.skill) || [];
-        status.push(el("span", { class: "out", text: ex.length ? capitalise(ex[0]) : `Ranked, not in top ${D.config.holdings}` }));
+        const note = (r.notes || [])[0];
+        status.push(el("span", { class: "out", text: ex.length ? capitalise(ex[0]) : note ? capitalise(note) : `Ranked, not in top ${D.config.holdings}` }));
       }
       const tr = el("tr", { class: "row", tabindex: "0", "aria-expanded": String(isOpen),
         onclick: () => toggle(r.ticker), onkeydown: (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(r.ticker); } } },
@@ -348,14 +375,14 @@
         el("td", { class: "hide-sm", text: short(r.sector_key) }),
         el("td", {}, scoreCell(r.composite, r.vetoed ? "Vetoed" : r.grade, capped)),
         el("td", { class: "num " + signCls(r.mom_pct), text: pct(r.mom_pct, 0) }),
-        el("td", { class: "hide-sm nowrap", text: r.trend_up == null ? "–" : r.trend_up ? "Above 200-day" : "Below 200-day" }),
+        el("td", { class: "num hide-sm", text: r.share_cost_dkk != null ? money(r.share_cost_dkk) : "–" }),
         el("td", {}, status),
       );
       body.append(tr);
       if (isOpen) body.append(el("tr", { class: "detail" }, el("td", { colspan: 7 }, detail(r))));
     }
     t.replaceChildren(el("thead", {}, el("tr", {}, head("rank", "Rank"), head("ticker", "Stock"), el("th", { class: "hide-sm", text: "Sector" }),
-      head("score", "Skill score"), head("mom", "12-month momentum", "num"), el("th", { class: "hide-sm", text: "Trend" }), el("th", { text: "Status" }))), body);
+      head("score", "Skill score"), head("mom", "12-month momentum", "num"), el("th", { class: "num hide-sm", text: "One share" }), el("th", { text: "Status" }))), body);
     if (!rows.length) t.append(el("tbody", {}, el("tr", {}, el("td", { colspan: 7, class: "empty", text: "No stocks match that filter." }))));
   }
   function toggle(tk) { open.has(tk) ? open.delete(tk) : open.add(tk); drawBoard(); }
@@ -414,20 +441,45 @@
     const all = (D.trades || []).filter((t) => logFilter === "all" || t.strategy === logFilter);
     const rows = all.slice(0, logLimit);
     $("#log").replaceChildren(
-      el("thead", {}, el("tr", {}, el("th", { text: "Date" }), el("th", { text: "Trade" }), el("th", { class: "num", text: "Amount" }),
+      el("thead", {}, el("tr", {}, el("th", { text: "Date" }), el("th", { text: "Trade" }), el("th", { class: "num", text: "Amount" }), el("th", { class: "num", text: "Fees" }),
         el("th", { class: "num hide-sm", text: "Share price" }), el("th", { text: "Reason" }))),
       el("tbody", {}, ...(rows.length ? rows.map((t) => el("tr", {},
         el("td", { text: fmtDate(t.date, { day: "numeric", month: "short" }) }),
-        el("td", {}, el("span", { class: t.action === "BUY" ? "buy" : "sell", text: t.action === "BUY" ? "Buy " : "Sell " }),
-          el("span", { class: "tick", text: t.ticker }), el("span", { class: "name", text: t.strategy })),
-        el("td", { class: "num", text: money(t.value) }),
-        el("td", { class: "num hide-sm", text: usd(t.price_usd ?? t.price) }),
-        el("td", { class: "out", text: t.reason }))) : [el("tr", {}, el("td", { colspan: 5, class: "empty", text: "No trades yet." }))])));
+        el("td", {}, actionLabel(t), el("span", { class: "tick", text: t.ticker }),
+          el("span", { class: "name", text: t.strategy + (t.shares ? `, ${+t.shares} shares` : "") })),
+        el("td", { class: "num", text: t.value ? money(t.value) : "–" }),
+        el("td", { class: "num", text: t.fee ? money(t.fee, 2) : "–" }),
+        el("td", { class: "num hide-sm", text: t.price ? (t.currency === "EUR" ? "€" + (+t.price).toFixed(2) : usd(t.price)) : "–" }),
+        el("td", { class: "out", text: t.reason }))) : [el("tr", {}, el("td", { colspan: 6, class: "empty", text: "No trades yet. The first orders fill at the next market open." }))])));
     $("#log-more").hidden = all.length <= logLimit;
   }
 
   function renderRules() {
-    const c = D.config;
-    $("#rules").textContent = `Each portfolio holds ${c.holdings} stocks at equal weight. A holding is kept while it ranks in the top ${c.keep_while_rank_within}, which avoids churning on small moves. Weights reset on the first run of each month. Every trade pays ${(c.trade_cost_bps / 100).toFixed(2)}% in costs.`;
+    const c = D.config, br = D.broker || {};
+    $("#rules").textContent = `Each active portfolio holds ${c.holdings} stocks, bought in whole shares. It trades once a ${c.rebalance === "quarterly" ? "quarter" : "month"}: a holding stays while it ranks in the top ${c.keep_while_rank_within}, and only the gaps are filled, so there are no small top-up trades that would each pay a minimum fee. The one exception is a red-flag veto, which sells at the next open on any day.`;
+    const costs = [
+      ["Broker and account", `${br.broker || "Saxo"}, ${br.account || "aktiesparekonto"}`],
+      ["Commission, US stocks", `${br.stock_commission_pct}% (at least $${br.stock_commission_min_usd})`],
+      ["Commission, index fund", `${br.etf_commission_pct}% (at least €${br.etf_commission_min_eur})`],
+      ["Currency exchange", `${br.fx_fee_pct}% each way`],
+      ["Spread on a market order", `about ${br.slippage_pct}%`],
+      ["US dividend tax", `${br.us_dividend_withholding_pct}% withheld, not refundable on an ASK`],
+      ["ASK tax", `${br.ask_tax_pct}% of each year's gain, losses carried forward (deposit limit ${money(br.ask_deposit_cap_dkk)} in 2026)`],
+      ["Index fund", br.etf ? `${br.etf.name}, ${br.etf.ter_pct}% a year` : "–"],
+    ];
+    $("#cost-table").replaceChildren(el("tbody", {}, costs.map(([k, v]) => el("tr", {}, el("th", { scope: "row", text: k }), el("td", { text: v })))));
+    const R = D.research;
+    if (R && R.rows) {
+      $("#research-intro").textContent = `Tested on prices from ${fmtDate(R.period[0])} to ${fmtDate(R.period[1])}, starting with 10,000 kr and paying the costs above. All 38 stocks are today's winners, which flatters every row, so the fair comparison is the equal-weight hold of the same stocks.`;
+      $("#research-table").replaceChildren(
+        el("thead", {}, el("tr", {}, el("th", { text: "Approach" }), el("th", { class: "num", text: "Per year" }), el("th", { class: "num hide-sm", text: "2012–18" }),
+          el("th", { class: "num hide-sm", text: "2019–26" }), el("th", { class: "num", text: "Worst drop" }), el("th", { class: "num hide-sm", text: "Costs a year" }))),
+        el("tbody", {}, R.rows.map((r) => el("tr", { class: r.name.startsWith("Chosen") ? "chosen" : "" },
+          el("td", { text: r.name }), el("td", { class: "num", text: pct(r.cagr_pct) }), el("td", { class: "num hide-sm", text: pct(r.cagr_2012_2018_pct) }),
+          el("td", { class: "num hide-sm", text: pct(r.cagr_2019_now_pct) }), el("td", { class: "num", text: pct(r.max_drawdown_pct, 0) }),
+          el("td", { class: "num hide-sm", text: r.costs_pct_per_year != null ? r.costs_pct_per_year.toFixed(2) + "%" : "–" })))));
+      $("#research-why").replaceChildren(...R.why.map((w) => el("li", { text: w })));
+      $("#research").hidden = false;
+    }
   }
 })();

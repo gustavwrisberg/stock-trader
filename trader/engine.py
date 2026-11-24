@@ -57,7 +57,7 @@ def rank_universe(rows: Dict[str, Dict[str, Any]], cfg: Dict[str, Any]) -> Dict[
         reasons = []
         if r.get("mom_pct") is None:
             reasons.append("not enough price history")
-        if r.get("trend_up") is False:
+        if cfg["momentum"].get("trend_filter", True) and r.get("trend_up") is False:
             reasons.append("below 200-day average")
         if not reasons:
             mom_scores[t] = r["mom_pct"]
@@ -84,92 +84,55 @@ def rank_universe(rows: Dict[str, Dict[str, Any]], cfg: Dict[str, Any]) -> Dict[
     return order
 
 
-# ── Portfolio ──────────────────────────────────────────────────────────────────
+# ── Orders ─────────────────────────────────────────────────────────────────────
 
-def new_portfolio(cash: float, as_of: str) -> Dict[str, Any]:
-    return {"cash": cash, "positions": {}, "started": as_of, "last_rebalance_month": None}
-
-
-def portfolio_value(p: Dict[str, Any], px: Dict[str, float]) -> float:
-    return p["cash"] + sum(pos["shares"] * px.get(t, pos.get("last_price", 0)) for t, pos in p["positions"].items())
-
-
-def step_portfolio(p: Dict[str, Any], ranked: List[str], px: Dict[str, float], as_of: str,
-                   cfg: Dict[str, Any], label: str, rows: Dict[str, Dict[str, Any]],
-                   rank_key: str) -> List[Dict[str, Any]]:
-    """Decide target holdings with a keep-band, then trade to equal weight if anything changed."""
-    n, keep_within = cfg["holdings"], cfg["keep_while_rank_within"]
-    cost = cfg["trade_cost_bps"] / 10_000
+def decide_orders(p: Dict[str, Any], ranked: List[str], rows: Dict[str, Dict[str, Any]], cfg: Dict[str, Any],
+                  rank_key: str, total_dkk: float, est_share_cost_dkk: Dict[str, float], as_of: str,
+                  new_period: bool) -> List[Dict[str, Any]]:
+    """Orders for the next open. Red-flag vetoes exit any day; everything else waits for the
+    rebalance day. No trims: with a minimum fee per trade, nudging weights costs more than it earns."""
+    n, band = cfg["holdings"], cfg["keep_while_rank_within"]
     rank = {t: i + 1 for i, t in enumerate(ranked)}
-
     held = list(p["positions"])
-    keep, sells = [], {}
+    orders = []
     for t in held:
-        r = rank.get(t)
-        if r is not None and r <= keep_within:
-            keep.append(t)
-        else:
-            why = rows.get(t, {}).get("excluded", {}).get(rank_key) or []
-            sells[t] = "; ".join(why) if why else (f"fell to rank #{r}, outside top {keep_within}" if r else "no longer ranked")
-    target = list(keep)
+        r = rows.get(t, {})
+        why = None
+        if rank_key == "skill" and r.get("vetoed"):
+            why = "Exit: red-flag veto from the skill's gates"
+        elif new_period:
+            ex = r.get("excluded", {}).get(rank_key) or []
+            if ex:
+                why = "Exit: " + "; ".join(ex)
+            elif rank.get(t, 999) > band:
+                why = f"Exit: fell to rank #{rank.get(t)}, outside the top {band}"
+        if why:
+            orders.append({"ticker": t, "side": -1, "placed": as_of, "reason": why})
+    if not new_period:
+        return orders
+    staying = [t for t in held if t not in {o["ticker"] for o in orders}]
+    budget = total_dkk / n
+    slots = n - len(staying)
     for t in ranked:
-        if len(target) >= n:
+        if slots <= 0:
             break
-        if t not in target and t in px:
-            target.append(t)
-
-    month = as_of[:7]
-    changed = set(target) != set(held)
-    monthly = p.get("last_rebalance_month") != month
-    if not changed and not monthly:
-        return []
-
-    trades: List[Dict[str, Any]] = []
-
-    def trade(t, shares, price, reason):
-        value = shares * price
-        fee = abs(value) * cost
-        p["cash"] -= value + fee
-        trades.append({"date": as_of, "strategy": label, "ticker": t, "action": "BUY" if shares > 0 else "SELL",
-                       "shares": round(abs(shares), 6), "price": round(price, 4), "value": round(abs(value), 2),
-                       "fee": round(fee, 2), "reason": reason})
-
-    for t, why in sells.items():
-        pos = p["positions"].pop(t)
-        price = px.get(t, pos.get("last_price"))
-        pnl = (price / pos["entry_price"] - 1) * 100 if pos.get("entry_price") else 0
-        trade(t, -pos["shares"], price, f"Exit: {why} ({pnl:+.1f}% since entry)")
-
-    total = portfolio_value(p, px)
-    if target:
-        tgt_val = total * (1 - cost) / len(target)
-        # sells/trims first so cash is available for buys
-        for phase in ("trim", "buy"):
-            for t in target:
-                price = px[t]
-                cur = p["positions"].get(t, {}).get("shares", 0.0)
-                delta = tgt_val / price - cur
-                if abs(delta * price) < max(1.0, 0.01 * tgt_val):
-                    continue
-                if (phase == "trim") != (delta < 0):
-                    continue
-                if cur == 0:
-                    r = rows.get(t, {})
-                    bits = [f"rank #{rank[t]}"]
-                    if rank_key == "skill" and r.get("composite") is not None:
-                        bits.append(f"skill score {r['composite']:.1f} ({r.get('grade')})")
-                    if r.get("mom_pct") is not None:
-                        bits.append(f"{r['mom_pct']:+.0f}% 12-1m momentum")
-                    reason = "New entry: " + ", ".join(bits)
-                    p["positions"][t] = {"shares": 0.0, "entry_price": price, "entry_date": as_of}
-                else:
-                    reason = "Rebalance to equal weight" + (" (monthly)" if monthly and not changed else "")
-                trade(t, delta, price, reason)
-                p["positions"][t]["shares"] += delta
-    p["last_rebalance_month"] = month
-    if abs(p["cash"]) < 0.005:
-        p["cash"] = 0.0
-    return trades
+        if t in staying:
+            continue
+        cost1 = est_share_cost_dkk.get(t)
+        if cost1 is None or cost1 > budget:
+            rows[t].setdefault("notes", []).append(
+                f"one share (~{cost1:,.0f} kr) costs more than a position budget ({budget:,.0f} kr)" if cost1 else "no price")
+            continue
+        r = rows.get(t, {})
+        bits = [f"rank #{rank[t]}"]
+        if rank_key == "skill" and r.get("composite") is not None:
+            bits.append(f"skill score {r['composite']:.1f} ({r.get('grade')})")
+        if r.get("mom_pct") is not None:
+            bits.append(f"{r['mom_pct']:+.0f}% 12-1m momentum")
+        orders.append({"ticker": t, "side": 1, "placed": as_of, "budget_dkk": round(budget, 2),
+                       "reason": "New entry: " + ", ".join(bits)})
+        slots -= 1
+    return orders
 
 
 # ── Performance stats ──────────────────────────────────────────────────────────

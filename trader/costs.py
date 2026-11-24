@@ -48,6 +48,15 @@ class CostModel:
         """side +1 buy, -1 sell: market orders fill slightly worse than the quote."""
         return price * (1 + side * self.slippage_pct)
 
+    def buy_receipt(self, price: float, shares: float, ccy: str, fx_ccy_dkk: float, eur_dkk: float) -> Dict[str, float]:
+        """Exact cost in DKK of buying `shares` at a quoted price, everything included."""
+        px = self.fill_price(price, +1)
+        gross = shares * px * fx_ccy_dkk
+        fx_fee = gross * self.fx_fee_pct
+        comm = self.commission_local(shares * px, ccy, fx_ccy_dkk, eur_dkk) * (1 + self.fx_fee_pct)
+        return {"shares": shares, "price": px, "gross": gross, "fx_fee": fx_fee, "commission": comm,
+                "slippage": shares * (px - price) * fx_ccy_dkk, "total": gross + fx_fee + comm}
+
     def buy(self, price: float, cash_dkk: float, budget_dkk: float, ccy: str, fx_ccy_dkk: float,
             eur_dkk: float) -> Dict[str, float]:
         """Largest whole-share buy within min(budget, cash), all costs included. Returns {} if none."""

@@ -243,3 +243,19 @@ h3 { font-size: 16px; font-weight: 700; margin: 0 0 8px; }
   .race-table .lead-badge { display: none; }
 }
 @media (max-width: 640px) { .score .grade { display: none; } .score { min-width: 0; } }
+
+/* plan section */
+.plan-lede { font-size: 18px; color: var(--ink-2); max-width: 62ch; margin: -6px 0 26px !important; }
+.plan-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 40px; margin-top: 36px; }
+.kv { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.kv th { text-align: left; font-weight: 500; color: var(--muted); padding: 8px 14px 8px 0; vertical-align: top; width: 42%; border-bottom: 1px solid var(--rule); }
+.kv td { padding: 8px 0; border-bottom: 1px solid var(--rule); color: var(--ink); }
+.research td:first-child { max-width: 300px; }
+.research tr.chosen td { font-weight: 650; background: var(--wash); }
+.why { margin: 14px 0 0; padding-left: 18px; color: var(--ink-2); font-size: 14.5px; line-height: 1.55; }
+.why li { margin: 4px 0; }
+.pending { margin-top: 16px; }
+.pending h3 { font-size: 15px; margin: 0 0 4px; }
+@media (max-width: 900px) { .plan-grid { grid-template-columns: 1fr; gap: 28px; } }
+#holdings .score .grade { display: none; }
+#holdings .score { min-width: 0; }

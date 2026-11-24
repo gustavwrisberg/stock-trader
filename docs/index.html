@@ -26,7 +26,7 @@
 
   <section class="hero" aria-labelledby="verdict">
     <h1 id="verdict" class="verdict">Waiting for the first trading day.</h1>
-    <p class="lede" id="lede">Three portfolios started with 10,000 kr each. One picks stocks using the stock-analysis skill's fundamental scores plus momentum, one uses momentum alone, and one just holds the S&amp;P 500.</p>
+    <p class="lede" id="lede">Three portfolios start with 10,000 kr each on a simulated Saxo aktiesparekonto. One picks stocks with the stock-analysis skill's fundamental scores plus momentum, one uses momentum alone, and one just holds an S&amp;P 500 index fund.</p>
   </section>
 
   <section aria-label="Portfolio comparison" class="race">
@@ -37,8 +37,9 @@
           <th scope="col" class="num">Value</th>
           <th scope="col" class="num">Total return</th>
           <th scope="col" class="num">Today</th>
+          <th scope="col" class="num hide-sm" title="Value minus the 17% ASK tax building up on this year's gain">After tax</th>
+          <th scope="col" class="num hide-sm">Fees paid</th>
           <th scope="col" class="num hide-sm">Worst drop</th>
-          <th scope="col" class="num hide-sm">Volatility</th>
           <th scope="col" class="num hide-sm" title="Return per unit of risk, annualised. Needs 20+ days.">Sharpe</th>
         </tr>
       </thead>
@@ -72,9 +73,11 @@
         <div class="seg" role="group" aria-label="Portfolio" id="hold-tabs">
           <button type="button" data-sid="skill" aria-pressed="true">Skill-scored</button>
           <button type="button" data-sid="momentum">Momentum</button>
+          <button type="button" data-sid="index">Index fund</button>
         </div>
       </div>
       <div class="scroll"><table class="grid" id="holdings"></table></div>
+      <div id="pending" class="pending"></div>
       <p class="foot" id="cash-line"></p>
     </section>
 
@@ -104,6 +107,7 @@
         <button type="button" data-sid="all" aria-pressed="true">Both</button>
         <button type="button" data-sid="Skill-scored">Skill-scored</button>
         <button type="button" data-sid="Momentum only">Momentum</button>
+        <button type="button" data-sid="S&amp;P 500 index fund">Index fund</button>
       </div>
     </div>
     <div class="scroll"><table class="grid" id="log"></table></div>
@@ -111,7 +115,8 @@
   </section>
 
   <section class="method" aria-labelledby="how-title">
-    <h2 id="how-title">How it decides</h2>
+    <h2 id="how-title">The plan</h2>
+    <p class="plan-lede">This tests a strategy you could actually run: US large caps on a Saxo aktiesparekonto, with every fee, currency charge and tax included, against the index fund you would otherwise buy.</p>
     <div class="method-cols">
       <div>
         <h3>Quality, from the skill</h3>
@@ -119,15 +124,29 @@
       </div>
       <div>
         <h3>Timing, from momentum</h3>
-        <p>Every weekday after the US close it measures 12-month price momentum, skipping the latest month, and checks the stock is above its 200-day average. Skill-scored ranks stocks half on skill score and half on momentum, and only buys names scoring 5 or more. Momentum only ignores the skill entirely: it is the control that shows whether the fundamentals help.</p>
+        <p>Every weekday after the US close it measures 12-month price momentum, skipping the latest month. Skill-scored ranks stocks half on skill score and half on momentum, and only buys names scoring 5 or more. Momentum only ignores the skill: it is the control that shows whether the fundamentals add anything. Orders fill at the next day's open, never at the close the decision was made on.</p>
       </div>
       <div>
         <h3>Trading rules</h3>
-        <p id="rules">Each portfolio holds 6 stocks at equal weight. A holding is kept while it ranks in the top 10, which avoids churning on small moves. Weights reset on the first run of each month. Every trade pays 0.10% in costs.</p>
+        <p id="rules"></p>
       </div>
     </div>
+
+    <div class="plan-grid">
+      <div>
+        <h3>What it costs</h3>
+        <table class="kv" id="cost-table"></table>
+      </div>
+      <div id="research" hidden>
+        <h3>Why these settings</h3>
+        <p class="sub" id="research-intro"></p>
+        <div class="scroll"><table class="grid research" id="research-table"></table></div>
+        <ul class="why" id="research-why"></ul>
+      </div>
+    </div>
+
     <p class="caveat" id="fx-note" hidden></p>
-    <p class="caveat">The data is Yahoo Finance via yfinance. The skill treats that as an aggregator: fine for a screen like this, never a source of record. Scores cover only the measurable parts of the skill (no moat, governance or management judgement), so they are labelled indicative. Paper money only. This is an experiment, not investment advice.</p>
+    <p class="caveat">The data is Yahoo Finance via yfinance. The skill treats that as an aggregator: fine for a screen like this, never a source of record. Scores cover only the measurable parts of the skill (no moat, governance or management judgement), so they are labelled indicative. The skill's score cannot be backtested, because free data has no point-in-time history of company statements, so its value is measured live here. Fees and tax are researched for November 2026 and modelled, not quoted by a broker. Paper money only. This is an experiment, not investment advice.</p>
   </section>
 </main>
 

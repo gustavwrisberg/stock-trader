@@ -1,12 +1,17 @@
 {
-  "_note": "starting_cash is in `currency`. Stocks trade in USD; values are converted at each day's USD rate, so currency moves count. Tuning knobs for both paper portfolios. Changing these mid-run changes behaviour from the next run onward; history is kept.",
+  "_note": "starting_cash is in DKK. Costs, tax and the index fund are in config/broker.json. Orders are decided after the US close and fill at the next open. Rebalance, holdings, keep band and the trend filter were chosen from research/backtest_results.md (see research/decision.json).",
   "currency": "DKK",
   "starting_cash": 10000,
-  "holdings": 6,
-  "keep_while_rank_within": 10,
-  "trade_cost_bps": 10,
+  "rebalance": "quarterly",
+  "holdings": 4,
+  "keep_while_rank_within": 8,
   "fundamentals_refresh_days": 7,
-  "momentum": {"lookback_days": 252, "skip_recent_days": 21, "trend_sma_days": 200},
+  "momentum": {
+    "lookback_days": 252,
+    "skip_recent_days": 21,
+    "trend_sma_days": 200,
+    "trend_filter": false
+  },
   "skill_strategy": {
     "label": "Skill-scored",
     "quality_weight": 0.5,
