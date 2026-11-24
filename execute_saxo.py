@@ -178,7 +178,7 @@ def main():
         done_refs = set()
         log_path = STATE_DIR / "executions.csv"
         if log_path.exists():
-            done_refs = {r["ref"] for r in csv.DictReader(log_path.open()) if r.get("status") in ("placed", "dry-run")}
+            done_refs = {r["ref"] for r in csv.DictReader(log_path.open()) if r.get("status") == "placed"}
         for o in plan[: lim["max_orders_per_run"]]:
             t = o["ticker"]
             uic = inst[t]["Uic"]
