@@ -28,10 +28,17 @@
   const signCls = (v) => v > 0 ? "up" : v < 0 ? "down" : "";
   const fmtDate = (s) => new Date(s + "T12:00:00Z").toLocaleDateString("en-GB", { month: "short", year: "numeric" });
   const tip = $("#tip");
+  const REAL_LABEL = "80,000 kr after the last 10 years, after inflation";
+  const realTitle = (rows) => {
+    const r = rows.find((x) => x.inflation_10y_pct != null);
+    return r ? `80,000 kr put in 10 years ago, valued today and shrunk by Danish inflation (${r.inflation_10y_pct}% over the 10 years, Statistics Denmark), so it is in the same money as the 80,000 kr you put in. Above 80,000 kr means you can buy more than you started with.` : null;
+  };
+  const realCol = (rows) => ({ label: REAL_LABEL, num: true, title: realTitle(rows), get: (r) => r.value_of_80k_after_10y_real_kr,
+    fmt: kr, cls: (r) => r.value_of_80k_after_10y_real_kr == null ? "" : signCls(r.value_of_80k_after_10y_real_kr - 80000) });
 
   function table(t, cols, rows, highlight) {
     t.replaceChildren(
-      el("thead", {}, el("tr", {}, cols.map((c) => el("th", { class: c.num ? "num" : "", text: c.label })))),
+      el("thead", {}, el("tr", {}, cols.map((c) => el("th", { class: c.num ? "num" : "", text: c.label, title: c.title })))),
       el("tbody", {}, rows.map((r) => el("tr", { class: highlight && highlight(r) ? "chosen" : "" },
         cols.map((c) => {
           const v = c.get(r);
@@ -45,7 +52,7 @@
   }
 
   function showTip(evt, nodes) {
-    tip.replaceChildren(...nodes);
+    tip.replaceChildren(...nodes.filter(Boolean));
     tip.hidden = false;
     const w = tip.offsetWidth, h = tip.offsetHeight;
     let x = evt.clientX + 14, y = evt.clientY + 14;
@@ -70,7 +77,7 @@
   // ── Strategy rules ────────────────────────────────────────────────────────
   function rules(bt, dec) {
     let cap = 10000, showAll = false;
-    $("#rules-sub").textContent = `${bt.results.filter((r) => r.capital === 10000).length - 3} variants of the trading rules, ${fmtDate(bt.period[0])} to ${fmtDate(bt.period[1])}, after Saxo fees and tax. Each dot is one variant; up is better, left is safer.`;
+    $("#rules-sub").textContent = `${bt.results.filter((r) => r.capital === 10000).length - 3} variants of the trading rules, ${fmtDate(bt.period[0])} to ${fmtDate(bt.period[1])}, after Saxo fees and tax. Each dot is one variant; up is better, left is safer. The last column takes Danish inflation off, so 80,000 kr means you only kept up with prices.`;
     if (dec) $("#rules-why").replaceChildren(...dec.why.map((w) => el("li", { text: w })));
     const chosenName = "4 stocks, quarterly, keep top 8, no filter, 12-1m momentum";
     const kind = (r) => r.name === chosenName ? "chosen" : r.name.startsWith("S&P 500") ? "index" : r.name.startsWith("Same 38") ? "baseline"
@@ -97,6 +104,7 @@
         { label: "Worst year", num: true, get: (r) => r.worst_year_pct, fmt: (v) => pct(v, 0) },
         { label: "Costs a year", num: true, get: (r) => r.costs_pct_per_year, fmt: (v) => v == null ? "–" : v.toFixed(2) + "%" },
         { label: "Sharpe", num: true, get: (r) => r.sharpe, fmt: (v) => v == null ? "–" : v.toFixed(2) },
+        realCol(rows),
       ], vis, (r) => kind(r) === "chosen");
       $("#rules-more").textContent = showAll ? "Show the top 15" : `Show all ${rows.length} rows`;
     }
@@ -137,7 +145,8 @@
       hit.addEventListener("pointermove", (e) => showTip(e, [el("div", { class: "d", text: r.name }),
         el("div", { class: "row" }, el("span", { text: "Per year" }), el("b", { text: pct(r.cagr_pct) })),
         el("div", { class: "row" }, el("span", { text: "Worst drop" }), el("b", { text: pct(r.max_drawdown_pct, 0) })),
-        el("div", { class: "row" }, el("span", { text: "Costs a year" }), el("b", { text: (r.costs_pct_per_year ?? 0).toFixed(2) + "%" }))]));
+        el("div", { class: "row" }, el("span", { text: "Costs a year" }), el("b", { text: (r.costs_pct_per_year ?? 0).toFixed(2) + "%" })),
+        r.value_of_80k_after_10y_real_kr == null ? null : el("div", { class: "row" }, el("span", { text: "80,000 kr, 10 years, after inflation" }), el("b", { text: kr(r.value_of_80k_after_10y_real_kr) }))]));
       hit.addEventListener("pointerleave", hideTip);
       svg.append(c, hit);
       if (k !== "variant" && !narrow) labels.push({ cx, cy, text: k === "chosen" ? "Chosen rules" : k === "index" ? "Index fund" : "Same stocks, held" });
@@ -152,7 +161,7 @@
 
   // ── 80,000 kr plan ────────────────────────────────────────────────────────
   function planLsb(d) {
-    $("#plan-sub").textContent = `Invested ${fmtDate(d.period[0])}, measured to ${fmtDate(d.period[1])}, with Lån & Spar's fees, holding fee on foreign shares and 17% tax.`;
+    $("#plan-sub").textContent = `Invested ${fmtDate(d.period[0])}, measured to ${fmtDate(d.period[1])}, with Lån & Spar's fees, holding fee on foreign shares and 17% tax. The last column takes Danish inflation off, so 80,000 kr means you only kept up with prices.`;
     const rows = d.rows.slice().sort((a, b) => a.cagr_pct - b.cagr_pct);
     table($("#plan-table"), [
       { label: "Plan", get: (r) => r.plan },
@@ -160,7 +169,7 @@
       { label: "Worst drop", num: true, get: (r) => r.max_drawdown_pct, fmt: (v) => pct(v, 0) },
       { label: "Worst year", num: true, get: (r) => r.worst_year_pct, fmt: (v) => pct(v, 0) },
       { label: "Costs a year", num: true, get: (r) => r.costs_pct_per_year, fmt: (v) => v == null ? "–" : v.toFixed(2) + "%" },
-      { label: "80,000 kr after the last 10 years", num: true, get: (r) => r.value_of_80k_after_10y_kr, fmt: kr },
+      realCol(rows),
     ], rows, (r) => r.plan.startsWith("Global index"));
   }
 

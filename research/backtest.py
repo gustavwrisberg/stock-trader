@@ -24,6 +24,8 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from trader.costs import CostModel, ask_tax  # noqa: E402
+sys.path.insert(0, str(ROOT / "research"))
+from inflation import last_10y  # noqa: E402
 
 START = "2011-01-01"
 
@@ -149,6 +151,7 @@ def stats(v: pd.Series, capital: float, costs_paid: float, traded: float):
         "cagr_2019_now_pct": _cagr(v[v.index >= "2019-01-01"]),
         "years": round(yrs, 1),
         "worst_year_pct": round(float(v.resample("YE").last().pct_change().min() * 100), 1),
+        **last_10y(v),
     }
 
 
@@ -184,7 +187,9 @@ def main():
         "universe": tickers, "caveats": __doc__, "results": results}, indent=1))
     df = pd.DataFrame(results)
     lines = ["# Backtest results", "", __doc__.strip(), "",
-             f"Period {close.index[252].date()} to {close.index[-1].date()}, values in DKK after Saxo costs and 17% ASK tax.", ""]
+             f"Period {close.index[252].date()} to {close.index[-1].date()}, values in DKK after Saxo costs and 17% ASK tax.",
+             "value_of_80k_after_10y_real_kr: 80,000 kr put in 10 years before the end, in start-month kroner "
+             "after Danish inflation (Statistics Denmark PRIS01).", ""]
     for capital in (10_000.0, 100_000.0):
         sub = df[df.capital == capital].sort_values("sharpe", ascending=False)
         base = df[(df.capital == capital) & df.name.str.contains("buy and hold")]
@@ -192,7 +197,7 @@ def main():
                   "sharpe", "max_drawdown_pct", "worst_year_pct"]].to_markdown(index=False), ""]
         lines += [f"## Starting with {capital:,.0f} kr (sorted by Sharpe)", "",
                   sub[["name", "cagr_pct", "cagr_2012_2018_pct", "cagr_2019_now_pct", "sharpe", "max_drawdown_pct", "worst_year_pct",
-                       "costs_pct_per_year", "turnover_x_per_year"]].head(30).to_markdown(index=False), ""]
+                       "costs_pct_per_year", "turnover_x_per_year", "value_of_80k_after_10y_real_kr"]].head(30).to_markdown(index=False), ""]
     (out / "backtest_results.md").write_text("\n".join(lines))
     print("\n".join(lines[:60]))
 

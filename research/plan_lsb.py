@@ -106,8 +106,6 @@ def main():
         s = stats(v, CAPITAL, c, t)
         vv = v[v.index >= v.index[WARMUP]]
         s["end_value_kr"] = round(float(vv.iloc[-1] / vv.iloc[0] * CAPITAL))
-        last10 = vv[vv.index >= vv.index[-1] - pd.DateOffset(years=10)]
-        s["value_of_80k_after_10y_kr"] = round(float(last10.iloc[-1] / last10.iloc[0] * CAPITAL))
         rows.append({"plan": name, **s})
         print(name, s["cagr_pct"], s["max_drawdown_pct"])
 
@@ -117,9 +115,10 @@ def main():
                                                    "rows": rows}, indent=1))
     df = pd.DataFrame(rows)
     md = ["# 80,000 kr on a Lån & Spar aktiesparekonto: plan backtest", "", __doc__.strip(), "",
-          f"Invested {start}, measured to {end}. All values in DKK after fees, custody, dividend tax and 17% ASK tax.", "",
+          f"Invested {start}, measured to {end}. All values in DKK after fees, custody, dividend tax and 17% ASK tax.",
+          "The real column is 80,000 kr put in 10 years before the end, in start-month kroner after Danish inflation.", "",
           df[["plan", "cagr_pct", "cagr_2012_2018_pct", "cagr_2019_now_pct", "max_drawdown_pct", "worst_year_pct",
-              "costs_pct_per_year", "end_value_kr", "value_of_80k_after_10y_kr"]].to_markdown(index=False)]
+              "costs_pct_per_year", "end_value_kr", "value_of_80k_after_10y_kr", "value_of_80k_after_10y_real_kr"]].to_markdown(index=False)]
     (out / "plan_lsb.md").write_text("\n".join(md) + "\n")
     print("\n".join(md))
 
