@@ -61,7 +61,16 @@ def live_price(ticker: str):
     """Latest trade price from Yahoo Finance, used when Saxo sends no quote."""
     try:
         import yfinance as yf
-        p = yf.Ticker(ticker).fast_info.get("last_price")
+        tk = yf.Ticker(ticker)
+        p = None
+        try:
+            p = tk.fast_info.last_price
+        except Exception:
+            pass
+        if not p:
+            h = tk.history(period="5d", interval="1m")
+            if len(h):
+                p = float(h["Close"].dropna().iloc[-1])
         return float(p) if p else None
     except Exception as exc:
         print(f"  ({ticker}: no Yahoo price: {exc})")
