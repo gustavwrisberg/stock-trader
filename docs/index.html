@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper trader: skill-scored vs momentum vs S&amp;P 500</title>
+<meta name="description" content="A daily paper-trading experiment: does the stock-analysis skill's fundamental scoring beat plain momentum and the S&P 500?">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2317211d'/%3E%3Cpath d='M6 22l6-7 5 4 9-11' stroke='%233987e5' stroke-width='3.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="wordmark">Paper trader</span>
+    <span class="stamp" id="stamp">Loading…</span>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div id="banner" class="banner" hidden></div>
+
+  <section class="hero" aria-labelledby="verdict">
+    <h1 id="verdict" class="verdict">Waiting for the first trading day.</h1>
+    <p class="lede" id="lede">Three portfolios started with $10,000 each. One picks stocks using the stock-analysis skill's fundamental scores plus momentum, one uses momentum alone, and one just holds the S&amp;P 500.</p>
+  </section>
+
+  <section aria-label="Portfolio comparison" class="race">
+    <table class="race-table" id="race">
+      <thead>
+        <tr>
+          <th scope="col">Portfolio</th>
+          <th scope="col" class="num">Value</th>
+          <th scope="col" class="num">Total return</th>
+          <th scope="col" class="num">Today</th>
+          <th scope="col" class="num hide-sm">Worst drop</th>
+          <th scope="col" class="num hide-sm">Volatility</th>
+          <th scope="col" class="num hide-sm" title="Return per unit of risk, annualised. Needs 20+ days.">Sharpe</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section class="panel chart-panel" aria-labelledby="chart-title">
+    <div class="panel-head">
+      <h2 id="chart-title">Value of $10,000</h2>
+      <div class="seg" role="group" aria-label="Time range" id="ranges">
+        <button type="button" data-range="21">1M</button>
+        <button type="button" data-range="63">3M</button>
+        <button type="button" data-range="126">6M</button>
+        <button type="button" data-range="0" aria-pressed="true">All</button>
+      </div>
+    </div>
+    <div class="legend" id="legend"></div>
+    <div class="chart" id="chart" role="img" aria-label="Portfolio value over time"></div>
+    <div class="tooltip" id="tip" role="status" aria-live="polite" hidden></div>
+    <details class="table-view">
+      <summary>Show as table</summary>
+      <div class="scroll"><table id="equity-table"></table></div>
+    </details>
+  </section>
+
+  <div class="split">
+    <section class="panel" aria-labelledby="hold-title">
+      <div class="panel-head">
+        <h2 id="hold-title">Holdings</h2>
+        <div class="seg" role="group" aria-label="Portfolio" id="hold-tabs">
+          <button type="button" data-sid="skill" aria-pressed="true">Skill-scored</button>
+          <button type="button" data-sid="momentum">Momentum</button>
+        </div>
+      </div>
+      <div class="scroll"><table class="grid" id="holdings"></table></div>
+      <p class="foot" id="cash-line"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="today-title">
+      <div class="panel-head"><h2 id="today-title">What happened today</h2></div>
+      <ul class="events" id="today"></ul>
+    </section>
+  </div>
+
+  <section class="panel" aria-labelledby="board-title">
+    <div class="panel-head">
+      <div>
+        <h2 id="board-title">Scoreboard</h2>
+        <p class="sub">Every stock the bot watches, scored against its own sector by the skill. Open a row to see why.</p>
+      </div>
+      <label class="search"><span class="vh">Filter stocks</span>
+        <input type="search" id="filter" placeholder="Filter by ticker, name or sector">
+      </label>
+    </div>
+    <div class="scroll"><table class="grid board" id="board"></table></div>
+  </section>
+
+  <section class="panel" aria-labelledby="log-title">
+    <div class="panel-head">
+      <h2 id="log-title">Trade log</h2>
+      <div class="seg" role="group" aria-label="Show trades for" id="log-tabs">
+        <button type="button" data-sid="all" aria-pressed="true">Both</button>
+        <button type="button" data-sid="Skill-scored">Skill-scored</button>
+        <button type="button" data-sid="Momentum only">Momentum</button>
+      </div>
+    </div>
+    <div class="scroll"><table class="grid" id="log"></table></div>
+    <button type="button" class="more" id="log-more" hidden>Show more trades</button>
+  </section>
+
+  <section class="method" aria-labelledby="how-title">
+    <h2 id="how-title">How it decides</h2>
+    <div class="method-cols">
+      <div>
+        <h3>Quality, from the skill</h3>
+        <p>Once a week the bot pulls each company's annual statements and computes the ratios the <a id="skill-link" href="https://github.com/alirezarezvani/claude-skills/tree/main/finance/skills/stock-analysis">stock-analysis skill</a> asks for: return on capital, margins, cash conversion, leverage, growth, dilution and valuation. The skill's own <code>score.py</code> grades each one against benchmarks for that company's sector, so a bank is never judged by software margins. Red-flag gates cap or veto a score, for example when cash flow has trailed reported profit for three years.</p>
+      </div>
+      <div>
+        <h3>Timing, from momentum</h3>
+        <p>Every weekday after the US close it measures 12-month price momentum, skipping the latest month, and checks the stock is above its 200-day average. Skill-scored ranks stocks half on skill score and half on momentum, and only buys names scoring 5 or more. Momentum only ignores the skill entirely: it is the control that shows whether the fundamentals help.</p>
+      </div>
+      <div>
+        <h3>Trading rules</h3>
+        <p id="rules">Each portfolio holds 6 stocks at equal weight. A holding is kept while it ranks in the top 10, which avoids churning on small moves. Weights reset on the first run of each month. Every trade pays 0.10% in costs.</p>
+      </div>
+    </div>
+    <p class="caveat">The data is Yahoo Finance via yfinance. The skill treats that as an aggregator: fine for a screen like this, never a source of record. Scores cover only the measurable parts of the skill (no moat, governance or management judgement), so they are labelled indicative. Paper money only. This is an experiment, not investment advice.</p>
+  </section>
+</main>
+
+<footer class="wrap footer">
+  <span id="gen"></span>
+  <a href="https://github.com/gustavwrisberg/stock-trader">Source on GitHub</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "_note": "Tuning knobs for both paper portfolios. Changing these mid-run changes behaviour from the next run onward; history is kept.",
+  "starting_cash": 10000,
+  "holdings": 6,
+  "keep_while_rank_within": 10,
+  "trade_cost_bps": 10,
+  "fundamentals_refresh_days": 7,
+  "momentum": {"lookback_days": 252, "skip_recent_days": 21, "trend_sma_days": 200},
+  "skill_strategy": {
+    "label": "Skill-scored",
+    "quality_weight": 0.5,
+    "momentum_weight": 0.5,
+    "min_composite": 5.0,
+    "weight_preset": "default"
+  },
+  "alerts": {
+    "daily_drop_pct": -3.0,
+    "send_email": true,
+    "site_url": "https://gustavwrisberg.github.io/stock-trader/"
+  }
+}

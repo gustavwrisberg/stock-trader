@@ -1,0 +1,7 @@
+{
+  "_note": "Manual red-flag gates from the stock-analysis skill, keyed by ticker. Use these when a deep-dive (run the skill in Claude Code: 'analyse NVDA') finds something the automated screen can't see. Ids must match the gates in benchmarks.json, e.g. auditor_qualification, material_restatement, fraud_investigation, payment_default, related_party_leakage. A veto removes the stock from the Skill-scored portfolio; a cap limits its score.",
+  "_example": {
+    "XYZ": {"material_restatement": {"present": true, "evidence": "Restated FY24 revenue, 8-K Item 4.02, 2026-03-02"}}
+  },
+  "flags": {}
+}
