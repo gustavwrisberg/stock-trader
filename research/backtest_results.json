@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-24T12:43:41.651235+00:00",
+ "generated": "2026-11-24T21:17:51.320901+00:00",
  "period": [
   "2012-01-03",
-  "2026-11-23"
+  "2026-11-24"
  ],
  "universe": [
   "AAPL",
@@ -49,30 +49,44 @@
   {
    "name": "S&P 500 ETF, buy and hold",
    "capital": 10000.0,
-   "cagr_pct": 13.22,
+   "cagr_pct": 13.18,
    "max_drawdown_pct": -33.1,
    "volatility_pct": 18.4,
    "sharpe": 0.77,
    "costs_pct_per_year": 0.04,
    "turnover_x_per_year": 0.02,
    "cagr_2012_2018_pct": 12.07,
-   "cagr_2019_now_pct": 14.27,
+   "cagr_2019_now_pct": 14.19,
    "years": 14.9,
-   "worst_year_pct": -17.4
+   "worst_year_pct": -17.4,
+   "value_of_80k_after_10y_kr": 240680,
+   "value_of_80k_after_10y_real_kr": 193408,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "Same 38 stocks, equal weight, buy and hold",
    "capital": 10000.0,
-   "cagr_pct": 22.52,
+   "cagr_pct": 22.39,
    "max_drawdown_pct": -36.5,
    "volatility_pct": 24.0,
    "sharpe": 0.97,
    "costs_pct_per_year": 0.04,
    "turnover_x_per_year": 0.02,
    "cagr_2012_2018_pct": 18.09,
-   "cagr_2019_now_pct": 26.78,
+   "cagr_2019_now_pct": 26.52,
    "years": 14.9,
-   "worst_year_pct": -32.2
+   "worst_year_pct": -32.2,
+   "value_of_80k_after_10y_kr": 659349,
+   "value_of_80k_after_10y_real_kr": 529846,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 3, trend filter, 12-1m momentum",
@@ -82,16 +96,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 30.41,
+   "cagr_pct": 30.46,
    "max_drawdown_pct": -42.1,
    "volatility_pct": 32.7,
    "sharpe": 0.98,
    "costs_pct_per_year": 2.83,
    "turnover_x_per_year": 3.71,
    "cagr_2012_2018_pct": 38.34,
-   "cagr_2019_now_pct": 24.19,
+   "cagr_2019_now_pct": 24.28,
    "years": 14.9,
-   "worst_year_pct": -22.3
+   "worst_year_pct": -22.3,
+   "value_of_80k_after_10y_kr": 613809,
+   "value_of_80k_after_10y_real_kr": 493250,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 3, trend filter, 6-1m momentum",
@@ -101,16 +122,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 32.4,
+   "cagr_pct": 32.65,
    "max_drawdown_pct": -49.1,
    "volatility_pct": 33.1,
    "sharpe": 1.02,
    "costs_pct_per_year": 4.09,
    "turnover_x_per_year": 5.37,
    "cagr_2012_2018_pct": 35.88,
-   "cagr_2019_now_pct": 30.04,
+   "cagr_2019_now_pct": 30.52,
    "years": 14.9,
-   "worst_year_pct": -23.7
+   "worst_year_pct": -23.7,
+   "value_of_80k_after_10y_kr": 892632,
+   "value_of_80k_after_10y_real_kr": 717309,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 3, no filter, 12-1m momentum",
@@ -120,16 +148,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 30.65,
+   "cagr_pct": 30.4,
    "max_drawdown_pct": -42.3,
    "volatility_pct": 33.7,
    "sharpe": 0.96,
    "costs_pct_per_year": 2.59,
    "turnover_x_per_year": 3.39,
    "cagr_2012_2018_pct": 35.7,
-   "cagr_2019_now_pct": 26.77,
+   "cagr_2019_now_pct": 26.3,
    "years": 14.9,
-   "worst_year_pct": -9.7
+   "worst_year_pct": -9.7,
+   "value_of_80k_after_10y_kr": 690241,
+   "value_of_80k_after_10y_real_kr": 554670,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 3, no filter, 6-1m momentum",
@@ -139,16 +174,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 32.97,
+   "cagr_pct": 33.11,
    "max_drawdown_pct": -49.0,
    "volatility_pct": 33.3,
-   "sharpe": 1.02,
+   "sharpe": 1.03,
    "costs_pct_per_year": 4.2,
    "turnover_x_per_year": 5.52,
    "cagr_2012_2018_pct": 37.11,
-   "cagr_2019_now_pct": 30.05,
+   "cagr_2019_now_pct": 30.32,
    "years": 14.9,
-   "worst_year_pct": -23.8
+   "worst_year_pct": -23.8,
+   "value_of_80k_after_10y_kr": 875129,
+   "value_of_80k_after_10y_real_kr": 703244,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 6, trend filter, 12-1m momentum",
@@ -158,16 +200,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 28.9,
+   "cagr_pct": 28.96,
    "max_drawdown_pct": -40.4,
    "volatility_pct": 33.0,
    "sharpe": 0.94,
    "costs_pct_per_year": 1.55,
    "turnover_x_per_year": 2.03,
    "cagr_2012_2018_pct": 33.06,
-   "cagr_2019_now_pct": 25.57,
+   "cagr_2019_now_pct": 25.67,
    "years": 14.9,
-   "worst_year_pct": -26.7
+   "worst_year_pct": -26.7,
+   "value_of_80k_after_10y_kr": 637939,
+   "value_of_80k_after_10y_real_kr": 512640,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 6, trend filter, 6-1m momentum",
@@ -177,16 +226,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 37.37,
+   "cagr_pct": 37.55,
    "max_drawdown_pct": -46.6,
    "volatility_pct": 33.3,
-   "sharpe": 1.12,
+   "sharpe": 1.13,
    "costs_pct_per_year": 2.61,
-   "turnover_x_per_year": 3.43,
+   "turnover_x_per_year": 3.42,
    "cagr_2012_2018_pct": 41.73,
-   "cagr_2019_now_pct": 34.39,
+   "cagr_2019_now_pct": 34.72,
    "years": 14.9,
-   "worst_year_pct": -31.7
+   "worst_year_pct": -31.7,
+   "value_of_80k_after_10y_kr": 1243236,
+   "value_of_80k_after_10y_real_kr": 999050,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 6, no filter, 12-1m momentum",
@@ -196,16 +252,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 30.44,
+   "cagr_pct": 30.27,
    "max_drawdown_pct": -33.3,
    "volatility_pct": 33.0,
    "sharpe": 0.97,
-   "costs_pct_per_year": 1.38,
+   "costs_pct_per_year": 1.37,
    "turnover_x_per_year": 1.8,
    "cagr_2012_2018_pct": 31.67,
-   "cagr_2019_now_pct": 29.6,
+   "cagr_2019_now_pct": 29.28,
    "years": 14.9,
-   "worst_year_pct": -12.5
+   "worst_year_pct": -12.5,
+   "value_of_80k_after_10y_kr": 817015,
+   "value_of_80k_after_10y_real_kr": 656544,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 6, no filter, 6-1m momentum",
@@ -215,16 +278,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 34.26,
+   "cagr_pct": 34.29,
    "max_drawdown_pct": -47.4,
    "volatility_pct": 33.0,
    "sharpe": 1.06,
    "costs_pct_per_year": 2.58,
    "turnover_x_per_year": 3.39,
    "cagr_2012_2018_pct": 36.57,
-   "cagr_2019_now_pct": 33.04,
+   "cagr_2019_now_pct": 33.09,
    "years": 14.9,
-   "worst_year_pct": -35.6
+   "worst_year_pct": -35.6,
+   "value_of_80k_after_10y_kr": 1134950,
+   "value_of_80k_after_10y_real_kr": 912033,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 3, trend filter, 12-1m momentum",
@@ -234,16 +304,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 30.63,
+   "cagr_pct": 30.45,
    "max_drawdown_pct": -36.5,
    "volatility_pct": 32.2,
    "sharpe": 0.99,
    "costs_pct_per_year": 1.13,
    "turnover_x_per_year": 1.47,
    "cagr_2012_2018_pct": 34.07,
-   "cagr_2019_now_pct": 28.39,
+   "cagr_2019_now_pct": 28.05,
    "years": 14.9,
-   "worst_year_pct": -7.0
+   "worst_year_pct": -8.9,
+   "value_of_80k_after_10y_kr": 953107,
+   "value_of_80k_after_10y_real_kr": 765906,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 3, trend filter, 6-1m momentum",
@@ -253,16 +330,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 32.38,
+   "cagr_pct": 32.55,
    "max_drawdown_pct": -43.0,
    "volatility_pct": 32.8,
    "sharpe": 1.02,
    "costs_pct_per_year": 2.07,
    "turnover_x_per_year": 2.71,
    "cagr_2012_2018_pct": 33.91,
-   "cagr_2019_now_pct": 31.58,
+   "cagr_2019_now_pct": 31.9,
    "years": 14.9,
-   "worst_year_pct": -28.4
+   "worst_year_pct": -28.4,
+   "value_of_80k_after_10y_kr": 1036746,
+   "value_of_80k_after_10y_real_kr": 833118,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 3, no filter, 12-1m momentum",
@@ -272,16 +356,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 31.44,
+   "cagr_pct": 31.26,
    "max_drawdown_pct": -36.7,
    "volatility_pct": 32.3,
    "sharpe": 1.01,
    "costs_pct_per_year": 1.17,
-   "turnover_x_per_year": 1.53,
+   "turnover_x_per_year": 1.52,
    "cagr_2012_2018_pct": 33.01,
-   "cagr_2019_now_pct": 30.82,
+   "cagr_2019_now_pct": 30.48,
    "years": 14.9,
-   "worst_year_pct": -9.4
+   "worst_year_pct": -11.2,
+   "value_of_80k_after_10y_kr": 1104487,
+   "value_of_80k_after_10y_real_kr": 887554,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 3, no filter, 6-1m momentum",
@@ -291,16 +382,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 32.79,
+   "cagr_pct": 32.96,
    "max_drawdown_pct": -43.1,
    "volatility_pct": 32.9,
    "sharpe": 1.03,
    "costs_pct_per_year": 2.06,
    "turnover_x_per_year": 2.7,
    "cagr_2012_2018_pct": 34.08,
-   "cagr_2019_now_pct": 32.18,
+   "cagr_2019_now_pct": 32.5,
    "years": 14.9,
-   "worst_year_pct": -28.4
+   "worst_year_pct": -28.4,
+   "value_of_80k_after_10y_kr": 1077985,
+   "value_of_80k_after_10y_real_kr": 866256,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 6, trend filter, 12-1m momentum",
@@ -310,16 +408,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 26.11,
+   "cagr_pct": 25.94,
    "max_drawdown_pct": -50.2,
    "volatility_pct": 33.0,
    "sharpe": 0.87,
    "costs_pct_per_year": 1.0,
    "turnover_x_per_year": 1.31,
    "cagr_2012_2018_pct": 23.61,
-   "cagr_2019_now_pct": 28.08,
+   "cagr_2019_now_pct": 27.76,
    "years": 14.9,
-   "worst_year_pct": -26.2
+   "worst_year_pct": -26.2,
+   "value_of_80k_after_10y_kr": 558406,
+   "value_of_80k_after_10y_real_kr": 448729,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 6, trend filter, 6-1m momentum",
@@ -329,16 +434,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 28.83,
+   "cagr_pct": 28.93,
    "max_drawdown_pct": -43.1,
    "volatility_pct": 32.5,
-   "sharpe": 0.94,
+   "sharpe": 0.95,
    "costs_pct_per_year": 1.56,
    "turnover_x_per_year": 2.03,
    "cagr_2012_2018_pct": 26.02,
-   "cagr_2019_now_pct": 31.8,
+   "cagr_2019_now_pct": 31.99,
    "years": 14.9,
-   "worst_year_pct": -25.4
+   "worst_year_pct": -25.4,
+   "value_of_80k_after_10y_kr": 1096255,
+   "value_of_80k_after_10y_real_kr": 880938,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 6, no filter, 12-1m momentum",
@@ -348,16 +460,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 24.51,
+   "cagr_pct": 24.34,
    "max_drawdown_pct": -50.8,
    "volatility_pct": 32.7,
-   "sharpe": 0.84,
+   "sharpe": 0.83,
    "costs_pct_per_year": 1.0,
    "turnover_x_per_year": 1.3,
    "cagr_2012_2018_pct": 22.1,
-   "cagr_2019_now_pct": 26.42,
+   "cagr_2019_now_pct": 26.1,
    "years": 14.9,
-   "worst_year_pct": -24.8
+   "worst_year_pct": -24.8,
+   "value_of_80k_after_10y_kr": 506775,
+   "value_of_80k_after_10y_real_kr": 407238,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 6, no filter, 6-1m momentum",
@@ -367,16 +486,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 29.91,
+   "cagr_pct": 30.01,
    "max_drawdown_pct": -43.0,
    "volatility_pct": 32.0,
    "sharpe": 0.98,
    "costs_pct_per_year": 1.54,
    "turnover_x_per_year": 2.01,
    "cagr_2012_2018_pct": 28.16,
-   "cagr_2019_now_pct": 32.21,
+   "cagr_2019_now_pct": 32.39,
    "years": 14.9,
-   "worst_year_pct": -25.3
+   "worst_year_pct": -25.3,
+   "value_of_80k_after_10y_kr": 1189852,
+   "value_of_80k_after_10y_real_kr": 956152,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 4, trend filter, 12-1m momentum",
@@ -386,16 +512,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 28.95,
+   "cagr_pct": 29.07,
    "max_drawdown_pct": -39.1,
    "volatility_pct": 30.7,
-   "sharpe": 0.98,
+   "sharpe": 0.99,
    "costs_pct_per_year": 2.41,
    "turnover_x_per_year": 3.14,
    "cagr_2012_2018_pct": 33.4,
-   "cagr_2019_now_pct": 25.46,
+   "cagr_2019_now_pct": 25.68,
    "years": 14.9,
-   "worst_year_pct": -22.0
+   "worst_year_pct": -22.0,
+   "value_of_80k_after_10y_kr": 671154,
+   "value_of_80k_after_10y_real_kr": 539332,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 4, trend filter, 6-1m momentum",
@@ -405,16 +538,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 29.75,
+   "cagr_pct": 29.97,
    "max_drawdown_pct": -45.2,
    "volatility_pct": 30.7,
-   "sharpe": 1.0,
-   "costs_pct_per_year": 3.73,
+   "sharpe": 1.01,
+   "costs_pct_per_year": 3.72,
    "turnover_x_per_year": 4.87,
    "cagr_2012_2018_pct": 31.65,
-   "cagr_2019_now_pct": 28.95,
+   "cagr_2019_now_pct": 29.35,
    "years": 14.9,
-   "worst_year_pct": -24.3
+   "worst_year_pct": -24.3,
+   "value_of_80k_after_10y_kr": 847091,
+   "value_of_80k_after_10y_real_kr": 680712,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 4, no filter, 12-1m momentum",
@@ -424,16 +564,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 29.94,
+   "cagr_pct": 29.77,
    "max_drawdown_pct": -39.0,
    "volatility_pct": 31.5,
    "sharpe": 0.99,
    "costs_pct_per_year": 2.4,
    "turnover_x_per_year": 3.13,
    "cagr_2012_2018_pct": 32.77,
-   "cagr_2019_now_pct": 27.9,
+   "cagr_2019_now_pct": 27.58,
    "years": 14.9,
-   "worst_year_pct": -11.6
+   "worst_year_pct": -11.6,
+   "value_of_80k_after_10y_kr": 748540,
+   "value_of_80k_after_10y_real_kr": 601518,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 4, no filter, 6-1m momentum",
@@ -443,16 +590,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 30.51,
+   "cagr_pct": 30.63,
    "max_drawdown_pct": -45.0,
    "volatility_pct": 30.9,
    "sharpe": 1.02,
    "costs_pct_per_year": 3.88,
    "turnover_x_per_year": 5.08,
    "cagr_2012_2018_pct": 32.49,
-   "cagr_2019_now_pct": 29.65,
+   "cagr_2019_now_pct": 29.88,
    "years": 14.9,
-   "worst_year_pct": -22.8
+   "worst_year_pct": -22.8,
+   "value_of_80k_after_10y_kr": 880828,
+   "value_of_80k_after_10y_real_kr": 707823,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 8, trend filter, 12-1m momentum",
@@ -462,16 +616,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 26.83,
+   "cagr_pct": 26.95,
    "max_drawdown_pct": -36.6,
    "volatility_pct": 31.0,
-   "sharpe": 0.92,
+   "sharpe": 0.93,
    "costs_pct_per_year": 1.31,
    "turnover_x_per_year": 1.7,
    "cagr_2012_2018_pct": 30.45,
-   "cagr_2019_now_pct": 23.95,
+   "cagr_2019_now_pct": 24.16,
    "years": 14.9,
-   "worst_year_pct": -24.7
+   "worst_year_pct": -24.7,
+   "value_of_80k_after_10y_kr": 595595,
+   "value_of_80k_after_10y_real_kr": 478613,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 8, trend filter, 6-1m momentum",
@@ -481,16 +642,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 31.29,
+   "cagr_pct": 31.5,
    "max_drawdown_pct": -44.0,
    "volatility_pct": 31.0,
    "sharpe": 1.04,
    "costs_pct_per_year": 2.54,
-   "turnover_x_per_year": 3.33,
+   "turnover_x_per_year": 3.32,
    "cagr_2012_2018_pct": 33.34,
-   "cagr_2019_now_pct": 30.37,
+   "cagr_2019_now_pct": 30.78,
    "years": 14.9,
-   "worst_year_pct": -18.5
+   "worst_year_pct": -18.5,
+   "value_of_80k_after_10y_kr": 949259,
+   "value_of_80k_after_10y_real_kr": 762814,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 8, no filter, 12-1m momentum",
@@ -500,16 +668,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 30.65,
+   "cagr_pct": 30.4,
    "max_drawdown_pct": -34.1,
    "volatility_pct": 31.8,
    "sharpe": 1.0,
    "costs_pct_per_year": 1.09,
-   "turnover_x_per_year": 1.42,
+   "turnover_x_per_year": 1.41,
    "cagr_2012_2018_pct": 31.02,
-   "cagr_2019_now_pct": 30.69,
+   "cagr_2019_now_pct": 30.22,
    "years": 14.9,
-   "worst_year_pct": -6.0
+   "worst_year_pct": -8.6,
+   "value_of_80k_after_10y_kr": 903193,
+   "value_of_80k_after_10y_real_kr": 725796,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 8, no filter, 6-1m momentum",
@@ -519,16 +694,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 33.11,
+   "cagr_pct": 33.22,
    "max_drawdown_pct": -43.5,
    "volatility_pct": 31.2,
-   "sharpe": 1.07,
+   "sharpe": 1.08,
    "costs_pct_per_year": 2.48,
-   "turnover_x_per_year": 3.25,
+   "turnover_x_per_year": 3.24,
    "cagr_2012_2018_pct": 36.0,
-   "cagr_2019_now_pct": 31.22,
+   "cagr_2019_now_pct": 31.42,
    "years": 14.9,
-   "worst_year_pct": -19.2
+   "worst_year_pct": -19.2,
+   "value_of_80k_after_10y_kr": 1011758,
+   "value_of_80k_after_10y_real_kr": 813037,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 4, trend filter, 12-1m momentum",
@@ -538,16 +720,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 25.49,
+   "cagr_pct": 25.47,
    "max_drawdown_pct": -46.6,
    "volatility_pct": 30.6,
    "sharpe": 0.9,
    "costs_pct_per_year": 1.15,
    "turnover_x_per_year": 1.48,
    "cagr_2012_2018_pct": 22.14,
-   "cagr_2019_now_pct": 28.33,
+   "cagr_2019_now_pct": 28.3,
    "years": 14.9,
-   "worst_year_pct": -15.3
+   "worst_year_pct": -15.3,
+   "value_of_80k_after_10y_kr": 638761,
+   "value_of_80k_after_10y_real_kr": 513301,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 4, trend filter, 6-1m momentum",
@@ -557,16 +746,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 27.54,
+   "cagr_pct": 27.64,
    "max_drawdown_pct": -41.4,
    "volatility_pct": 30.4,
-   "sharpe": 0.95,
+   "sharpe": 0.96,
    "costs_pct_per_year": 2.05,
    "turnover_x_per_year": 2.67,
    "cagr_2012_2018_pct": 28.8,
-   "cagr_2019_now_pct": 26.85,
+   "cagr_2019_now_pct": 27.03,
    "years": 14.9,
-   "worst_year_pct": -27.8
+   "worst_year_pct": -27.8,
+   "value_of_80k_after_10y_kr": 716218,
+   "value_of_80k_after_10y_real_kr": 575545,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 4, no filter, 12-1m momentum",
@@ -576,16 +772,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 26.42,
+   "cagr_pct": 26.41,
    "max_drawdown_pct": -43.4,
    "volatility_pct": 30.6,
    "sharpe": 0.92,
    "costs_pct_per_year": 1.17,
    "turnover_x_per_year": 1.51,
    "cagr_2012_2018_pct": 20.75,
-   "cagr_2019_now_pct": 31.5,
+   "cagr_2019_now_pct": 31.48,
    "years": 14.9,
-   "worst_year_pct": -14.6
+   "worst_year_pct": -14.6,
+   "value_of_80k_after_10y_kr": 777228,
+   "value_of_80k_after_10y_real_kr": 624571,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 4, no filter, 6-1m momentum",
@@ -595,16 +798,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 28.31,
+   "cagr_pct": 28.41,
    "max_drawdown_pct": -41.5,
    "volatility_pct": 30.4,
-   "sharpe": 0.97,
+   "sharpe": 0.98,
    "costs_pct_per_year": 2.05,
    "turnover_x_per_year": 2.67,
    "cagr_2012_2018_pct": 28.72,
-   "cagr_2019_now_pct": 28.36,
+   "cagr_2019_now_pct": 28.54,
    "years": 14.9,
-   "worst_year_pct": -27.8
+   "worst_year_pct": -27.8,
+   "value_of_80k_after_10y_kr": 786689,
+   "value_of_80k_after_10y_real_kr": 632174,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 8, trend filter, 12-1m momentum",
@@ -614,16 +824,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 26.61,
+   "cagr_pct": 26.39,
    "max_drawdown_pct": -44.1,
    "volatility_pct": 30.6,
-   "sharpe": 0.93,
+   "sharpe": 0.92,
    "costs_pct_per_year": 0.8,
    "turnover_x_per_year": 1.03,
    "cagr_2012_2018_pct": 23.9,
-   "cagr_2019_now_pct": 28.92,
+   "cagr_2019_now_pct": 28.5,
    "years": 14.9,
-   "worst_year_pct": -14.7
+   "worst_year_pct": -14.7,
+   "value_of_80k_after_10y_kr": 639569,
+   "value_of_80k_after_10y_real_kr": 513950,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 8, trend filter, 6-1m momentum",
@@ -640,9 +857,16 @@
    "costs_pct_per_year": 1.47,
    "turnover_x_per_year": 1.9,
    "cagr_2012_2018_pct": 25.92,
-   "cagr_2019_now_pct": 26.58,
+   "cagr_2019_now_pct": 26.57,
    "years": 14.9,
-   "worst_year_pct": -25.5
+   "worst_year_pct": -25.5,
+   "value_of_80k_after_10y_kr": 811468,
+   "value_of_80k_after_10y_real_kr": 652086,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 8, no filter, 12-1m momentum",
@@ -652,16 +876,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 28.6,
+   "cagr_pct": 28.45,
    "max_drawdown_pct": -42.2,
    "volatility_pct": 30.5,
-   "sharpe": 0.98,
+   "sharpe": 0.97,
    "costs_pct_per_year": 0.79,
    "turnover_x_per_year": 1.03,
    "cagr_2012_2018_pct": 24.13,
-   "cagr_2019_now_pct": 32.55,
+   "cagr_2019_now_pct": 32.25,
    "years": 14.9,
-   "worst_year_pct": -10.0
+   "worst_year_pct": -10.0,
+   "value_of_80k_after_10y_kr": 841866,
+   "value_of_80k_after_10y_real_kr": 676514,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 8, no filter, 6-1m momentum",
@@ -671,16 +902,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 26.13,
+   "cagr_pct": 26.12,
    "max_drawdown_pct": -41.4,
    "volatility_pct": 29.9,
    "sharpe": 0.93,
    "costs_pct_per_year": 1.47,
    "turnover_x_per_year": 1.9,
    "cagr_2012_2018_pct": 25.72,
-   "cagr_2019_now_pct": 27.03,
+   "cagr_2019_now_pct": 27.02,
    "years": 14.9,
-   "worst_year_pct": -25.2
+   "worst_year_pct": -25.2,
+   "value_of_80k_after_10y_kr": 793792,
+   "value_of_80k_after_10y_real_kr": 637882,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 5, trend filter, 12-1m momentum",
@@ -690,16 +928,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 25.96,
+   "cagr_pct": 26.07,
    "max_drawdown_pct": -37.0,
    "volatility_pct": 29.1,
    "sharpe": 0.94,
    "costs_pct_per_year": 2.36,
-   "turnover_x_per_year": 3.05,
+   "turnover_x_per_year": 3.04,
    "cagr_2012_2018_pct": 28.9,
-   "cagr_2019_now_pct": 23.71,
+   "cagr_2019_now_pct": 23.92,
    "years": 14.9,
-   "worst_year_pct": -20.1
+   "worst_year_pct": -20.1,
+   "value_of_80k_after_10y_kr": 598430,
+   "value_of_80k_after_10y_real_kr": 480892,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 5, trend filter, 6-1m momentum",
@@ -709,16 +954,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 27.06,
+   "cagr_pct": 27.28,
    "max_drawdown_pct": -43.7,
    "volatility_pct": 28.6,
-   "sharpe": 0.98,
+   "sharpe": 0.99,
    "costs_pct_per_year": 3.56,
    "turnover_x_per_year": 4.63,
    "cagr_2012_2018_pct": 30.04,
-   "cagr_2019_now_pct": 25.24,
+   "cagr_2019_now_pct": 25.65,
    "years": 14.9,
-   "worst_year_pct": -26.8
+   "worst_year_pct": -26.8,
+   "value_of_80k_after_10y_kr": 648284,
+   "value_of_80k_after_10y_real_kr": 520953,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 5, no filter, 12-1m momentum",
@@ -728,16 +980,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 26.52,
+   "cagr_pct": 26.38,
    "max_drawdown_pct": -35.0,
    "volatility_pct": 29.5,
-   "sharpe": 0.95,
+   "sharpe": 0.94,
    "costs_pct_per_year": 2.27,
    "turnover_x_per_year": 2.91,
    "cagr_2012_2018_pct": 26.02,
-   "cagr_2019_now_pct": 27.08,
+   "cagr_2019_now_pct": 26.81,
    "years": 14.9,
-   "worst_year_pct": -8.1
+   "worst_year_pct": -8.1,
+   "value_of_80k_after_10y_kr": 660132,
+   "value_of_80k_after_10y_real_kr": 530474,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 5, no filter, 6-1m momentum",
@@ -747,16 +1006,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 26.38,
+   "cagr_pct": 26.5,
    "max_drawdown_pct": -43.6,
    "volatility_pct": 29.0,
-   "sharpe": 0.95,
+   "sharpe": 0.96,
    "costs_pct_per_year": 3.59,
-   "turnover_x_per_year": 4.65,
+   "turnover_x_per_year": 4.64,
    "cagr_2012_2018_pct": 28.22,
-   "cagr_2019_now_pct": 25.56,
+   "cagr_2019_now_pct": 25.78,
    "years": 14.9,
-   "worst_year_pct": -27.1
+   "worst_year_pct": -27.1,
+   "value_of_80k_after_10y_kr": 660723,
+   "value_of_80k_after_10y_real_kr": 530950,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 10, trend filter, 12-1m momentum",
@@ -766,16 +1032,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 27.47,
+   "cagr_pct": 27.59,
    "max_drawdown_pct": -37.4,
    "volatility_pct": 29.5,
-   "sharpe": 0.97,
+   "sharpe": 0.98,
    "costs_pct_per_year": 1.17,
    "turnover_x_per_year": 1.5,
    "cagr_2012_2018_pct": 27.85,
-   "cagr_2019_now_pct": 27.21,
+   "cagr_2019_now_pct": 27.42,
    "years": 14.9,
-   "worst_year_pct": -18.0
+   "worst_year_pct": -18.0,
+   "value_of_80k_after_10y_kr": 716207,
+   "value_of_80k_after_10y_real_kr": 575536,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 10, trend filter, 6-1m momentum",
@@ -785,16 +1058,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 28.0,
+   "cagr_pct": 28.22,
    "max_drawdown_pct": -42.9,
    "volatility_pct": 29.4,
    "sharpe": 0.99,
    "costs_pct_per_year": 2.36,
    "turnover_x_per_year": 3.07,
    "cagr_2012_2018_pct": 30.22,
-   "cagr_2019_now_pct": 26.92,
+   "cagr_2019_now_pct": 27.34,
    "years": 14.9,
-   "worst_year_pct": -19.2
+   "worst_year_pct": -19.2,
+   "value_of_80k_after_10y_kr": 765761,
+   "value_of_80k_after_10y_real_kr": 615357,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 10, no filter, 12-1m momentum",
@@ -804,16 +1084,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 27.86,
+   "cagr_pct": 27.69,
    "max_drawdown_pct": -37.2,
    "volatility_pct": 30.1,
    "sharpe": 0.97,
    "costs_pct_per_year": 0.95,
    "turnover_x_per_year": 1.21,
    "cagr_2012_2018_pct": 24.06,
-   "cagr_2019_now_pct": 31.41,
+   "cagr_2019_now_pct": 31.08,
    "years": 14.9,
-   "worst_year_pct": -15.5
+   "worst_year_pct": -15.5,
+   "value_of_80k_after_10y_kr": 779480,
+   "value_of_80k_after_10y_real_kr": 626381,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 10, no filter, 6-1m momentum",
@@ -823,16 +1110,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 30.23,
+   "cagr_pct": 30.35,
    "max_drawdown_pct": -41.3,
    "volatility_pct": 29.6,
-   "sharpe": 1.04,
+   "sharpe": 1.05,
    "costs_pct_per_year": 2.3,
-   "turnover_x_per_year": 3.0,
+   "turnover_x_per_year": 2.99,
    "cagr_2012_2018_pct": 33.03,
-   "cagr_2019_now_pct": 28.62,
+   "cagr_2019_now_pct": 28.84,
    "years": 14.9,
-   "worst_year_pct": -16.2
+   "worst_year_pct": -16.2,
+   "value_of_80k_after_10y_kr": 857718,
+   "value_of_80k_after_10y_real_kr": 689252,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 5, trend filter, 12-1m momentum",
@@ -842,16 +1136,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 23.1,
+   "cagr_pct": 23.14,
    "max_drawdown_pct": -45.6,
    "volatility_pct": 28.8,
    "sharpe": 0.87,
-   "costs_pct_per_year": 1.25,
-   "turnover_x_per_year": 1.58,
+   "costs_pct_per_year": 1.24,
+   "turnover_x_per_year": 1.57,
    "cagr_2012_2018_pct": 20.82,
-   "cagr_2019_now_pct": 25.05,
+   "cagr_2019_now_pct": 25.12,
    "years": 14.9,
-   "worst_year_pct": -10.8
+   "worst_year_pct": -10.8,
+   "value_of_80k_after_10y_kr": 524761,
+   "value_of_80k_after_10y_real_kr": 421692,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 5, trend filter, 6-1m momentum",
@@ -861,16 +1162,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 25.48,
+   "cagr_pct": 25.59,
    "max_drawdown_pct": -40.8,
    "volatility_pct": 28.7,
    "sharpe": 0.94,
    "costs_pct_per_year": 1.97,
    "turnover_x_per_year": 2.55,
    "cagr_2012_2018_pct": 28.19,
-   "cagr_2019_now_pct": 23.61,
+   "cagr_2019_now_pct": 23.81,
    "years": 14.9,
-   "worst_year_pct": -30.4
+   "worst_year_pct": -30.4,
+   "value_of_80k_after_10y_kr": 657031,
+   "value_of_80k_after_10y_real_kr": 527983,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 5, no filter, 12-1m momentum",
@@ -880,16 +1188,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 25.15,
+   "cagr_pct": 25.17,
    "max_drawdown_pct": -41.2,
    "volatility_pct": 28.9,
    "sharpe": 0.92,
    "costs_pct_per_year": 1.17,
    "turnover_x_per_year": 1.48,
    "cagr_2012_2018_pct": 20.76,
-   "cagr_2019_now_pct": 29.06,
+   "cagr_2019_now_pct": 29.1,
    "years": 14.9,
-   "worst_year_pct": -10.2
+   "worst_year_pct": -10.2,
+   "value_of_80k_after_10y_kr": 664769,
+   "value_of_80k_after_10y_real_kr": 534201,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 5, no filter, 6-1m momentum",
@@ -899,16 +1214,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 26.05,
+   "cagr_pct": 26.16,
    "max_drawdown_pct": -40.7,
    "volatility_pct": 28.8,
    "sharpe": 0.95,
    "costs_pct_per_year": 1.98,
    "turnover_x_per_year": 2.56,
    "cagr_2012_2018_pct": 28.07,
-   "cagr_2019_now_pct": 24.77,
+   "cagr_2019_now_pct": 24.97,
    "years": 14.9,
-   "worst_year_pct": -30.4
+   "worst_year_pct": -30.4,
+   "value_of_80k_after_10y_kr": 718167,
+   "value_of_80k_after_10y_real_kr": 577111,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 10, trend filter, 12-1m momentum",
@@ -918,16 +1240,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 23.24,
+   "cagr_pct": 23.15,
    "max_drawdown_pct": -45.5,
    "volatility_pct": 29.9,
    "sharpe": 0.85,
    "costs_pct_per_year": 0.8,
    "turnover_x_per_year": 1.01,
    "cagr_2012_2018_pct": 20.5,
-   "cagr_2019_now_pct": 25.6,
+   "cagr_2019_now_pct": 25.43,
    "years": 14.9,
-   "worst_year_pct": -21.1
+   "worst_year_pct": -21.1,
+   "value_of_80k_after_10y_kr": 520912,
+   "value_of_80k_after_10y_real_kr": 418599,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 10, trend filter, 6-1m momentum",
@@ -937,16 +1266,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 18.73,
+   "cagr_pct": 18.74,
    "max_drawdown_pct": -47.2,
    "volatility_pct": 28.9,
    "sharpe": 0.74,
    "costs_pct_per_year": 1.46,
    "turnover_x_per_year": 1.81,
    "cagr_2012_2018_pct": 15.59,
-   "cagr_2019_now_pct": 21.41,
+   "cagr_2019_now_pct": 21.43,
    "years": 14.9,
-   "worst_year_pct": -24.4
+   "worst_year_pct": -24.4,
+   "value_of_80k_after_10y_kr": 391422,
+   "value_of_80k_after_10y_real_kr": 314542,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 10, no filter, 12-1m momentum",
@@ -956,16 +1292,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 26.3,
+   "cagr_pct": 26.1,
    "max_drawdown_pct": -40.7,
    "volatility_pct": 30.2,
-   "sharpe": 0.93,
+   "sharpe": 0.92,
    "costs_pct_per_year": 0.59,
    "turnover_x_per_year": 0.75,
    "cagr_2012_2018_pct": 20.32,
-   "cagr_2019_now_pct": 31.79,
+   "cagr_2019_now_pct": 31.39,
    "years": 14.9,
-   "worst_year_pct": -19.7
+   "worst_year_pct": -19.7,
+   "value_of_80k_after_10y_kr": 745628,
+   "value_of_80k_after_10y_real_kr": 599178,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 10, no filter, 6-1m momentum",
@@ -975,16 +1318,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 20.02,
+   "cagr_pct": 20.04,
    "max_drawdown_pct": -44.5,
    "volatility_pct": 28.8,
    "sharpe": 0.78,
    "costs_pct_per_year": 1.46,
    "turnover_x_per_year": 1.82,
    "cagr_2012_2018_pct": 16.6,
-   "cagr_2019_now_pct": 22.94,
+   "cagr_2019_now_pct": 22.99,
    "years": 14.9,
-   "worst_year_pct": -23.6
+   "worst_year_pct": -23.6,
+   "value_of_80k_after_10y_kr": 458373,
+   "value_of_80k_after_10y_real_kr": 368344,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 6, trend filter, 12-1m momentum",
@@ -994,16 +1344,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 24.87,
+   "cagr_pct": 24.98,
    "max_drawdown_pct": -34.8,
    "volatility_pct": 27.8,
    "sharpe": 0.94,
    "costs_pct_per_year": 2.26,
    "turnover_x_per_year": 2.88,
    "cagr_2012_2018_pct": 27.4,
-   "cagr_2019_now_pct": 22.9,
+   "cagr_2019_now_pct": 23.09,
    "years": 14.9,
-   "worst_year_pct": -16.7
+   "worst_year_pct": -16.7,
+   "value_of_80k_after_10y_kr": 552879,
+   "value_of_80k_after_10y_real_kr": 444287,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 6, trend filter, 6-1m momentum",
@@ -1013,16 +1370,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 24.06,
+   "cagr_pct": 24.26,
    "max_drawdown_pct": -42.1,
    "volatility_pct": 27.4,
    "sharpe": 0.93,
    "costs_pct_per_year": 3.47,
    "turnover_x_per_year": 4.44,
    "cagr_2012_2018_pct": 25.94,
-   "cagr_2019_now_pct": 23.03,
+   "cagr_2019_now_pct": 23.42,
    "years": 14.9,
-   "worst_year_pct": -24.1
+   "worst_year_pct": -24.1,
+   "value_of_80k_after_10y_kr": 565004,
+   "value_of_80k_after_10y_real_kr": 454031,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 6, no filter, 12-1m momentum",
@@ -1032,16 +1396,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 26.79,
+   "cagr_pct": 26.71,
    "max_drawdown_pct": -35.4,
    "volatility_pct": 28.3,
    "sharpe": 0.98,
    "costs_pct_per_year": 2.14,
    "turnover_x_per_year": 2.73,
    "cagr_2012_2018_pct": 26.24,
-   "cagr_2019_now_pct": 27.54,
+   "cagr_2019_now_pct": 27.4,
    "years": 14.9,
-   "worst_year_pct": -5.2
+   "worst_year_pct": -5.2,
+   "value_of_80k_after_10y_kr": 709191,
+   "value_of_80k_after_10y_real_kr": 569898,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 6, no filter, 6-1m momentum",
@@ -1051,16 +1422,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 24.42,
+   "cagr_pct": 24.49,
    "max_drawdown_pct": -41.3,
    "volatility_pct": 27.5,
-   "sharpe": 0.93,
+   "sharpe": 0.94,
    "costs_pct_per_year": 3.51,
-   "turnover_x_per_year": 4.5,
+   "turnover_x_per_year": 4.49,
    "cagr_2012_2018_pct": 26.74,
-   "cagr_2019_now_pct": 23.02,
+   "cagr_2019_now_pct": 23.16,
    "years": 14.9,
-   "worst_year_pct": -24.1
+   "worst_year_pct": -24.1,
+   "value_of_80k_after_10y_kr": 560488,
+   "value_of_80k_after_10y_real_kr": 450402,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 12, trend filter, 12-1m momentum",
@@ -1070,16 +1448,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 24.56,
+   "cagr_pct": 24.66,
    "max_drawdown_pct": -34.6,
    "volatility_pct": 27.0,
    "sharpe": 0.95,
    "costs_pct_per_year": 1.06,
    "turnover_x_per_year": 1.34,
    "cagr_2012_2018_pct": 24.88,
-   "cagr_2019_now_pct": 24.39,
+   "cagr_2019_now_pct": 24.58,
    "years": 14.9,
-   "worst_year_pct": -10.0
+   "worst_year_pct": -10.0,
+   "value_of_80k_after_10y_kr": 565287,
+   "value_of_80k_after_10y_real_kr": 454259,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 12, trend filter, 6-1m momentum",
@@ -1089,16 +1474,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 26.36,
+   "cagr_pct": 26.58,
    "max_drawdown_pct": -40.3,
    "volatility_pct": 27.9,
-   "sharpe": 0.98,
+   "sharpe": 0.99,
    "costs_pct_per_year": 2.2,
    "turnover_x_per_year": 2.83,
    "cagr_2012_2018_pct": 27.18,
-   "cagr_2019_now_pct": 26.41,
+   "cagr_2019_now_pct": 26.82,
    "years": 14.9,
-   "worst_year_pct": -18.4
+   "worst_year_pct": -18.4,
+   "value_of_80k_after_10y_kr": 725716,
+   "value_of_80k_after_10y_real_kr": 583177,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 12, no filter, 12-1m momentum",
@@ -1108,16 +1500,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 24.09,
+   "cagr_pct": 24.0,
    "max_drawdown_pct": -33.4,
    "volatility_pct": 27.6,
    "sharpe": 0.92,
    "costs_pct_per_year": 0.83,
    "turnover_x_per_year": 1.02,
    "cagr_2012_2018_pct": 21.97,
-   "cagr_2019_now_pct": 26.05,
+   "cagr_2019_now_pct": 25.89,
    "years": 14.9,
-   "worst_year_pct": -10.1
+   "worst_year_pct": -10.1,
+   "value_of_80k_after_10y_kr": 548634,
+   "value_of_80k_after_10y_real_kr": 440876,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 12, no filter, 6-1m momentum",
@@ -1127,16 +1526,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 26.71,
+   "cagr_pct": 26.76,
    "max_drawdown_pct": -38.5,
    "volatility_pct": 27.5,
    "sharpe": 1.0,
    "costs_pct_per_year": 2.11,
    "turnover_x_per_year": 2.72,
    "cagr_2012_2018_pct": 28.83,
-   "cagr_2019_now_pct": 25.64,
+   "cagr_2019_now_pct": 25.74,
    "years": 14.9,
-   "worst_year_pct": -18.6
+   "worst_year_pct": -18.6,
+   "value_of_80k_after_10y_kr": 691905,
+   "value_of_80k_after_10y_real_kr": 556007,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 6, trend filter, 12-1m momentum",
@@ -1146,16 +1552,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 22.35,
+   "cagr_pct": 22.38,
    "max_drawdown_pct": -44.0,
    "volatility_pct": 27.8,
    "sharpe": 0.87,
    "costs_pct_per_year": 1.26,
    "turnover_x_per_year": 1.55,
    "cagr_2012_2018_pct": 19.96,
-   "cagr_2019_now_pct": 24.35,
+   "cagr_2019_now_pct": 24.41,
    "years": 14.9,
-   "worst_year_pct": -14.9
+   "worst_year_pct": -14.9,
+   "value_of_80k_after_10y_kr": 481116,
+   "value_of_80k_after_10y_real_kr": 386619,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 6, trend filter, 6-1m momentum",
@@ -1165,16 +1578,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 24.9,
+   "cagr_pct": 24.93,
    "max_drawdown_pct": -38.5,
    "volatility_pct": 27.1,
    "sharpe": 0.96,
    "costs_pct_per_year": 1.85,
    "turnover_x_per_year": 2.37,
    "cagr_2012_2018_pct": 28.81,
-   "cagr_2019_now_pct": 22.11,
+   "cagr_2019_now_pct": 22.17,
    "years": 14.9,
-   "worst_year_pct": -23.3
+   "worst_year_pct": -23.3,
+   "value_of_80k_after_10y_kr": 603612,
+   "value_of_80k_after_10y_real_kr": 485056,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 6, no filter, 12-1m momentum",
@@ -1184,16 +1604,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 24.69,
+   "cagr_pct": 24.73,
    "max_drawdown_pct": -41.0,
    "volatility_pct": 28.3,
    "sharpe": 0.92,
    "costs_pct_per_year": 1.17,
    "turnover_x_per_year": 1.46,
    "cagr_2012_2018_pct": 21.01,
-   "cagr_2019_now_pct": 27.93,
+   "cagr_2019_now_pct": 27.99,
    "years": 14.9,
-   "worst_year_pct": -9.0
+   "worst_year_pct": -9.0,
+   "value_of_80k_after_10y_kr": 652666,
+   "value_of_80k_after_10y_real_kr": 524475,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 6, no filter, 6-1m momentum",
@@ -1203,16 +1630,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 25.69,
+   "cagr_pct": 25.82,
    "max_drawdown_pct": -38.5,
    "volatility_pct": 27.1,
    "sharpe": 0.98,
    "costs_pct_per_year": 1.9,
-   "turnover_x_per_year": 2.43,
+   "turnover_x_per_year": 2.42,
    "cagr_2012_2018_pct": 28.84,
-   "cagr_2019_now_pct": 23.54,
+   "cagr_2019_now_pct": 23.79,
    "years": 14.9,
-   "worst_year_pct": -22.8
+   "worst_year_pct": -22.8,
+   "value_of_80k_after_10y_kr": 669907,
+   "value_of_80k_after_10y_real_kr": 538330,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 12, trend filter, 12-1m momentum",
@@ -1222,16 +1656,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 23.06,
+   "cagr_pct": 22.99,
    "max_drawdown_pct": -39.6,
    "volatility_pct": 28.6,
    "sharpe": 0.87,
    "costs_pct_per_year": 0.75,
    "turnover_x_per_year": 0.93,
    "cagr_2012_2018_pct": 19.54,
-   "cagr_2019_now_pct": 26.15,
+   "cagr_2019_now_pct": 26.01,
    "years": 14.9,
-   "worst_year_pct": -19.6
+   "worst_year_pct": -19.6,
+   "value_of_80k_after_10y_kr": 542432,
+   "value_of_80k_after_10y_real_kr": 435892,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 12, trend filter, 6-1m momentum",
@@ -1241,16 +1682,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 20.78,
+   "cagr_pct": 20.74,
    "max_drawdown_pct": -40.3,
    "volatility_pct": 27.6,
    "sharpe": 0.82,
    "costs_pct_per_year": 1.26,
    "turnover_x_per_year": 1.55,
    "cagr_2012_2018_pct": 17.36,
-   "cagr_2019_now_pct": 23.76,
+   "cagr_2019_now_pct": 23.69,
    "years": 14.9,
-   "worst_year_pct": -23.2
+   "worst_year_pct": -23.2,
+   "value_of_80k_after_10y_kr": 472857,
+   "value_of_80k_after_10y_real_kr": 379982,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 12, no filter, 12-1m momentum",
@@ -1260,16 +1708,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 23.55,
+   "cagr_pct": 23.47,
    "max_drawdown_pct": -38.4,
    "volatility_pct": 28.0,
    "sharpe": 0.9,
    "costs_pct_per_year": 0.57,
-   "turnover_x_per_year": 0.7,
+   "turnover_x_per_year": 0.69,
    "cagr_2012_2018_pct": 20.11,
-   "cagr_2019_now_pct": 26.57,
+   "cagr_2019_now_pct": 26.41,
    "years": 14.9,
-   "worst_year_pct": -14.3
+   "worst_year_pct": -14.3,
+   "value_of_80k_after_10y_kr": 576637,
+   "value_of_80k_after_10y_real_kr": 463379,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 12, no filter, 6-1m momentum",
@@ -1279,16 +1734,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 21.72,
+   "cagr_pct": 21.69,
    "max_drawdown_pct": -40.4,
    "volatility_pct": 27.8,
    "sharpe": 0.85,
    "costs_pct_per_year": 1.26,
    "turnover_x_per_year": 1.55,
    "cagr_2012_2018_pct": 17.9,
-   "cagr_2019_now_pct": 25.07,
+   "cagr_2019_now_pct": 25.01,
    "years": 14.9,
-   "worst_year_pct": -24.1
+   "worst_year_pct": -24.1,
+   "value_of_80k_after_10y_kr": 504848,
+   "value_of_80k_after_10y_real_kr": 405690,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 8, trend filter, 12-1m momentum",
@@ -1298,16 +1760,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 22.29,
+   "cagr_pct": 22.38,
    "max_drawdown_pct": -35.0,
    "volatility_pct": 26.0,
    "sharpe": 0.91,
    "costs_pct_per_year": 2.02,
-   "turnover_x_per_year": 2.42,
+   "turnover_x_per_year": 2.41,
    "cagr_2012_2018_pct": 23.38,
-   "cagr_2019_now_pct": 21.46,
+   "cagr_2019_now_pct": 21.63,
    "years": 14.9,
-   "worst_year_pct": -15.6
+   "worst_year_pct": -15.6,
+   "value_of_80k_after_10y_kr": 487599,
+   "value_of_80k_after_10y_real_kr": 391829,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 8, trend filter, 6-1m momentum",
@@ -1317,16 +1786,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 24.12,
+   "cagr_pct": 24.3,
    "max_drawdown_pct": -37.4,
    "volatility_pct": 25.1,
    "sharpe": 0.99,
    "costs_pct_per_year": 3.26,
-   "turnover_x_per_year": 4.06,
+   "turnover_x_per_year": 4.05,
    "cagr_2012_2018_pct": 25.39,
-   "cagr_2019_now_pct": 23.69,
+   "cagr_2019_now_pct": 24.02,
    "years": 14.9,
-   "worst_year_pct": -15.4
+   "worst_year_pct": -15.4,
+   "value_of_80k_after_10y_kr": 636430,
+   "value_of_80k_after_10y_real_kr": 511428,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 8, no filter, 12-1m momentum",
@@ -1336,16 +1812,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 23.54,
+   "cagr_pct": 23.52,
    "max_drawdown_pct": -34.2,
    "volatility_pct": 26.5,
    "sharpe": 0.93,
    "costs_pct_per_year": 1.74,
    "turnover_x_per_year": 2.08,
    "cagr_2012_2018_pct": 22.34,
-   "cagr_2019_now_pct": 24.85,
+   "cagr_2019_now_pct": 24.81,
    "years": 14.9,
-   "worst_year_pct": -9.5
+   "worst_year_pct": -9.5,
+   "value_of_80k_after_10y_kr": 593357,
+   "value_of_80k_after_10y_real_kr": 476815,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 8, no filter, 6-1m momentum",
@@ -1355,16 +1838,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 23.43,
+   "cagr_pct": 23.47,
    "max_drawdown_pct": -38.6,
    "volatility_pct": 25.5,
-   "sharpe": 0.95,
+   "sharpe": 0.96,
    "costs_pct_per_year": 3.39,
    "turnover_x_per_year": 4.19,
    "cagr_2012_2018_pct": 23.65,
-   "cagr_2019_now_pct": 23.8,
+   "cagr_2019_now_pct": 23.88,
    "years": 14.9,
-   "worst_year_pct": -18.1
+   "worst_year_pct": -18.1,
+   "value_of_80k_after_10y_kr": 597302,
+   "value_of_80k_after_10y_real_kr": 479986,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 16, trend filter, 12-1m momentum",
@@ -1374,16 +1864,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 21.85,
+   "cagr_pct": 21.96,
    "max_drawdown_pct": -35.7,
    "volatility_pct": 25.7,
    "sharpe": 0.9,
    "costs_pct_per_year": 1.11,
    "turnover_x_per_year": 1.36,
    "cagr_2012_2018_pct": 23.48,
-   "cagr_2019_now_pct": 20.51,
+   "cagr_2019_now_pct": 20.71,
    "years": 14.9,
-   "worst_year_pct": -20.7
+   "worst_year_pct": -20.7,
+   "value_of_80k_after_10y_kr": 442030,
+   "value_of_80k_after_10y_real_kr": 355210,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 16, trend filter, 6-1m momentum",
@@ -1393,16 +1890,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 23.6,
+   "cagr_pct": 23.75,
    "max_drawdown_pct": -36.8,
    "volatility_pct": 25.0,
    "sharpe": 0.98,
    "costs_pct_per_year": 1.78,
    "turnover_x_per_year": 2.22,
    "cagr_2012_2018_pct": 26.32,
-   "cagr_2019_now_pct": 21.9,
+   "cagr_2019_now_pct": 22.19,
    "years": 14.9,
-   "worst_year_pct": -15.5
+   "worst_year_pct": -15.5,
+   "value_of_80k_after_10y_kr": 552413,
+   "value_of_80k_after_10y_real_kr": 443913,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 16, no filter, 12-1m momentum",
@@ -1412,16 +1916,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 24.31,
+   "cagr_pct": 24.27,
    "max_drawdown_pct": -36.5,
    "volatility_pct": 26.7,
    "sharpe": 0.95,
    "costs_pct_per_year": 0.69,
-   "turnover_x_per_year": 0.84,
+   "turnover_x_per_year": 0.83,
    "cagr_2012_2018_pct": 22.07,
-   "cagr_2019_now_pct": 26.29,
+   "cagr_2019_now_pct": 26.2,
    "years": 14.9,
-   "worst_year_pct": -13.0
+   "worst_year_pct": -13.0,
+   "value_of_80k_after_10y_kr": 556246,
+   "value_of_80k_after_10y_real_kr": 446993,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 16, no filter, 6-1m momentum",
@@ -1431,16 +1942,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 24.55,
+   "cagr_pct": 24.54,
    "max_drawdown_pct": -38.1,
    "volatility_pct": 25.9,
    "sharpe": 0.98,
    "costs_pct_per_year": 1.78,
    "turnover_x_per_year": 2.22,
    "cagr_2012_2018_pct": 24.5,
-   "cagr_2019_now_pct": 25.26,
+   "cagr_2019_now_pct": 25.24,
    "years": 14.9,
-   "worst_year_pct": -15.0
+   "worst_year_pct": -15.0,
+   "value_of_80k_after_10y_kr": 632670,
+   "value_of_80k_after_10y_real_kr": 508406,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 8, trend filter, 12-1m momentum",
@@ -1450,16 +1968,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 20.2,
+   "cagr_pct": 20.17,
    "max_drawdown_pct": -39.5,
    "volatility_pct": 25.8,
    "sharpe": 0.84,
    "costs_pct_per_year": 1.14,
    "turnover_x_per_year": 1.31,
    "cagr_2012_2018_pct": 17.97,
-   "cagr_2019_now_pct": 22.11,
+   "cagr_2019_now_pct": 22.07,
    "years": 14.9,
-   "worst_year_pct": -11.1
+   "worst_year_pct": -11.1,
+   "value_of_80k_after_10y_kr": 434365,
+   "value_of_80k_after_10y_real_kr": 349051,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 8, trend filter, 6-1m momentum",
@@ -1469,16 +1994,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 22.49,
+   "cagr_pct": 22.53,
    "max_drawdown_pct": -38.5,
    "volatility_pct": 25.0,
    "sharpe": 0.94,
-   "costs_pct_per_year": 1.75,
+   "costs_pct_per_year": 1.74,
    "turnover_x_per_year": 2.14,
    "cagr_2012_2018_pct": 25.16,
-   "cagr_2019_now_pct": 20.64,
+   "cagr_2019_now_pct": 20.72,
    "years": 14.9,
-   "worst_year_pct": -20.2
+   "worst_year_pct": -20.2,
+   "value_of_80k_after_10y_kr": 512199,
+   "value_of_80k_after_10y_real_kr": 411598,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 8, no filter, 12-1m momentum",
@@ -1497,7 +2029,14 @@
    "cagr_2012_2018_pct": 18.14,
    "cagr_2019_now_pct": 28.54,
    "years": 14.9,
-   "worst_year_pct": -8.4
+   "worst_year_pct": -8.4,
+   "value_of_80k_after_10y_kr": 665582,
+   "value_of_80k_after_10y_real_kr": 534854,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 8, no filter, 6-1m momentum",
@@ -1507,16 +2046,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 22.05,
+   "cagr_pct": 22.08,
    "max_drawdown_pct": -38.1,
    "volatility_pct": 25.1,
    "sharpe": 0.92,
-   "costs_pct_per_year": 1.81,
-   "turnover_x_per_year": 2.21,
+   "costs_pct_per_year": 1.8,
+   "turnover_x_per_year": 2.2,
    "cagr_2012_2018_pct": 24.23,
-   "cagr_2019_now_pct": 20.61,
+   "cagr_2019_now_pct": 20.66,
    "years": 14.9,
-   "worst_year_pct": -20.2
+   "worst_year_pct": -20.2,
+   "value_of_80k_after_10y_kr": 498702,
+   "value_of_80k_after_10y_real_kr": 400751,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 16, trend filter, 12-1m momentum",
@@ -1526,16 +2072,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 19.86,
+   "cagr_pct": 19.83,
    "max_drawdown_pct": -34.9,
    "volatility_pct": 25.9,
    "sharpe": 0.83,
    "costs_pct_per_year": 0.78,
    "turnover_x_per_year": 0.91,
    "cagr_2012_2018_pct": 19.36,
-   "cagr_2019_now_pct": 20.28,
+   "cagr_2019_now_pct": 20.23,
    "years": 14.9,
-   "worst_year_pct": -25.9
+   "worst_year_pct": -25.9,
+   "value_of_80k_after_10y_kr": 395982,
+   "value_of_80k_after_10y_real_kr": 318206,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 16, trend filter, 6-1m momentum",
@@ -1545,16 +2098,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 20.87,
+   "cagr_pct": 20.88,
    "max_drawdown_pct": -35.3,
    "volatility_pct": 25.6,
    "sharpe": 0.87,
    "costs_pct_per_year": 1.16,
    "turnover_x_per_year": 1.37,
    "cagr_2012_2018_pct": 19.97,
-   "cagr_2019_now_pct": 21.61,
+   "cagr_2019_now_pct": 21.63,
    "years": 14.9,
-   "worst_year_pct": -17.7
+   "worst_year_pct": -17.7,
+   "value_of_80k_after_10y_kr": 430846,
+   "value_of_80k_after_10y_real_kr": 346223,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 16, no filter, 12-1m momentum",
@@ -1564,16 +2124,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 10000.0,
-   "cagr_pct": 21.42,
+   "cagr_pct": 21.41,
    "max_drawdown_pct": -35.4,
    "volatility_pct": 25.5,
    "sharpe": 0.89,
    "costs_pct_per_year": 0.61,
    "turnover_x_per_year": 0.73,
    "cagr_2012_2018_pct": 19.84,
-   "cagr_2019_now_pct": 22.8,
+   "cagr_2019_now_pct": 22.79,
    "years": 14.9,
-   "worst_year_pct": -17.5
+   "worst_year_pct": -17.5,
+   "value_of_80k_after_10y_kr": 460385,
+   "value_of_80k_after_10y_real_kr": 369960,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 16, no filter, 6-1m momentum",
@@ -1583,58 +2150,86 @@
    "trend": false,
    "lookback": 126,
    "capital": 10000.0,
-   "cagr_pct": 22.6,
+   "cagr_pct": 22.64,
    "max_drawdown_pct": -35.1,
    "volatility_pct": 25.6,
    "sharpe": 0.93,
    "costs_pct_per_year": 1.1,
-   "turnover_x_per_year": 1.32,
+   "turnover_x_per_year": 1.31,
    "cagr_2012_2018_pct": 19.5,
-   "cagr_2019_now_pct": 25.35,
+   "cagr_2019_now_pct": 25.43,
    "years": 14.9,
-   "worst_year_pct": -13.1
+   "worst_year_pct": -13.1,
+   "value_of_80k_after_10y_kr": 553405,
+   "value_of_80k_after_10y_real_kr": 444710,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 10, NO COSTS (reference)",
    "capital": 10000.0,
-   "cagr_pct": 29.15,
+   "cagr_pct": 29.27,
    "max_drawdown_pct": -37.0,
    "volatility_pct": 29.4,
    "sharpe": 1.02,
    "costs_pct_per_year": 0.0,
    "turnover_x_per_year": 1.5,
    "cagr_2012_2018_pct": 29.69,
-   "cagr_2019_now_pct": 28.79,
+   "cagr_2019_now_pct": 29.02,
    "years": 14.9,
-   "worst_year_pct": -18.8
+   "worst_year_pct": -18.8,
+   "value_of_80k_after_10y_kr": 810130,
+   "value_of_80k_after_10y_real_kr": 651012,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "S&P 500 ETF, buy and hold",
    "capital": 100000.0,
-   "cagr_pct": 13.23,
+   "cagr_pct": 13.2,
    "max_drawdown_pct": -33.1,
    "volatility_pct": 18.4,
    "sharpe": 0.77,
    "costs_pct_per_year": 0.02,
    "turnover_x_per_year": 0.02,
    "cagr_2012_2018_pct": 12.09,
-   "cagr_2019_now_pct": 14.28,
+   "cagr_2019_now_pct": 14.21,
    "years": 14.9,
-   "worst_year_pct": -17.4
+   "worst_year_pct": -17.4,
+   "value_of_80k_after_10y_kr": 240974,
+   "value_of_80k_after_10y_real_kr": 193644,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "Same 38 stocks, equal weight, buy and hold",
    "capital": 100000.0,
-   "cagr_pct": 21.31,
+   "cagr_pct": 21.23,
    "max_drawdown_pct": -31.0,
    "volatility_pct": 21.7,
    "sharpe": 1.0,
    "costs_pct_per_year": 0.02,
    "turnover_x_per_year": 0.02,
    "cagr_2012_2018_pct": 19.91,
-   "cagr_2019_now_pct": 22.76,
+   "cagr_2019_now_pct": 22.62,
    "years": 14.9,
-   "worst_year_pct": -25.3
+   "worst_year_pct": -25.3,
+   "value_of_80k_after_10y_kr": 504930,
+   "value_of_80k_after_10y_real_kr": 405756,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 3, trend filter, 12-1m momentum",
@@ -1644,16 +2239,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 30.43,
+   "cagr_pct": 30.47,
    "max_drawdown_pct": -42.2,
    "volatility_pct": 32.8,
    "sharpe": 0.98,
    "costs_pct_per_year": 2.84,
-   "turnover_x_per_year": 3.74,
+   "turnover_x_per_year": 3.73,
    "cagr_2012_2018_pct": 38.61,
-   "cagr_2019_now_pct": 24.01,
+   "cagr_2019_now_pct": 24.09,
    "years": 14.9,
-   "worst_year_pct": -22.6
+   "worst_year_pct": -22.6,
+   "value_of_80k_after_10y_kr": 604567,
+   "value_of_80k_after_10y_real_kr": 485823,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 3, trend filter, 6-1m momentum",
@@ -1663,16 +2265,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 32.45,
+   "cagr_pct": 32.71,
    "max_drawdown_pct": -49.1,
    "volatility_pct": 33.2,
    "sharpe": 1.02,
-   "costs_pct_per_year": 4.1,
-   "turnover_x_per_year": 5.39,
+   "costs_pct_per_year": 4.09,
+   "turnover_x_per_year": 5.38,
    "cagr_2012_2018_pct": 36.0,
-   "cagr_2019_now_pct": 30.02,
+   "cagr_2019_now_pct": 30.5,
    "years": 14.9,
-   "worst_year_pct": -23.9
+   "worst_year_pct": -23.9,
+   "value_of_80k_after_10y_kr": 885531,
+   "value_of_80k_after_10y_real_kr": 711603,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 3, no filter, 12-1m momentum",
@@ -1682,16 +2291,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 30.9,
+   "cagr_pct": 30.64,
    "max_drawdown_pct": -42.5,
    "volatility_pct": 33.9,
-   "sharpe": 0.97,
+   "sharpe": 0.96,
    "costs_pct_per_year": 2.59,
    "turnover_x_per_year": 3.41,
    "cagr_2012_2018_pct": 36.12,
-   "cagr_2019_now_pct": 26.86,
+   "cagr_2019_now_pct": 26.4,
    "years": 14.9,
-   "worst_year_pct": -9.6
+   "worst_year_pct": -9.6,
+   "value_of_80k_after_10y_kr": 692784,
+   "value_of_80k_after_10y_real_kr": 556714,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 3, no filter, 6-1m momentum",
@@ -1701,16 +2317,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 33.16,
+   "cagr_pct": 33.3,
    "max_drawdown_pct": -49.1,
    "volatility_pct": 33.4,
    "sharpe": 1.03,
    "costs_pct_per_year": 4.21,
-   "turnover_x_per_year": 5.54,
+   "turnover_x_per_year": 5.53,
    "cagr_2012_2018_pct": 37.51,
-   "cagr_2019_now_pct": 30.06,
+   "cagr_2019_now_pct": 30.33,
    "years": 14.9,
-   "worst_year_pct": -23.8
+   "worst_year_pct": -23.8,
+   "value_of_80k_after_10y_kr": 873443,
+   "value_of_80k_after_10y_real_kr": 701889,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 6, trend filter, 12-1m momentum",
@@ -1720,16 +2343,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 28.89,
+   "cagr_pct": 28.95,
    "max_drawdown_pct": -40.5,
    "volatility_pct": 33.0,
    "sharpe": 0.94,
    "costs_pct_per_year": 1.55,
    "turnover_x_per_year": 2.04,
    "cagr_2012_2018_pct": 32.95,
-   "cagr_2019_now_pct": 25.64,
+   "cagr_2019_now_pct": 25.74,
    "years": 14.9,
-   "worst_year_pct": -26.8
+   "worst_year_pct": -26.8,
+   "value_of_80k_after_10y_kr": 639573,
+   "value_of_80k_after_10y_real_kr": 513954,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 6, trend filter, 6-1m momentum",
@@ -1739,16 +2369,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 37.53,
+   "cagr_pct": 37.71,
    "max_drawdown_pct": -46.5,
    "volatility_pct": 33.4,
-   "sharpe": 1.12,
+   "sharpe": 1.13,
    "costs_pct_per_year": 2.61,
-   "turnover_x_per_year": 3.44,
+   "turnover_x_per_year": 3.43,
    "cagr_2012_2018_pct": 42.16,
-   "cagr_2019_now_pct": 34.33,
+   "cagr_2019_now_pct": 34.66,
    "years": 14.9,
-   "worst_year_pct": -31.7
+   "worst_year_pct": -31.7,
+   "value_of_80k_after_10y_kr": 1240367,
+   "value_of_80k_after_10y_real_kr": 996745,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 6, no filter, 12-1m momentum",
@@ -1758,16 +2395,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 30.39,
+   "cagr_pct": 30.22,
    "max_drawdown_pct": -33.4,
    "volatility_pct": 33.1,
    "sharpe": 0.97,
    "costs_pct_per_year": 1.38,
    "turnover_x_per_year": 1.81,
    "cagr_2012_2018_pct": 31.56,
-   "cagr_2019_now_pct": 29.61,
+   "cagr_2019_now_pct": 29.29,
    "years": 14.9,
-   "worst_year_pct": -12.5
+   "worst_year_pct": -12.5,
+   "value_of_80k_after_10y_kr": 819240,
+   "value_of_80k_after_10y_real_kr": 658332,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, monthly, keep top 6, no filter, 6-1m momentum",
@@ -1777,16 +2421,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 34.4,
+   "cagr_pct": 34.43,
    "max_drawdown_pct": -47.4,
    "volatility_pct": 33.1,
    "sharpe": 1.06,
-   "costs_pct_per_year": 2.59,
+   "costs_pct_per_year": 2.58,
    "turnover_x_per_year": 3.4,
    "cagr_2012_2018_pct": 36.84,
-   "cagr_2019_now_pct": 33.07,
+   "cagr_2019_now_pct": 33.12,
    "years": 14.9,
-   "worst_year_pct": -35.6
+   "worst_year_pct": -35.6,
+   "value_of_80k_after_10y_kr": 1138000,
+   "value_of_80k_after_10y_real_kr": 914484,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 3, trend filter, 12-1m momentum",
@@ -1796,16 +2447,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 30.85,
+   "cagr_pct": 30.66,
    "max_drawdown_pct": -36.8,
    "volatility_pct": 32.3,
-   "sharpe": 1.0,
+   "sharpe": 0.99,
    "costs_pct_per_year": 1.12,
    "turnover_x_per_year": 1.48,
    "cagr_2012_2018_pct": 34.38,
-   "cagr_2019_now_pct": 28.53,
+   "cagr_2019_now_pct": 28.19,
    "years": 14.9,
-   "worst_year_pct": -6.9
+   "worst_year_pct": -8.8,
+   "value_of_80k_after_10y_kr": 960622,
+   "value_of_80k_after_10y_real_kr": 771945,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 3, trend filter, 6-1m momentum",
@@ -1815,16 +2473,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 32.68,
+   "cagr_pct": 32.85,
    "max_drawdown_pct": -43.2,
    "volatility_pct": 33.0,
    "sharpe": 1.03,
    "costs_pct_per_year": 2.05,
-   "turnover_x_per_year": 2.7,
+   "turnover_x_per_year": 2.69,
    "cagr_2012_2018_pct": 34.34,
-   "cagr_2019_now_pct": 31.77,
+   "cagr_2019_now_pct": 32.09,
    "years": 14.9,
-   "worst_year_pct": -28.4
+   "worst_year_pct": -28.4,
+   "value_of_80k_after_10y_kr": 1052491,
+   "value_of_80k_after_10y_real_kr": 845770,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 3, no filter, 12-1m momentum",
@@ -1834,16 +2499,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 31.71,
+   "cagr_pct": 31.52,
    "max_drawdown_pct": -36.8,
    "volatility_pct": 32.4,
    "sharpe": 1.01,
    "costs_pct_per_year": 1.17,
-   "turnover_x_per_year": 1.54,
+   "turnover_x_per_year": 1.53,
    "cagr_2012_2018_pct": 33.33,
-   "cagr_2019_now_pct": 31.03,
+   "cagr_2019_now_pct": 30.68,
    "years": 14.9,
-   "worst_year_pct": -9.2
+   "worst_year_pct": -11.0,
+   "value_of_80k_after_10y_kr": 1117724,
+   "value_of_80k_after_10y_real_kr": 898191,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 3, no filter, 6-1m momentum",
@@ -1853,16 +2525,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 32.89,
+   "cagr_pct": 33.06,
    "max_drawdown_pct": -43.2,
    "volatility_pct": 33.0,
    "sharpe": 1.03,
    "costs_pct_per_year": 2.08,
    "turnover_x_per_year": 2.74,
    "cagr_2012_2018_pct": 34.24,
-   "cagr_2019_now_pct": 32.25,
+   "cagr_2019_now_pct": 32.57,
    "years": 14.9,
-   "worst_year_pct": -28.4
+   "worst_year_pct": -28.4,
+   "value_of_80k_after_10y_kr": 1082574,
+   "value_of_80k_after_10y_real_kr": 869944,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 6, trend filter, 12-1m momentum",
@@ -1872,16 +2551,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 26.36,
+   "cagr_pct": 26.19,
    "max_drawdown_pct": -50.1,
    "volatility_pct": 33.0,
-   "sharpe": 0.88,
+   "sharpe": 0.87,
    "costs_pct_per_year": 1.0,
    "turnover_x_per_year": 1.31,
    "cagr_2012_2018_pct": 23.87,
-   "cagr_2019_now_pct": 28.34,
+   "cagr_2019_now_pct": 28.01,
    "years": 14.9,
-   "worst_year_pct": -25.4
+   "worst_year_pct": -25.4,
+   "value_of_80k_after_10y_kr": 571689,
+   "value_of_80k_after_10y_real_kr": 459403,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 6, trend filter, 6-1m momentum",
@@ -1891,16 +2577,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 29.44,
+   "cagr_pct": 29.53,
    "max_drawdown_pct": -43.2,
    "volatility_pct": 32.4,
    "sharpe": 0.96,
    "costs_pct_per_year": 1.55,
    "turnover_x_per_year": 2.03,
    "cagr_2012_2018_pct": 27.64,
-   "cagr_2019_now_pct": 31.78,
+   "cagr_2019_now_pct": 31.96,
    "years": 14.9,
-   "worst_year_pct": -25.5
+   "worst_year_pct": -25.5,
+   "value_of_80k_after_10y_kr": 1163001,
+   "value_of_80k_after_10y_real_kr": 934575,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 6, no filter, 12-1m momentum",
@@ -1910,16 +2603,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 24.9,
+   "cagr_pct": 24.73,
    "max_drawdown_pct": -50.6,
    "volatility_pct": 32.9,
    "sharpe": 0.84,
    "costs_pct_per_year": 1.0,
    "turnover_x_per_year": 1.31,
    "cagr_2012_2018_pct": 22.45,
-   "cagr_2019_now_pct": 26.86,
+   "cagr_2019_now_pct": 26.54,
    "years": 14.9,
-   "worst_year_pct": -24.2
+   "worst_year_pct": -24.2,
+   "value_of_80k_after_10y_kr": 523176,
+   "value_of_80k_after_10y_real_kr": 420418,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "3 stocks, quarterly, keep top 6, no filter, 6-1m momentum",
@@ -1929,16 +2629,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 30.07,
+   "cagr_pct": 30.17,
    "max_drawdown_pct": -43.2,
    "volatility_pct": 32.2,
    "sharpe": 0.98,
    "costs_pct_per_year": 1.54,
-   "turnover_x_per_year": 2.03,
+   "turnover_x_per_year": 2.02,
    "cagr_2012_2018_pct": 28.42,
-   "cagr_2019_now_pct": 32.28,
+   "cagr_2019_now_pct": 32.47,
    "years": 14.9,
-   "worst_year_pct": -25.5
+   "worst_year_pct": -25.5,
+   "value_of_80k_after_10y_kr": 1198605,
+   "value_of_80k_after_10y_real_kr": 963185,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 4, trend filter, 12-1m momentum",
@@ -1948,16 +2655,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 28.98,
+   "cagr_pct": 29.09,
    "max_drawdown_pct": -39.3,
    "volatility_pct": 30.8,
-   "sharpe": 0.98,
+   "sharpe": 0.99,
    "costs_pct_per_year": 2.41,
    "turnover_x_per_year": 3.17,
    "cagr_2012_2018_pct": 33.91,
-   "cagr_2019_now_pct": 25.1,
+   "cagr_2019_now_pct": 25.32,
    "years": 14.9,
-   "worst_year_pct": -23.3
+   "worst_year_pct": -23.3,
+   "value_of_80k_after_10y_kr": 658210,
+   "value_of_80k_after_10y_real_kr": 528930,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 4, trend filter, 6-1m momentum",
@@ -1967,16 +2681,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 30.3,
+   "cagr_pct": 30.52,
    "max_drawdown_pct": -44.9,
    "volatility_pct": 30.7,
    "sharpe": 1.02,
    "costs_pct_per_year": 3.73,
    "turnover_x_per_year": 4.9,
    "cagr_2012_2018_pct": 33.17,
-   "cagr_2019_now_pct": 28.69,
+   "cagr_2019_now_pct": 29.09,
    "years": 14.9,
-   "worst_year_pct": -24.4
+   "worst_year_pct": -24.4,
+   "value_of_80k_after_10y_kr": 843306,
+   "value_of_80k_after_10y_real_kr": 677671,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 4, no filter, 12-1m momentum",
@@ -1986,16 +2707,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 29.9,
+   "cagr_pct": 29.72,
    "max_drawdown_pct": -38.9,
    "volatility_pct": 31.5,
    "sharpe": 0.99,
    "costs_pct_per_year": 2.4,
    "turnover_x_per_year": 3.16,
    "cagr_2012_2018_pct": 33.08,
-   "cagr_2019_now_pct": 27.57,
+   "cagr_2019_now_pct": 27.24,
    "years": 14.9,
-   "worst_year_pct": -11.6
+   "worst_year_pct": -11.6,
+   "value_of_80k_after_10y_kr": 734006,
+   "value_of_80k_after_10y_real_kr": 589839,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 4, no filter, 6-1m momentum",
@@ -2005,16 +2733,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 30.46,
+   "cagr_pct": 30.58,
    "max_drawdown_pct": -44.8,
    "volatility_pct": 31.0,
-   "sharpe": 1.01,
+   "sharpe": 1.02,
    "costs_pct_per_year": 3.88,
    "turnover_x_per_year": 5.1,
    "cagr_2012_2018_pct": 32.46,
-   "cagr_2019_now_pct": 29.58,
+   "cagr_2019_now_pct": 29.81,
    "years": 14.9,
-   "worst_year_pct": -22.9
+   "worst_year_pct": -22.9,
+   "value_of_80k_after_10y_kr": 876400,
+   "value_of_80k_after_10y_real_kr": 704265,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 8, trend filter, 12-1m momentum",
@@ -2024,16 +2759,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 27.04,
+   "cagr_pct": 27.17,
    "max_drawdown_pct": -36.6,
    "volatility_pct": 31.1,
    "sharpe": 0.93,
    "costs_pct_per_year": 1.3,
    "turnover_x_per_year": 1.71,
    "cagr_2012_2018_pct": 30.63,
-   "cagr_2019_now_pct": 24.19,
+   "cagr_2019_now_pct": 24.41,
    "years": 14.9,
-   "worst_year_pct": -24.8
+   "worst_year_pct": -24.8,
+   "value_of_80k_after_10y_kr": 603800,
+   "value_of_80k_after_10y_real_kr": 485207,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 8, trend filter, 6-1m momentum",
@@ -2043,16 +2785,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 31.1,
+   "cagr_pct": 31.32,
    "max_drawdown_pct": -43.2,
    "volatility_pct": 30.8,
    "sharpe": 1.04,
    "costs_pct_per_year": 2.54,
    "turnover_x_per_year": 3.34,
    "cagr_2012_2018_pct": 33.56,
-   "cagr_2019_now_pct": 29.84,
+   "cagr_2019_now_pct": 30.25,
    "years": 14.9,
-   "worst_year_pct": -18.5
+   "worst_year_pct": -18.5,
+   "value_of_80k_after_10y_kr": 923232,
+   "value_of_80k_after_10y_real_kr": 741899,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 8, no filter, 12-1m momentum",
@@ -2062,16 +2811,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 30.59,
+   "cagr_pct": 30.34,
    "max_drawdown_pct": -34.1,
    "volatility_pct": 31.9,
-   "sharpe": 1.0,
+   "sharpe": 0.99,
    "costs_pct_per_year": 1.08,
-   "turnover_x_per_year": 1.43,
+   "turnover_x_per_year": 1.42,
    "cagr_2012_2018_pct": 31.03,
-   "cagr_2019_now_pct": 30.56,
+   "cagr_2019_now_pct": 30.09,
    "years": 14.9,
-   "worst_year_pct": -6.0
+   "worst_year_pct": -8.6,
+   "value_of_80k_after_10y_kr": 894116,
+   "value_of_80k_after_10y_real_kr": 718502,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, monthly, keep top 8, no filter, 6-1m momentum",
@@ -2081,16 +2837,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 33.3,
+   "cagr_pct": 33.41,
    "max_drawdown_pct": -43.2,
    "volatility_pct": 31.2,
    "sharpe": 1.08,
    "costs_pct_per_year": 2.48,
    "turnover_x_per_year": 3.26,
    "cagr_2012_2018_pct": 36.58,
-   "cagr_2019_now_pct": 31.09,
+   "cagr_2019_now_pct": 31.29,
    "years": 14.9,
-   "worst_year_pct": -19.3
+   "worst_year_pct": -19.3,
+   "value_of_80k_after_10y_kr": 1011775,
+   "value_of_80k_after_10y_real_kr": 813051,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 4, trend filter, 12-1m momentum",
@@ -2100,16 +2863,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 25.51,
+   "cagr_pct": 25.49,
    "max_drawdown_pct": -46.4,
    "volatility_pct": 30.7,
    "sharpe": 0.9,
    "costs_pct_per_year": 1.15,
    "turnover_x_per_year": 1.51,
    "cagr_2012_2018_pct": 22.25,
-   "cagr_2019_now_pct": 28.31,
+   "cagr_2019_now_pct": 28.28,
    "years": 14.9,
-   "worst_year_pct": -14.2
+   "worst_year_pct": -14.2,
+   "value_of_80k_after_10y_kr": 642379,
+   "value_of_80k_after_10y_real_kr": 516208,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 4, trend filter, 6-1m momentum",
@@ -2119,16 +2889,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 27.87,
+   "cagr_pct": 27.97,
    "max_drawdown_pct": -41.6,
    "volatility_pct": 30.7,
    "sharpe": 0.96,
    "costs_pct_per_year": 2.06,
    "turnover_x_per_year": 2.71,
    "cagr_2012_2018_pct": 29.41,
-   "cagr_2019_now_pct": 26.94,
+   "cagr_2019_now_pct": 27.13,
    "years": 14.9,
-   "worst_year_pct": -27.9
+   "worst_year_pct": -27.9,
+   "value_of_80k_after_10y_kr": 722388,
+   "value_of_80k_after_10y_real_kr": 580503,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 4, no filter, 12-1m momentum",
@@ -2138,16 +2915,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 26.43,
+   "cagr_pct": 26.42,
    "max_drawdown_pct": -43.4,
    "volatility_pct": 30.8,
    "sharpe": 0.92,
    "costs_pct_per_year": 1.16,
    "turnover_x_per_year": 1.52,
    "cagr_2012_2018_pct": 21.09,
-   "cagr_2019_now_pct": 31.21,
+   "cagr_2019_now_pct": 31.18,
    "years": 14.9,
-   "worst_year_pct": -14.2
+   "worst_year_pct": -14.2,
+   "value_of_80k_after_10y_kr": 766371,
+   "value_of_80k_after_10y_real_kr": 615847,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 4, no filter, 6-1m momentum",
@@ -2157,16 +2941,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 28.61,
+   "cagr_pct": 28.7,
    "max_drawdown_pct": -41.6,
    "volatility_pct": 30.6,
    "sharpe": 0.98,
-   "costs_pct_per_year": 2.07,
-   "turnover_x_per_year": 2.72,
+   "costs_pct_per_year": 2.06,
+   "turnover_x_per_year": 2.71,
    "cagr_2012_2018_pct": 29.23,
-   "cagr_2019_now_pct": 28.48,
+   "cagr_2019_now_pct": 28.66,
    "years": 14.9,
-   "worst_year_pct": -27.9
+   "worst_year_pct": -27.9,
+   "value_of_80k_after_10y_kr": 794132,
+   "value_of_80k_after_10y_real_kr": 638155,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 8, trend filter, 12-1m momentum",
@@ -2176,16 +2967,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 26.63,
+   "cagr_pct": 26.41,
    "max_drawdown_pct": -44.5,
    "volatility_pct": 30.8,
    "sharpe": 0.92,
    "costs_pct_per_year": 0.79,
-   "turnover_x_per_year": 1.05,
+   "turnover_x_per_year": 1.04,
    "cagr_2012_2018_pct": 24.4,
-   "cagr_2019_now_pct": 28.5,
+   "cagr_2019_now_pct": 28.07,
    "years": 14.9,
-   "worst_year_pct": -14.4
+   "worst_year_pct": -14.4,
+   "value_of_80k_after_10y_kr": 624869,
+   "value_of_80k_after_10y_real_kr": 502138,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 8, trend filter, 6-1m momentum",
@@ -2195,16 +2993,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 26.13,
+   "cagr_pct": 26.12,
    "max_drawdown_pct": -41.6,
    "volatility_pct": 29.9,
    "sharpe": 0.93,
    "costs_pct_per_year": 1.45,
    "turnover_x_per_year": 1.9,
    "cagr_2012_2018_pct": 26.19,
-   "cagr_2019_now_pct": 26.67,
+   "cagr_2019_now_pct": 26.66,
    "years": 14.9,
-   "worst_year_pct": -25.4
+   "worst_year_pct": -25.4,
+   "value_of_80k_after_10y_kr": 801486,
+   "value_of_80k_after_10y_real_kr": 644065,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 8, no filter, 12-1m momentum",
@@ -2214,16 +3019,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 28.28,
+   "cagr_pct": 28.13,
    "max_drawdown_pct": -42.7,
    "volatility_pct": 30.6,
-   "sharpe": 0.97,
+   "sharpe": 0.96,
    "costs_pct_per_year": 0.79,
    "turnover_x_per_year": 1.04,
    "cagr_2012_2018_pct": 23.51,
-   "cagr_2019_now_pct": 32.53,
+   "cagr_2019_now_pct": 32.23,
    "years": 14.9,
-   "worst_year_pct": -13.6
+   "worst_year_pct": -13.6,
+   "value_of_80k_after_10y_kr": 805688,
+   "value_of_80k_after_10y_real_kr": 647442,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "4 stocks, quarterly, keep top 8, no filter, 6-1m momentum",
@@ -2242,7 +3054,14 @@
    "cagr_2012_2018_pct": 26.9,
    "cagr_2019_now_pct": 27.49,
    "years": 14.9,
-   "worst_year_pct": -25.4
+   "worst_year_pct": -25.4,
+   "value_of_80k_after_10y_kr": 844306,
+   "value_of_80k_after_10y_real_kr": 678475,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 5, trend filter, 12-1m momentum",
@@ -2252,16 +3071,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 25.8,
+   "cagr_pct": 25.91,
    "max_drawdown_pct": -37.0,
    "volatility_pct": 29.3,
-   "sharpe": 0.93,
+   "sharpe": 0.94,
    "costs_pct_per_year": 2.35,
    "turnover_x_per_year": 3.09,
    "cagr_2012_2018_pct": 28.62,
-   "cagr_2019_now_pct": 23.66,
+   "cagr_2019_now_pct": 23.87,
    "years": 14.9,
-   "worst_year_pct": -20.3
+   "worst_year_pct": -20.3,
+   "value_of_80k_after_10y_kr": 598849,
+   "value_of_80k_after_10y_real_kr": 481229,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 5, trend filter, 6-1m momentum",
@@ -2271,16 +3097,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 27.56,
+   "cagr_pct": 27.79,
    "max_drawdown_pct": -43.9,
    "volatility_pct": 28.8,
-   "sharpe": 0.99,
-   "costs_pct_per_year": 3.55,
+   "sharpe": 1.0,
+   "costs_pct_per_year": 3.54,
    "turnover_x_per_year": 4.66,
    "cagr_2012_2018_pct": 30.78,
-   "cagr_2019_now_pct": 25.58,
+   "cagr_2019_now_pct": 25.99,
    "years": 14.9,
-   "worst_year_pct": -26.9
+   "worst_year_pct": -26.9,
+   "value_of_80k_after_10y_kr": 666619,
+   "value_of_80k_after_10y_real_kr": 535687,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 5, no filter, 12-1m momentum",
@@ -2290,16 +3123,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 26.48,
+   "cagr_pct": 26.33,
    "max_drawdown_pct": -36.3,
    "volatility_pct": 29.8,
    "sharpe": 0.94,
-   "costs_pct_per_year": 2.26,
-   "turnover_x_per_year": 2.97,
+   "costs_pct_per_year": 2.25,
+   "turnover_x_per_year": 2.96,
    "cagr_2012_2018_pct": 26.2,
-   "cagr_2019_now_pct": 26.88,
+   "cagr_2019_now_pct": 26.6,
    "years": 14.9,
-   "worst_year_pct": -8.1
+   "worst_year_pct": -8.1,
+   "value_of_80k_after_10y_kr": 656945,
+   "value_of_80k_after_10y_real_kr": 527914,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 5, no filter, 6-1m momentum",
@@ -2309,16 +3149,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 26.83,
+   "cagr_pct": 26.95,
    "max_drawdown_pct": -43.9,
    "volatility_pct": 29.2,
-   "sharpe": 0.96,
-   "costs_pct_per_year": 3.56,
-   "turnover_x_per_year": 4.68,
+   "sharpe": 0.97,
+   "costs_pct_per_year": 3.55,
+   "turnover_x_per_year": 4.67,
    "cagr_2012_2018_pct": 28.81,
-   "cagr_2019_now_pct": 25.9,
+   "cagr_2019_now_pct": 26.12,
    "years": 14.9,
-   "worst_year_pct": -27.1
+   "worst_year_pct": -27.1,
+   "value_of_80k_after_10y_kr": 672312,
+   "value_of_80k_after_10y_real_kr": 540263,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 10, trend filter, 12-1m momentum",
@@ -2328,16 +3175,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 27.21,
+   "cagr_pct": 27.33,
    "max_drawdown_pct": -37.4,
    "volatility_pct": 29.5,
    "sharpe": 0.97,
    "costs_pct_per_year": 1.16,
    "turnover_x_per_year": 1.52,
    "cagr_2012_2018_pct": 27.21,
-   "cagr_2019_now_pct": 27.27,
+   "cagr_2019_now_pct": 27.49,
    "years": 14.9,
-   "worst_year_pct": -20.3
+   "worst_year_pct": -20.3,
+   "value_of_80k_after_10y_kr": 705914,
+   "value_of_80k_after_10y_real_kr": 567265,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 10, trend filter, 6-1m momentum",
@@ -2347,16 +3201,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 28.4,
+   "cagr_pct": 28.63,
    "max_drawdown_pct": -43.2,
    "volatility_pct": 29.6,
    "sharpe": 1.0,
    "costs_pct_per_year": 2.35,
    "turnover_x_per_year": 3.09,
    "cagr_2012_2018_pct": 30.67,
-   "cagr_2019_now_pct": 27.3,
+   "cagr_2019_now_pct": 27.72,
    "years": 14.9,
-   "worst_year_pct": -19.1
+   "worst_year_pct": -19.1,
+   "value_of_80k_after_10y_kr": 786543,
+   "value_of_80k_after_10y_real_kr": 632057,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 10, no filter, 12-1m momentum",
@@ -2366,16 +3227,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 27.64,
+   "cagr_pct": 27.46,
    "max_drawdown_pct": -34.9,
    "volatility_pct": 30.0,
-   "sharpe": 0.97,
+   "sharpe": 0.96,
    "costs_pct_per_year": 0.95,
    "turnover_x_per_year": 1.24,
    "cagr_2012_2018_pct": 23.84,
-   "cagr_2019_now_pct": 31.18,
+   "cagr_2019_now_pct": 30.84,
    "years": 14.9,
-   "worst_year_pct": -13.7
+   "worst_year_pct": -13.7,
+   "value_of_80k_after_10y_kr": 770328,
+   "value_of_80k_after_10y_real_kr": 619027,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 10, no filter, 6-1m momentum",
@@ -2385,16 +3253,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 30.45,
+   "cagr_pct": 30.56,
    "max_drawdown_pct": -41.0,
    "volatility_pct": 29.6,
    "sharpe": 1.05,
    "costs_pct_per_year": 2.28,
    "turnover_x_per_year": 3.0,
    "cagr_2012_2018_pct": 33.95,
-   "cagr_2019_now_pct": 28.26,
+   "cagr_2019_now_pct": 28.46,
    "years": 14.9,
-   "worst_year_pct": -16.0
+   "worst_year_pct": -16.0,
+   "value_of_80k_after_10y_kr": 842197,
+   "value_of_80k_after_10y_real_kr": 676780,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 5, trend filter, 12-1m momentum",
@@ -2404,16 +3279,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 23.68,
+   "cagr_pct": 23.72,
    "max_drawdown_pct": -44.8,
    "volatility_pct": 29.1,
    "sharpe": 0.88,
    "costs_pct_per_year": 1.21,
    "turnover_x_per_year": 1.59,
    "cagr_2012_2018_pct": 21.57,
-   "cagr_2019_now_pct": 25.48,
+   "cagr_2019_now_pct": 25.55,
    "years": 14.9,
-   "worst_year_pct": -10.0
+   "worst_year_pct": -10.0,
+   "value_of_80k_after_10y_kr": 542663,
+   "value_of_80k_after_10y_real_kr": 436078,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 5, trend filter, 6-1m momentum",
@@ -2423,16 +3305,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 25.92,
+   "cagr_pct": 26.03,
    "max_drawdown_pct": -41.2,
    "volatility_pct": 28.9,
-   "sharpe": 0.94,
+   "sharpe": 0.95,
    "costs_pct_per_year": 1.94,
-   "turnover_x_per_year": 2.56,
+   "turnover_x_per_year": 2.55,
    "cagr_2012_2018_pct": 28.83,
-   "cagr_2019_now_pct": 23.87,
+   "cagr_2019_now_pct": 24.07,
    "years": 14.9,
-   "worst_year_pct": -30.5
+   "worst_year_pct": -30.5,
+   "value_of_80k_after_10y_kr": 675767,
+   "value_of_80k_after_10y_real_kr": 543038,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 5, no filter, 12-1m momentum",
@@ -2442,16 +3331,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 25.86,
+   "cagr_pct": 25.89,
    "max_drawdown_pct": -41.2,
-   "volatility_pct": 29.4,
+   "volatility_pct": 29.3,
    "sharpe": 0.93,
    "costs_pct_per_year": 1.15,
    "turnover_x_per_year": 1.51,
    "cagr_2012_2018_pct": 21.03,
-   "cagr_2019_now_pct": 30.2,
+   "cagr_2019_now_pct": 30.25,
    "years": 14.9,
-   "worst_year_pct": -9.6
+   "worst_year_pct": -9.6,
+   "value_of_80k_after_10y_kr": 719599,
+   "value_of_80k_after_10y_real_kr": 578262,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 5, no filter, 6-1m momentum",
@@ -2461,16 +3357,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 26.18,
+   "cagr_pct": 26.29,
    "max_drawdown_pct": -41.1,
    "volatility_pct": 28.9,
    "sharpe": 0.95,
    "costs_pct_per_year": 1.96,
    "turnover_x_per_year": 2.57,
    "cagr_2012_2018_pct": 28.18,
-   "cagr_2019_now_pct": 24.93,
+   "cagr_2019_now_pct": 25.13,
    "years": 14.9,
-   "worst_year_pct": -30.5
+   "worst_year_pct": -30.5,
+   "value_of_80k_after_10y_kr": 714268,
+   "value_of_80k_after_10y_real_kr": 573978,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 10, trend filter, 12-1m momentum",
@@ -2480,16 +3383,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 23.3,
+   "cagr_pct": 23.21,
    "max_drawdown_pct": -45.0,
    "volatility_pct": 30.1,
    "sharpe": 0.85,
    "costs_pct_per_year": 0.78,
-   "turnover_x_per_year": 1.03,
+   "turnover_x_per_year": 1.02,
    "cagr_2012_2018_pct": 20.53,
-   "cagr_2019_now_pct": 25.69,
+   "cagr_2019_now_pct": 25.51,
    "years": 14.9,
-   "worst_year_pct": -22.7
+   "worst_year_pct": -22.7,
+   "value_of_80k_after_10y_kr": 524831,
+   "value_of_80k_after_10y_real_kr": 421748,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 10, trend filter, 6-1m momentum",
@@ -2499,16 +3409,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 19.2,
+   "cagr_pct": 19.21,
    "max_drawdown_pct": -45.4,
    "volatility_pct": 29.1,
    "sharpe": 0.75,
    "costs_pct_per_year": 1.4,
    "turnover_x_per_year": 1.84,
    "cagr_2012_2018_pct": 16.5,
-   "cagr_2019_now_pct": 21.45,
+   "cagr_2019_now_pct": 21.47,
    "years": 14.9,
-   "worst_year_pct": -24.9
+   "worst_year_pct": -24.9,
+   "value_of_80k_after_10y_kr": 407696,
+   "value_of_80k_after_10y_real_kr": 327620,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 10, no filter, 12-1m momentum",
@@ -2518,16 +3435,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 26.18,
+   "cagr_pct": 25.98,
    "max_drawdown_pct": -40.9,
    "volatility_pct": 30.3,
    "sharpe": 0.92,
    "costs_pct_per_year": 0.58,
    "turnover_x_per_year": 0.76,
    "cagr_2012_2018_pct": 20.03,
-   "cagr_2019_now_pct": 31.84,
+   "cagr_2019_now_pct": 31.44,
    "years": 14.9,
-   "worst_year_pct": -20.9
+   "worst_year_pct": -20.9,
+   "value_of_80k_after_10y_kr": 750960,
+   "value_of_80k_after_10y_real_kr": 603463,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, quarterly, keep top 10, no filter, 6-1m momentum",
@@ -2537,16 +3461,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 20.44,
+   "cagr_pct": 20.45,
    "max_drawdown_pct": -44.6,
    "volatility_pct": 29.2,
    "sharpe": 0.78,
    "costs_pct_per_year": 1.39,
    "turnover_x_per_year": 1.82,
    "cagr_2012_2018_pct": 17.02,
-   "cagr_2019_now_pct": 23.36,
+   "cagr_2019_now_pct": 23.37,
    "years": 14.9,
-   "worst_year_pct": -23.4
+   "worst_year_pct": -23.4,
+   "value_of_80k_after_10y_kr": 469128,
+   "value_of_80k_after_10y_real_kr": 376986,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 6, trend filter, 12-1m momentum",
@@ -2556,16 +3487,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 24.72,
+   "cagr_pct": 24.82,
    "max_drawdown_pct": -35.7,
    "volatility_pct": 27.9,
-   "sharpe": 0.93,
-   "costs_pct_per_year": 2.23,
-   "turnover_x_per_year": 2.93,
+   "sharpe": 0.94,
+   "costs_pct_per_year": 2.22,
+   "turnover_x_per_year": 2.92,
    "cagr_2012_2018_pct": 27.41,
-   "cagr_2019_now_pct": 22.57,
+   "cagr_2019_now_pct": 22.76,
    "years": 14.9,
-   "worst_year_pct": -17.6
+   "worst_year_pct": -17.6,
+   "value_of_80k_after_10y_kr": 541405,
+   "value_of_80k_after_10y_real_kr": 435067,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 6, trend filter, 6-1m momentum",
@@ -2575,16 +3513,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 25.2,
+   "cagr_pct": 25.42,
    "max_drawdown_pct": -41.4,
    "volatility_pct": 27.5,
    "sharpe": 0.96,
-   "costs_pct_per_year": 3.41,
+   "costs_pct_per_year": 3.4,
    "turnover_x_per_year": 4.48,
    "cagr_2012_2018_pct": 28.68,
-   "cagr_2019_now_pct": 22.85,
+   "cagr_2019_now_pct": 23.25,
    "years": 14.9,
-   "worst_year_pct": -25.2
+   "worst_year_pct": -25.2,
+   "value_of_80k_after_10y_kr": 571560,
+   "value_of_80k_after_10y_real_kr": 459299,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 6, no filter, 12-1m momentum",
@@ -2594,16 +3539,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 26.97,
+   "cagr_pct": 26.89,
    "max_drawdown_pct": -35.3,
    "volatility_pct": 28.5,
    "sharpe": 0.98,
    "costs_pct_per_year": 2.09,
    "turnover_x_per_year": 2.75,
    "cagr_2012_2018_pct": 26.82,
-   "cagr_2019_now_pct": 27.42,
+   "cagr_2019_now_pct": 27.26,
    "years": 14.9,
-   "worst_year_pct": -5.2
+   "worst_year_pct": -5.2,
+   "value_of_80k_after_10y_kr": 722965,
+   "value_of_80k_after_10y_real_kr": 580966,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 6, no filter, 6-1m momentum",
@@ -2613,16 +3565,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 25.37,
+   "cagr_pct": 25.44,
    "max_drawdown_pct": -41.3,
    "volatility_pct": 27.7,
    "sharpe": 0.96,
    "costs_pct_per_year": 3.45,
-   "turnover_x_per_year": 4.54,
+   "turnover_x_per_year": 4.53,
    "cagr_2012_2018_pct": 28.6,
-   "cagr_2019_now_pct": 23.25,
+   "cagr_2019_now_pct": 23.39,
    "years": 14.9,
-   "worst_year_pct": -25.4
+   "worst_year_pct": -25.4,
+   "value_of_80k_after_10y_kr": 580703,
+   "value_of_80k_after_10y_real_kr": 466646,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 12, trend filter, 12-1m momentum",
@@ -2632,16 +3591,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 24.96,
+   "cagr_pct": 25.06,
    "max_drawdown_pct": -34.7,
    "volatility_pct": 27.4,
-   "sharpe": 0.95,
+   "sharpe": 0.96,
    "costs_pct_per_year": 1.03,
    "turnover_x_per_year": 1.36,
    "cagr_2012_2018_pct": 25.36,
-   "cagr_2019_now_pct": 24.63,
+   "cagr_2019_now_pct": 24.82,
    "years": 14.9,
-   "worst_year_pct": -9.3
+   "worst_year_pct": -9.3,
+   "value_of_80k_after_10y_kr": 555824,
+   "value_of_80k_after_10y_real_kr": 446654,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 12, trend filter, 6-1m momentum",
@@ -2651,16 +3617,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 25.74,
+   "cagr_pct": 25.95,
    "max_drawdown_pct": -40.4,
    "volatility_pct": 27.8,
-   "sharpe": 0.96,
+   "sharpe": 0.97,
    "costs_pct_per_year": 2.18,
    "turnover_x_per_year": 2.86,
    "cagr_2012_2018_pct": 25.72,
-   "cagr_2019_now_pct": 26.53,
+   "cagr_2019_now_pct": 26.94,
    "years": 14.9,
-   "worst_year_pct": -18.1
+   "worst_year_pct": -18.1,
+   "value_of_80k_after_10y_kr": 718279,
+   "value_of_80k_after_10y_real_kr": 577201,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 12, no filter, 12-1m momentum",
@@ -2670,16 +3643,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 23.99,
+   "cagr_pct": 23.91,
    "max_drawdown_pct": -33.5,
    "volatility_pct": 27.7,
    "sharpe": 0.92,
    "costs_pct_per_year": 0.79,
    "turnover_x_per_year": 1.03,
    "cagr_2012_2018_pct": 22.71,
-   "cagr_2019_now_pct": 25.21,
+   "cagr_2019_now_pct": 25.04,
    "years": 14.9,
-   "worst_year_pct": -10.6
+   "worst_year_pct": -10.6,
+   "value_of_80k_after_10y_kr": 522709,
+   "value_of_80k_after_10y_real_kr": 420043,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, monthly, keep top 12, no filter, 6-1m momentum",
@@ -2689,16 +3669,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 26.95,
+   "cagr_pct": 27.0,
    "max_drawdown_pct": -38.4,
    "volatility_pct": 27.5,
    "sharpe": 1.01,
    "costs_pct_per_year": 2.08,
    "turnover_x_per_year": 2.74,
    "cagr_2012_2018_pct": 29.8,
-   "cagr_2019_now_pct": 25.24,
+   "cagr_2019_now_pct": 25.34,
    "years": 14.9,
-   "worst_year_pct": -19.0
+   "worst_year_pct": -19.0,
+   "value_of_80k_after_10y_kr": 670818,
+   "value_of_80k_after_10y_real_kr": 539062,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 6, trend filter, 12-1m momentum",
@@ -2708,16 +3695,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 23.12,
+   "cagr_pct": 23.14,
    "max_drawdown_pct": -42.8,
    "volatility_pct": 28.2,
    "sharpe": 0.88,
    "costs_pct_per_year": 1.19,
    "turnover_x_per_year": 1.56,
    "cagr_2012_2018_pct": 22.04,
-   "cagr_2019_now_pct": 23.97,
+   "cagr_2019_now_pct": 24.0,
    "years": 14.9,
-   "worst_year_pct": -6.6
+   "worst_year_pct": -6.6,
+   "value_of_80k_after_10y_kr": 519732,
+   "value_of_80k_after_10y_real_kr": 417651,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 6, trend filter, 6-1m momentum",
@@ -2727,16 +3721,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 25.29,
+   "cagr_pct": 25.33,
    "max_drawdown_pct": -39.0,
    "volatility_pct": 27.4,
    "sharpe": 0.96,
    "costs_pct_per_year": 1.82,
    "turnover_x_per_year": 2.39,
    "cagr_2012_2018_pct": 29.52,
-   "cagr_2019_now_pct": 22.25,
+   "cagr_2019_now_pct": 22.32,
    "years": 14.9,
-   "worst_year_pct": -24.6
+   "worst_year_pct": -24.6,
+   "value_of_80k_after_10y_kr": 611901,
+   "value_of_80k_after_10y_real_kr": 491717,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 6, no filter, 12-1m momentum",
@@ -2746,16 +3747,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 25.09,
+   "cagr_pct": 25.1,
    "max_drawdown_pct": -40.4,
    "volatility_pct": 28.6,
    "sharpe": 0.93,
    "costs_pct_per_year": 1.12,
    "turnover_x_per_year": 1.47,
    "cagr_2012_2018_pct": 21.85,
-   "cagr_2019_now_pct": 27.89,
+   "cagr_2019_now_pct": 27.92,
    "years": 14.9,
-   "worst_year_pct": -7.4
+   "worst_year_pct": -7.4,
+   "value_of_80k_after_10y_kr": 663527,
+   "value_of_80k_after_10y_real_kr": 533203,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 6, no filter, 6-1m momentum",
@@ -2765,16 +3773,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 26.04,
+   "cagr_pct": 26.17,
    "max_drawdown_pct": -39.0,
    "volatility_pct": 27.4,
-   "sharpe": 0.98,
+   "sharpe": 0.99,
    "costs_pct_per_year": 1.85,
    "turnover_x_per_year": 2.44,
    "cagr_2012_2018_pct": 29.38,
-   "cagr_2019_now_pct": 23.74,
+   "cagr_2019_now_pct": 23.98,
    "years": 14.9,
-   "worst_year_pct": -24.7
+   "worst_year_pct": -24.7,
+   "value_of_80k_after_10y_kr": 680963,
+   "value_of_80k_after_10y_real_kr": 547214,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 12, trend filter, 12-1m momentum",
@@ -2784,16 +3799,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 23.17,
+   "cagr_pct": 23.11,
    "max_drawdown_pct": -38.3,
    "volatility_pct": 28.9,
    "sharpe": 0.87,
    "costs_pct_per_year": 0.72,
    "turnover_x_per_year": 0.95,
    "cagr_2012_2018_pct": 20.33,
-   "cagr_2019_now_pct": 25.65,
+   "cagr_2019_now_pct": 25.52,
    "years": 14.9,
-   "worst_year_pct": -24.2
+   "worst_year_pct": -24.2,
+   "value_of_80k_after_10y_kr": 540482,
+   "value_of_80k_after_10y_real_kr": 434325,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 12, trend filter, 6-1m momentum",
@@ -2803,16 +3825,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 20.84,
+   "cagr_pct": 20.81,
    "max_drawdown_pct": -39.8,
    "volatility_pct": 27.9,
    "sharpe": 0.82,
    "costs_pct_per_year": 1.21,
    "turnover_x_per_year": 1.59,
    "cagr_2012_2018_pct": 18.1,
-   "cagr_2019_now_pct": 23.2,
+   "cagr_2019_now_pct": 23.14,
    "years": 14.9,
-   "worst_year_pct": -24.4
+   "worst_year_pct": -24.4,
+   "value_of_80k_after_10y_kr": 460709,
+   "value_of_80k_after_10y_real_kr": 370221,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 12, no filter, 12-1m momentum",
@@ -2822,16 +3851,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 25.17,
+   "cagr_pct": 25.08,
    "max_drawdown_pct": -38.4,
    "volatility_pct": 28.6,
    "sharpe": 0.93,
    "costs_pct_per_year": 0.56,
    "turnover_x_per_year": 0.73,
    "cagr_2012_2018_pct": 20.52,
-   "cagr_2019_now_pct": 29.33,
+   "cagr_2019_now_pct": 29.16,
    "years": 14.9,
-   "worst_year_pct": -14.2
+   "worst_year_pct": -14.2,
+   "value_of_80k_after_10y_kr": 687976,
+   "value_of_80k_after_10y_real_kr": 552850,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "6 stocks, quarterly, keep top 12, no filter, 6-1m momentum",
@@ -2841,16 +3877,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 22.27,
+   "cagr_pct": 22.24,
    "max_drawdown_pct": -39.7,
    "volatility_pct": 27.9,
    "sharpe": 0.86,
-   "costs_pct_per_year": 1.21,
-   "turnover_x_per_year": 1.59,
+   "costs_pct_per_year": 1.2,
+   "turnover_x_per_year": 1.58,
    "cagr_2012_2018_pct": 18.5,
-   "cagr_2019_now_pct": 25.58,
+   "cagr_2019_now_pct": 25.52,
    "years": 14.9,
-   "worst_year_pct": -24.3
+   "worst_year_pct": -24.3,
+   "value_of_80k_after_10y_kr": 530445,
+   "value_of_80k_after_10y_real_kr": 426259,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 8, trend filter, 12-1m momentum",
@@ -2860,16 +3903,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 23.11,
+   "cagr_pct": 23.21,
    "max_drawdown_pct": -34.8,
    "volatility_pct": 26.0,
    "sharpe": 0.93,
    "costs_pct_per_year": 1.82,
-   "turnover_x_per_year": 2.4,
+   "turnover_x_per_year": 2.39,
    "cagr_2012_2018_pct": 24.76,
-   "cagr_2019_now_pct": 21.79,
+   "cagr_2019_now_pct": 21.99,
    "years": 14.9,
-   "worst_year_pct": -14.4
+   "worst_year_pct": -14.4,
+   "value_of_80k_after_10y_kr": 505812,
+   "value_of_80k_after_10y_real_kr": 406464,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 8, trend filter, 6-1m momentum",
@@ -2879,16 +3929,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 24.62,
+   "cagr_pct": 24.79,
    "max_drawdown_pct": -36.3,
    "volatility_pct": 25.2,
-   "sharpe": 1.0,
-   "costs_pct_per_year": 3.15,
-   "turnover_x_per_year": 4.14,
+   "sharpe": 1.01,
+   "costs_pct_per_year": 3.14,
+   "turnover_x_per_year": 4.13,
    "cagr_2012_2018_pct": 27.28,
-   "cagr_2019_now_pct": 23.0,
+   "cagr_2019_now_pct": 23.33,
    "years": 14.9,
-   "worst_year_pct": -15.6
+   "worst_year_pct": -15.6,
+   "value_of_80k_after_10y_kr": 608947,
+   "value_of_80k_after_10y_real_kr": 489343,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 8, no filter, 12-1m momentum",
@@ -2898,16 +3955,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 24.23,
+   "cagr_pct": 24.21,
    "max_drawdown_pct": -34.7,
    "volatility_pct": 26.7,
    "sharpe": 0.95,
    "costs_pct_per_year": 1.59,
    "turnover_x_per_year": 2.09,
    "cagr_2012_2018_pct": 23.5,
-   "cagr_2019_now_pct": 25.11,
+   "cagr_2019_now_pct": 25.08,
    "years": 14.9,
-   "worst_year_pct": -7.7
+   "worst_year_pct": -7.7,
+   "value_of_80k_after_10y_kr": 609161,
+   "value_of_80k_after_10y_real_kr": 489515,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 8, no filter, 6-1m momentum",
@@ -2917,16 +3981,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 23.77,
+   "cagr_pct": 23.82,
    "max_drawdown_pct": -36.9,
    "volatility_pct": 25.4,
    "sharpe": 0.97,
    "costs_pct_per_year": 3.25,
    "turnover_x_per_year": 4.27,
    "cagr_2012_2018_pct": 26.08,
-   "cagr_2019_now_pct": 22.35,
+   "cagr_2019_now_pct": 22.45,
    "years": 14.9,
-   "worst_year_pct": -18.2
+   "worst_year_pct": -18.2,
+   "value_of_80k_after_10y_kr": 550849,
+   "value_of_80k_after_10y_real_kr": 442656,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 16, trend filter, 12-1m momentum",
@@ -2936,16 +4007,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 22.33,
+   "cagr_pct": 22.43,
    "max_drawdown_pct": -36.3,
    "volatility_pct": 25.8,
-   "sharpe": 0.91,
+   "sharpe": 0.92,
    "costs_pct_per_year": 1.03,
    "turnover_x_per_year": 1.36,
    "cagr_2012_2018_pct": 24.33,
-   "cagr_2019_now_pct": 20.69,
+   "cagr_2019_now_pct": 20.88,
    "years": 14.9,
-   "worst_year_pct": -20.3
+   "worst_year_pct": -20.3,
+   "value_of_80k_after_10y_kr": 454981,
+   "value_of_80k_after_10y_real_kr": 365618,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 16, trend filter, 6-1m momentum",
@@ -2955,16 +4033,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 24.69,
+   "cagr_pct": 24.85,
    "max_drawdown_pct": -38.2,
    "volatility_pct": 25.7,
    "sharpe": 0.99,
    "costs_pct_per_year": 1.71,
    "turnover_x_per_year": 2.24,
    "cagr_2012_2018_pct": 27.14,
-   "cagr_2019_now_pct": 23.23,
+   "cagr_2019_now_pct": 23.52,
    "years": 14.9,
-   "worst_year_pct": -15.7
+   "worst_year_pct": -15.7,
+   "value_of_80k_after_10y_kr": 600770,
+   "value_of_80k_after_10y_real_kr": 482772,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 16, no filter, 12-1m momentum",
@@ -2974,16 +4059,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 25.3,
+   "cagr_pct": 25.26,
    "max_drawdown_pct": -38.3,
    "volatility_pct": 27.3,
    "sharpe": 0.96,
    "costs_pct_per_year": 0.64,
    "turnover_x_per_year": 0.84,
    "cagr_2012_2018_pct": 22.47,
-   "cagr_2019_now_pct": 27.83,
+   "cagr_2019_now_pct": 27.74,
    "years": 14.9,
-   "worst_year_pct": -13.9
+   "worst_year_pct": -13.9,
+   "value_of_80k_after_10y_kr": 608263,
+   "value_of_80k_after_10y_real_kr": 488793,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, monthly, keep top 16, no filter, 6-1m momentum",
@@ -3000,9 +4092,16 @@
    "costs_pct_per_year": 1.7,
    "turnover_x_per_year": 2.24,
    "cagr_2012_2018_pct": 26.08,
-   "cagr_2019_now_pct": 25.31,
+   "cagr_2019_now_pct": 25.3,
    "years": 14.9,
-   "worst_year_pct": -15.4
+   "worst_year_pct": -15.4,
+   "value_of_80k_after_10y_kr": 642944,
+   "value_of_80k_after_10y_real_kr": 516663,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 8, trend filter, 12-1m momentum",
@@ -3021,7 +4120,14 @@
    "cagr_2012_2018_pct": 19.27,
    "cagr_2019_now_pct": 22.95,
    "years": 14.9,
-   "worst_year_pct": -9.0
+   "worst_year_pct": -9.0,
+   "value_of_80k_after_10y_kr": 475169,
+   "value_of_80k_after_10y_real_kr": 381841,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 8, trend filter, 6-1m momentum",
@@ -3031,16 +4137,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 22.81,
+   "cagr_pct": 22.84,
    "max_drawdown_pct": -39.2,
    "volatility_pct": 25.5,
    "sharpe": 0.94,
    "costs_pct_per_year": 1.64,
    "turnover_x_per_year": 2.16,
    "cagr_2012_2018_pct": 26.16,
-   "cagr_2019_now_pct": 20.36,
+   "cagr_2019_now_pct": 20.42,
    "years": 14.9,
-   "worst_year_pct": -20.8
+   "worst_year_pct": -20.8,
+   "value_of_80k_after_10y_kr": 492671,
+   "value_of_80k_after_10y_real_kr": 395905,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 8, no filter, 12-1m momentum",
@@ -3057,9 +4170,16 @@
    "costs_pct_per_year": 0.91,
    "turnover_x_per_year": 1.2,
    "cagr_2012_2018_pct": 18.8,
-   "cagr_2019_now_pct": 28.74,
+   "cagr_2019_now_pct": 28.72,
    "years": 14.9,
-   "worst_year_pct": -7.6
+   "worst_year_pct": -7.6,
+   "value_of_80k_after_10y_kr": 682556,
+   "value_of_80k_after_10y_real_kr": 548494,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 8, no filter, 6-1m momentum",
@@ -3069,16 +4189,23 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 22.67,
+   "cagr_pct": 22.71,
    "max_drawdown_pct": -39.2,
    "volatility_pct": 25.5,
    "sharpe": 0.93,
    "costs_pct_per_year": 1.69,
    "turnover_x_per_year": 2.22,
    "cagr_2012_2018_pct": 25.69,
-   "cagr_2019_now_pct": 20.51,
+   "cagr_2019_now_pct": 20.58,
    "years": 14.9,
-   "worst_year_pct": -20.8
+   "worst_year_pct": -20.8,
+   "value_of_80k_after_10y_kr": 499617,
+   "value_of_80k_after_10y_real_kr": 401486,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 16, trend filter, 12-1m momentum",
@@ -3088,16 +4215,23 @@
    "trend": true,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 20.02,
+   "cagr_pct": 20.0,
    "max_drawdown_pct": -35.4,
    "volatility_pct": 25.6,
    "sharpe": 0.84,
    "costs_pct_per_year": 0.68,
    "turnover_x_per_year": 0.9,
    "cagr_2012_2018_pct": 18.79,
-   "cagr_2019_now_pct": 21.18,
+   "cagr_2019_now_pct": 21.14,
    "years": 14.9,
-   "worst_year_pct": -26.3
+   "worst_year_pct": -26.3,
+   "value_of_80k_after_10y_kr": 418972,
+   "value_of_80k_after_10y_real_kr": 336681,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 16, trend filter, 6-1m momentum",
@@ -3107,16 +4241,23 @@
    "trend": true,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 21.82,
+   "cagr_pct": 21.83,
    "max_drawdown_pct": -34.6,
-   "volatility_pct": 25.8,
+   "volatility_pct": 25.7,
    "sharpe": 0.9,
    "costs_pct_per_year": 1.06,
    "turnover_x_per_year": 1.39,
    "cagr_2012_2018_pct": 20.62,
-   "cagr_2019_now_pct": 22.82,
+   "cagr_2019_now_pct": 22.84,
    "years": 14.9,
-   "worst_year_pct": -16.7
+   "worst_year_pct": -16.7,
+   "value_of_80k_after_10y_kr": 474370,
+   "value_of_80k_after_10y_real_kr": 381199,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 16, no filter, 12-1m momentum",
@@ -3126,16 +4267,23 @@
    "trend": false,
    "lookback": 252,
    "capital": 100000.0,
-   "cagr_pct": 21.91,
+   "cagr_pct": 21.9,
    "max_drawdown_pct": -34.9,
    "volatility_pct": 25.7,
    "sharpe": 0.9,
    "costs_pct_per_year": 0.56,
    "turnover_x_per_year": 0.74,
    "cagr_2012_2018_pct": 20.77,
-   "cagr_2019_now_pct": 22.89,
+   "cagr_2019_now_pct": 22.87,
    "years": 14.9,
-   "worst_year_pct": -18.9
+   "worst_year_pct": -18.9,
+   "value_of_80k_after_10y_kr": 477931,
+   "value_of_80k_after_10y_real_kr": 384060,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "8 stocks, quarterly, keep top 16, no filter, 6-1m momentum",
@@ -3145,30 +4293,44 @@
    "trend": false,
    "lookback": 126,
    "capital": 100000.0,
-   "cagr_pct": 23.56,
+   "cagr_pct": 23.59,
    "max_drawdown_pct": -34.2,
    "volatility_pct": 26.1,
    "sharpe": 0.94,
    "costs_pct_per_year": 1.02,
    "turnover_x_per_year": 1.34,
    "cagr_2012_2018_pct": 20.64,
-   "cagr_2019_now_pct": 26.15,
+   "cagr_2019_now_pct": 26.21,
    "years": 14.9,
-   "worst_year_pct": -12.7
+   "worst_year_pct": -12.7,
+   "value_of_80k_after_10y_kr": 587716,
+   "value_of_80k_after_10y_real_kr": 472282,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   },
   {
    "name": "5 stocks, monthly, keep top 10, NO COSTS (reference)",
    "capital": 100000.0,
-   "cagr_pct": 28.61,
+   "cagr_pct": 28.73,
    "max_drawdown_pct": -37.0,
-   "volatility_pct": 29.5,
-   "sharpe": 1.0,
+   "volatility_pct": 29.4,
+   "sharpe": 1.01,
    "costs_pct_per_year": 0.0,
    "turnover_x_per_year": 1.53,
    "cagr_2012_2018_pct": 28.59,
-   "cagr_2019_now_pct": 28.7,
+   "cagr_2019_now_pct": 28.92,
    "years": 14.9,
-   "worst_year_pct": -18.5
+   "worst_year_pct": -18.5,
+   "value_of_80k_after_10y_kr": 783558,
+   "value_of_80k_after_10y_real_kr": 629658,
+   "inflation_10y_pct": 24.4,
+   "cpi_months": [
+    "2016-11",
+    "2026-10"
+   ]
   }
  ]
 }
