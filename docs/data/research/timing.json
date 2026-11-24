@@ -1,0 +1,98 @@
+{
+ "savings_kr": 85169,
+ "notes": "Should you wait for a crash, or ease in? 80,000 kr towards a house in 5 years.\n\n    python research/timing.py          # needs Yahoo Finance (Actions -> Backtest, script timing)\n\nEvery monthly start since 1993, 5-year horizon, S&P 500 total return in DKK (same fund costs, L\u00e5n & Spar\ntrading costs and 17% ASK tax as horizon.py; uninvested money earns 2% taxed at 37%):\n  All at once     invest the 80,000 kr in month 1\n  Over 6 months   invest 1/6 each month, the rest waits in savings\n  Over 12 months  invest 1/12 each month\n  Savings only    for reference\n\nEach plan is also split by the starting situation: starts right after the market had fallen 10% or more from\nits high (like November 2026), and all other starts. Not a forecast. Not investment advice.\n",
+ "rows": [
+  {
+   "plan": "All at once",
+   "starts": "All starts",
+   "windows": 347,
+   "median_kr": 133357,
+   "worst_10pct_kr": 71414,
+   "worst_kr": 53167,
+   "pct_beat_savings": 74,
+   "pct_below_80k": 22
+  },
+  {
+   "plan": "All at once",
+   "starts": "Starts after a 10%+ fall",
+   "windows": 104,
+   "median_kr": 103607,
+   "worst_10pct_kr": 67910,
+   "worst_kr": 53167,
+   "pct_beat_savings": 67,
+   "pct_below_80k": 24
+  },
+  {
+   "plan": "All at once",
+   "starts": "Other starts",
+   "windows": 243,
+   "median_kr": 137031,
+   "worst_10pct_kr": 72510,
+   "worst_kr": 61228,
+   "pct_beat_savings": 77,
+   "pct_below_80k": 21
+  },
+  {
+   "plan": "Over 6 months",
+   "starts": "All starts",
+   "windows": 347,
+   "median_kr": 129626,
+   "worst_10pct_kr": 69967,
+   "worst_kr": 53006,
+   "pct_beat_savings": 74,
+   "pct_below_80k": 22,
+   "pct_lump_sum_did_better": 69
+  },
+  {
+   "plan": "Over 6 months",
+   "starts": "Starts after a 10%+ fall",
+   "windows": 104,
+   "median_kr": 104534,
+   "worst_10pct_kr": 66776,
+   "worst_kr": 53006,
+   "pct_beat_savings": 69,
+   "pct_below_80k": 28
+  },
+  {
+   "plan": "Over 6 months",
+   "starts": "Other starts",
+   "windows": 243,
+   "median_kr": 132567,
+   "worst_10pct_kr": 71781,
+   "worst_kr": 62036,
+   "pct_beat_savings": 77,
+   "pct_below_80k": 20
+  },
+  {
+   "plan": "Over 12 months",
+   "starts": "All starts",
+   "windows": 347,
+   "median_kr": 125969,
+   "worst_10pct_kr": 68146,
+   "worst_kr": 53641,
+   "pct_beat_savings": 75,
+   "pct_below_80k": 23,
+   "pct_lump_sum_did_better": 76
+  },
+  {
+   "plan": "Over 12 months",
+   "starts": "Starts after a 10%+ fall",
+   "windows": 104,
+   "median_kr": 109818,
+   "worst_10pct_kr": 65202,
+   "worst_kr": 53641,
+   "pct_beat_savings": 68,
+   "pct_below_80k": 30
+  },
+  {
+   "plan": "Over 12 months",
+   "starts": "Other starts",
+   "windows": 243,
+   "median_kr": 128860,
+   "worst_10pct_kr": 69858,
+   "worst_kr": 60246,
+   "pct_beat_savings": 78,
+   "pct_below_80k": 20
+  }
+ ]
+}
