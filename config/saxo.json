@@ -1,0 +1,14 @@
+{
+  "_note": "Mirrors one paper portfolio onto a Saxo account. environment 'sim' is Saxo's practice system with fake money. Going live needs environment 'live' here AND the GitHub secret SAXO_ALLOW_LIVE set to the exact phrase in execute_saxo.py. Set enabled to false to stop all Saxo trading immediately. Differences smaller than min_trade_dkk are left alone (unless the model sells the whole holding), so rounding never costs a minimum fee.",
+  "enabled": true,
+  "environment": "sim",
+  "strategy": "skill",
+  "dry_run": false,
+  "limits": {
+    "max_order_dkk": 4000,
+    "max_orders_per_run": 8,
+    "max_total_buys_dkk": 11000,
+    "max_price_move_pct": 5,
+    "min_trade_dkk": 500
+  }
+}

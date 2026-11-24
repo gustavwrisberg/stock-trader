@@ -1,0 +1,55 @@
+name: Saxo practice trading
+
+# Mirrors the paper portfolio onto the Saxo account set in config/saxo.json (practice 'sim' by default).
+# Needs the secret SAXO_TOKEN. With no token or an expired one, nothing is traded and you get an email.
+
+on:
+  schedule:
+    # Weekdays 14:50 UTC: 20 minutes after the US open in winter (14:30 UTC), 80 minutes in summer.
+    - cron: "50 14 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only show the plan; place no orders"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-trade
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SAXO_TOKEN:          ${{ secrets.SAXO_TOKEN }}
+      SAXO_ALLOW_LIVE:     ${{ secrets.SAXO_ALLOW_LIVE }}
+      SAXO_DRY_RUN:        ${{ inputs.dry_run && 'true' || 'false' }}
+      GMAIL_CLIENT_ID:     ${{ secrets.GMAIL_CLIENT_ID }}
+      GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+      GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+      EMAIL_FROM:          ${{ secrets.EMAIL_FROM }}
+      EMAIL_TO:            ${{ secrets.EMAIL_TO }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install requests
+      - name: Mirror the paper portfolio onto Saxo
+        run: python execute_saxo.py
+      - name: Save the log
+        if: always()
+        run: |
+          git config user.name "paper-trader-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/saxo || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Saxo run $(date -u +%Y-%m-%d)"
+          git pull --rebase
+          git push
