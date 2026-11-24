@@ -72,6 +72,24 @@ Costs apply from the next run. Changing the number of stocks or the starting amo
 
 **Judge it fairly.** Give it at least a year, ideally longer. A few months of results is mostly luck. The questions that matter: does Skill-scored beat Momentum only (does the skill help?), and does either beat the index fund after costs and tax?
 
+## Trading on a Saxo practice account
+
+`execute_saxo.py` copies the Skill-scored portfolio onto a Saxo account. It runs as the **Saxo practice trading** workflow, on weekdays shortly after the US market opens. The default is Saxo's practice system: a simulated account with fake money.
+
+- **Reconcile, don't replay.** Each run compares what the paper model wants to hold with what Saxo actually holds, and trades only the difference. A missed run is caught up next time; nothing is doubled.
+- **Safety checks.** Every order is pre-checked by Saxo, labelled so it can't be sent twice, and must pass the limits in [`config/saxo.json`](config/saxo.json): per order, per run, in total, and a guard against prices that moved more than 5% from the model's. Differences under 500 kr are left alone, so rounding never costs a minimum fee.
+- **Off switch.** Set `"enabled": false` in `config/saxo.json`, or `"dry_run": true` to only see the plan.
+- **Live money is locked.** It needs `"environment": "live"` and a secret `SAXO_ALLOW_LIVE` containing an exact phrase.
+- **Log.** Every order is recorded in `data/saxo/executions.csv`, and `data/saxo/reconcile.json` shows model against Saxo.
+
+**Access key.** Saxo's keys are short-lived. Personal customers can't get a never-expiring key, so a person has to log in now and then. For the practice account, use the 24-hour token:
+
+1. Go to [developer.saxo/openapi/token](https://www.developer.saxo/openapi/token) while logged in and copy the token.
+2. In this repo, open Settings → Secrets and variables → Actions → New repository secret. Name it `SAXO_TOKEN` and paste the token.
+3. Go to Actions → **Saxo practice trading** → Run workflow. Leave "Only show the plan" ticked the first time.
+
+The strategy trades about once a quarter. When orders are waiting and the token has expired, you get an email asking you to refresh it.
+
 ## Setup
 
 1. **Website:** Settings → Pages → Deploy from a branch → `main`, folder `/docs`.
@@ -88,6 +106,8 @@ trader/engine.py           momentum, ranking and order decisions
 trader/fundamentals.py     financial statements -> the skill's metrics
 trader/scoring.py          runs the skill's score.py
 research/backtest.py       backtest of the rules with real costs
+execute_saxo.py            mirrors the paper portfolio onto a Saxo account (practice by default)
+trader/saxo.py             minimal Saxo OpenAPI client
 config/                    companies, strategy, broker costs, manual red flags
 data/                      the bot's state and history (written by the bot)
 docs/                      the website
