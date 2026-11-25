@@ -1,48 +1,44 @@
 {
  "schema": 2,
  "skill": {
-  "cash": 10000.0,
-  "positions": {},
-  "pending": [
-   {
-    "ticker": "TSM",
-    "side": 1,
-    "placed": "2026-11-23",
-    "budget_dkk": 2500.0,
-    "reason": "New entry: rank #1, skill score 9.0 (Exceptional), +52% 12-1m momentum"
+  "cash": 108.45760320532872,
+  "positions": {
+   "TSM": {
+    "shares": 1,
+    "cost_dkk": 2456.7179525034494,
+    "entry_price": 356.6482362213135,
+    "entry_date": "2026-11-24"
    },
-   {
-    "ticker": "BHP",
-    "side": 1,
-    "placed": "2026-11-23",
-    "budget_dkk": 2500.0,
-    "reason": "New entry: rank #2, skill score 8.5 (Exceptional), +54% 12-1m momentum"
+   "BHP": {
+    "shares": 6,
+    "cost_dkk": 2842.1979385688655,
+    "entry_price": 68.79438213729858,
+    "entry_date": "2026-11-24"
    },
-   {
-    "ticker": "AAPL",
-    "side": 1,
-    "placed": "2026-11-23",
-    "budget_dkk": 2500.0,
-    "reason": "New entry: rank #4, skill score 8.2 (Strong), +31% 12-1m momentum"
+   "AAPL": {
+    "shares": 1,
+    "cost_dkk": 2398.9199952166673,
+    "entry_price": 348.23402755737305,
+    "entry_date": "2026-11-24"
    },
-   {
-    "ticker": "NVDA",
-    "side": 1,
-    "placed": "2026-11-23",
-    "budget_dkk": 2500.0,
-    "reason": "New entry: rank #7, skill score 8.8 (Exceptional), +17% 12-1m momentum"
+   "NVDA": {
+    "shares": 2,
+    "cost_dkk": 2193.7065105056886,
+    "entry_price": 159.17955610656736,
+    "entry_date": "2026-11-24"
    }
-  ],
+  },
+  "pending": [],
   "started": "2026-11-23",
-  "last_run": "2026-11-23",
+  "last_run": "2026-11-24",
   "last_period": "2026-Q4",
   "year": 2026,
   "year_start_value": 10000.0,
   "loss_carry": 0.0,
   "costs": {
-   "commission": 0.0,
-   "fx_fee": 0.0,
-   "slippage": 0.0,
+   "commission": 27.476360330581663,
+   "fx_fee": 24.598668420109945,
+   "slippage": 4.917275046498515,
    "withholding": 0.0,
    "tax": 0.0
   },
@@ -50,48 +46,44 @@
   "deposits": 10000.0
  },
  "momentum": {
-  "cash": 10000.0,
-  "positions": {},
-  "pending": [
-   {
-    "ticker": "XOM",
-    "side": 1,
-    "placed": "2026-11-23",
-    "budget_dkk": 2500.0,
-    "reason": "New entry: rank #2, +60% 12-1m momentum"
+  "cash": 426.51819188496484,
+  "positions": {
+   "XOM": {
+    "shares": 2,
+    "cost_dkk": 2170.614718695601,
+    "entry_price": 157.49870816802976,
+    "entry_date": "2026-11-24"
    },
-   {
-    "ticker": "BHP",
-    "side": 1,
-    "placed": "2026-11-23",
-    "budget_dkk": 2500.0,
-    "reason": "New entry: rank #3, +54% 12-1m momentum"
+   "BHP": {
+    "shares": 5,
+    "cost_dkk": 2369.6431304878292,
+    "entry_price": 68.79438213729858,
+    "entry_date": "2026-11-24"
    },
-   {
-    "ticker": "TSM",
-    "side": 1,
-    "placed": "2026-11-23",
-    "budget_dkk": 2500.0,
-    "reason": "New entry: rank #4, +52% 12-1m momentum"
+   "TSM": {
+    "shares": 1,
+    "cost_dkk": 2456.7179525034494,
+    "entry_price": 356.6482362213135,
+    "entry_date": "2026-11-24"
    },
-   {
-    "ticker": "SHEL",
-    "side": 1,
-    "placed": "2026-11-23",
-    "budget_dkk": 2500.0,
-    "reason": "New entry: rank #5, +52% 12-1m momentum"
+   "SHEL": {
+    "shares": 4,
+    "cost_dkk": 2576.5060064281556,
+    "entry_price": 93.52173597335815,
+    "entry_date": "2026-11-24"
    }
-  ],
+  },
+  "pending": [],
   "started": "2026-11-23",
-  "last_run": "2026-11-23",
+  "last_run": "2026-11-24",
   "last_period": "2026-Q4",
   "year": 2026,
   "year_start_value": 10000.0,
   "loss_carry": 0.0,
   "costs": {
-   "commission": 0.0,
-   "fx_fee": 0.0,
-   "slippage": 0.0,
+   "commission": 27.476360330581663,
+   "fx_fee": 23.805499869786665,
+   "slippage": 4.758720613650074,
    "withholding": 0.0,
    "tax": 0.0
   },
@@ -99,27 +91,26 @@
   "deposits": 10000.0
  },
  "index": {
-  "cash": 10000.0,
-  "positions": {},
-  "pending": [
-   {
-    "ticker": "VUAA.DE",
-    "side": 1,
-    "placed": "2026-11-23",
-    "budget_dkk": 10000.0,
-    "reason": "Buy and hold: the index fund a Danish investor can actually buy"
+  "cash": 321.84786752506625,
+  "positions": {
+   "VUAA.DE": {
+    "shares": 10,
+    "cost_dkk": 9678.152132474934,
+    "entry_price": 128.86939517211914,
+    "entry_date": "2026-11-24"
    }
-  ],
+  },
+  "pending": [],
   "started": "2026-11-23",
-  "last_run": "2026-11-23",
+  "last_run": "2026-11-24",
   "last_period": null,
   "year": 2026,
   "year_start_value": 10000.0,
   "loss_carry": 0.0,
   "costs": {
-   "commission": 0.0,
-   "fx_fee": 0.0,
-   "slippage": 0.0,
+   "commission": 22.477814004421234,
+   "fx_fee": 24.07898832536287,
+   "slippage": 4.813390969587815,
    "withholding": 0.0,
    "tax": 0.0
   },
